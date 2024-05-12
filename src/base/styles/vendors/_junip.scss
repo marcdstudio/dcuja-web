@@ -1,0 +1,269 @@
+.junip-product-summary-star,
+.junip-star,
+.junip-product-summary-star {
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.junip-dark {
+  .junip-star-filled {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14.49 13.78'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23000000;%7D%3C/style%3E%3C/defs%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpolygon class='cls-1' points='14.49 5.26 8.96 5.26 7.25 0 5.54 5.26 0 5.26 4.48 8.52 2.77 13.78 7.25 10.53 11.72 13.78 10.01 8.52 14.49 5.26'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .junip-star-outline {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14.49 13.78'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23000000;%7D%3C/style%3E%3C/defs%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpath class='cls-1' d='M11.72,13.78,7.25,10.53,2.77,13.78,4.48,8.52,0,5.26H5.53L7.25,0,9,5.26h5.53L10,8.52ZM7.25,9.29l2.57,1.87-1-3,2.57-1.87H8.23l-1-3-1,3H3.08L5.65,8.13l-1,3Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .junip-star-half {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14.49 13.78'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23000000;%7D%3C/style%3E%3C/defs%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpath class='cls-1' d='M14.49,5.26H9L7.25,0h0L5.53,5.26H0L4.48,8.52,2.77,13.78h0l4.48-3.25,4.47,3.25L10,8.52Zm-7.24,4h0v-6h0l1,3h3.18L8.84,8.14l1,3Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+.junip-light {
+  .junip-star-filled {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14.49 13.78'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23FFFEFB;%7D%3C/style%3E%3C/defs%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpolygon class='cls-1' points='14.49 5.26 8.96 5.26 7.25 0 5.54 5.26 0 5.26 4.48 8.52 2.77 13.78 7.25 10.53 11.72 13.78 10.01 8.52 14.49 5.26'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .junip-star-outline {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14.49 13.78'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23FFFEFB;%7D%3C/style%3E%3C/defs%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpath class='cls-1' d='M11.72,13.78,7.25,10.53,2.77,13.78,4.48,8.52,0,5.26H5.53L7.25,0,9,5.26h5.53L10,8.52ZM7.25,9.29l2.57,1.87-1-3,2.57-1.87H8.23l-1-3-1,3H3.08L5.65,8.13l-1,3Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .junip-star-half {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14.49 13.78'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23FFFEFB;%7D%3C/style%3E%3C/defs%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpath class='cls-1' d='M14.49,5.26H9L7.25,0h0L5.53,5.26H0L4.48,8.52,2.77,13.78h0l4.48-3.25,4.47,3.25L10,8.52Zm-7.24,4h0v-6h0l1,3h3.18L8.84,8.14l1,3Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+/* Hide the review modal stars */
+.junip-rating-icon-star svg,
+.junip-star svg,
+.junip-product-summary-star svg {
+  display: none !important;
+}
+
+/* Set a background sizing property */
+.junip-rating-icon-star {
+  background-size: cover;
+}
+
+/* Set the custom stars */
+.junip-rating-icon-star-filled {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14.49 13.78'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23000000;%7D%3C/style%3E%3C/defs%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpolygon class='cls-1' points='14.49 5.26 8.96 5.26 7.25 0 5.54 5.26 0 5.26 4.48 8.52 2.77 13.78 7.25 10.53 11.72 13.78 10.01 8.52 14.49 5.26'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.junip-rating-icon-star-outline {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14.49 13.78'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23000000;%7D%3C/style%3E%3C/defs%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpath class='cls-1' d='M11.72,13.78,7.25,10.53,2.77,13.78,4.48,8.52,0,5.26H5.53L7.25,0,9,5.26h5.53L10,8.52ZM7.25,9.29l2.57,1.87-1-3,2.57-1.87H8.23l-1-3-1,3H3.08L5.65,8.13l-1,3Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.junip-product-summary-review-count {
+  font-size: 1.2rem;
+  margin-top: 0.1rem;
+}
+
+/* hide junip content */
+.junip-powered-by-footer,
+.junip-avatar,
+.junip-separator,
+.junip-review-vote-container,
+.junip-product-review-title {
+  display: none !important;
+}
+
+.junip-review-list-item-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.junip-review-list-item .junip-review-title,
+.junip-review-list-item
+  .junip-review-response-container
+  .junip-review-respondent,
+.junip-btn {
+  font-weight: unset !important;
+}
+
+.junip-review-title {
+  font-size: 3rem !important;
+  text-transform: uppercase !important;
+
+  @media (max-width: $mqs) {
+    font-size: 1.8rem !important;
+  }
+}
+
+.junip-review-image {
+  border-radius: 1rem;
+}
+
+.junip-review-product-container {
+  font-size: 1.1rem !important;
+  opacity: 0.6;
+}
+
+.junip-verified {
+  margin-top: 1rem;
+}
+
+.junip-customer-details {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+}
+
+.junip-review-customer {
+  display: flex;
+  align-items: center;
+}
+
+.junip-recommendation-container {
+  padding-top: 0 !important;
+  margin-left: 1rem !important;
+}
+
+.junip-product-review-bar {
+  background-color: transparent !important;
+  border: 1px solid black !important;
+  border-radius: 0 !important;
+}
+
+.junip-product-review-bar {
+  background-color: transparent !important;
+  border: 1px solid black !important;
+  border-radius: 0 !important;
+}
+
+.junip-verified-badge {
+  background-color: transparent !important;
+  margin-left: 1rem;
+  margin-top: 0;
+
+  svg {
+    path {
+      fill: black !important;
+    }
+  }
+}
+
+.junip-review-body-container,
+.junip-review-body {
+  font-size: 1.4rem !important;
+}
+
+.junip-product-review-summary-container,
+.junip-write-review-cta-container {
+  display: flex !important;
+  justify-content: center !important;
+  margin-left: 0 !important;
+}
+
+.junip-product-review-summary-flex-wrapper {
+  width: 100%;
+
+  .junip-product-review-average-container {
+    flex-grow: 1;
+
+    .junip-star-ratings-container {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .junip-product-review-bars-container {
+    margin-right: 0 !important;
+  }
+}
+
+.junip-container-xs .junip-product-review-title,
+.junip-product-review-summary-container,
+.junip-write-review-cta-container,
+.junip-review-sort-container,
+.junip-review-list-item-container,
+.junip-filters-container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.junip-filters {
+  display: none !important;
+}
+
+.junip-filters-label {
+  padding: 0 !important;
+}
+
+.product-reviews {
+}
+
+.reviews-stars {
+  .junip-star-filled {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14.49 13.78'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23000000;%7D%3C/style%3E%3C/defs%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpolygon class='cls-1' points='14.49 5.26 8.96 5.26 7.25 0 5.54 5.26 0 5.26 4.48 8.52 2.77 13.78 7.25 10.53 11.72 13.78 10.01 8.52 14.49 5.26'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .junip-star-outline {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14.49 13.78'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23000000;%7D%3C/style%3E%3C/defs%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpath class='cls-1' d='M11.72,13.78,7.25,10.53,2.77,13.78,4.48,8.52,0,5.26H5.53L7.25,0,9,5.26h5.53L10,8.52ZM7.25,9.29l2.57,1.87-1-3,2.57-1.87H8.23l-1-3-1,3H3.08L5.65,8.13l-1,3Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .junip-star-half {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14.49 13.78'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23000000;%7D%3C/style%3E%3C/defs%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpath class='cls-1' d='M14.49,5.26H9L7.25,0h0L5.53,5.26H0L4.48,8.52,2.77,13.78h0l4.48-3.25,4.47,3.25L10,8.52Zm-7.24,4h0v-6h0l1,3h3.18L8.84,8.14l1,3Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+.junip-product-summary.is-overlay {
+  .junip-stars-container {
+    .junip-star-filled {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14.49 13.78'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23FCF7F1;%7D%3C/style%3E%3C/defs%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpolygon class='cls-1' points='14.49 5.26 8.96 5.26 7.25 0 5.54 5.26 0 5.26 4.48 8.52 2.77 13.78 7.25 10.53 11.72 13.78 10.01 8.52 14.49 5.26'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") !important;
+    }
+
+    .junip-star-outline {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14.49 13.78'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23FCF7F1;%7D%3C/style%3E%3C/defs%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpath class='cls-1' d='M11.72,13.78,7.25,10.53,2.77,13.78,4.48,8.52,0,5.26H5.53L7.25,0,9,5.26h5.53L10,8.52ZM7.25,9.29l2.57,1.87-1-3,2.57-1.87H8.23l-1-3-1,3H3.08L5.65,8.13l-1,3Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") !important;
+    }
+
+    .junip-star-half {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14.49 13.78'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23FCF7F1;%7D%3C/style%3E%3C/defs%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpath class='cls-1' d='M14.49,5.26H9L7.25,0h0L5.53,5.26H0L4.48,8.52,2.77,13.78h0l4.48-3.25,4.47,3.25L10,8.52Zm-7.24,4h0v-6h0l1,3h3.18L8.84,8.14l1,3Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") !important;
+    }
+  }
+
+  .junip-product-summary-review-count {
+    color: #fcf7f1 !important;
+  }
+
+  .junip-product-summary-star,
+  .junip-star,
+  .junip-product-summary-star {
+    background-size: 100% !important;
+  }
+}
+
+.junip-product-review-container {
+  background: #fcf7f1 !important;
+  border-radius: 2rem !important;
+}
+
+.junip-write-review-cta {
+  width: 100% !important;
+  padding: 2rem !important;
+  border-radius: 0.5rem !important;
+  transition: background-color 0.3s ease !important;
+  background-color: black !important;
+  color: #fcf7f1 !important;
+
+  &:hover {
+    background-color: #fcf7f1 !important;
+    color: black !important;
+  }
+}
+
+.junip-btn {
+  letter-spacing: 0 !important;
+  font-family: 'Mori Medium', sans-serif;
+  border: 1px solid black !important;
+  border-radius: 0.5rem !important;
+  transition: background 0.3s ease, color 0.3s ease !important;
+  background-color: black !important;
+  color: #fcf7f1 !important;
+
+  &:hover {
+    background-color: #fcf7f1 !important;
+    color: black !important;
+  }
+}

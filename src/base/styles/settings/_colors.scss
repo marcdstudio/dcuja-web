@@ -1,0 +1,9 @@
+$black: #000;
+$white: #fff;
+$cream: #FFFBEB;
+$primary: #38573A;
+$secondary: #B7B74B;
+
+.bg-glass{
+  @apply bg-[rgba(255,251,235,.1)] backdrop-blur-2xl;
+}

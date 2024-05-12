@@ -1,0 +1,95 @@
+<div class="w-full bg-secondary flex py-60" data-component="steps">
+
+  <div class="flex w-full justify-center flex-shrink-0">
+    <div class="flex-1 relative rounded-tr-full rounded-br-full overflow-hidden">
+      {% include 'lazy' with className: 'w-full h-full object-cover'
+      , src: section.settings.imageLeft
+      , size: '1200x' %}
+      <div class="absolute top-1/2 -translate-y-1/2 left-30 text-vertical is-right leading-100 font-serif text-cream text-80 rotate-180">
+        {{ section.settings.titleLeft }}
+      </div>
+    </div>
+    <div class="flex px-[2rem]">
+      {% for block in section.blocks %}
+        <div class="flex-shrink-0 h-[40rem] w-[16rem] relative flex justify-center items-center text-secondary text-center text-24 font-serif leading-100">
+          <div class="absolute left-1/2 -translate-x-1/2 top-0 w-[20rem] h-full bg-primary rounded-[100%]"></div>
+          <div class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">{{ block.settings.title }}</div>
+          <div class="absolute top-60 left-1/2 -translate-x-1/2 w-40 h-40 flex items-center justify-center bg-tertiary text-primary rounded-full text-16">{{ block.settings.number }}</div>
+          {% if block.settings.connector.size > 0 %}
+            <div class="absolute z-3 right-0 top-1/2 -translate-y-1/2 translate-x-1/2 text-16">{{ block.settings.connector }}</div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+    <div class="flex-1 relative rounded-tl-full rounded-bl-full overflow-hidden">
+      {% include 'lazy' with className: 'w-full h-full object-cover'
+      , src: section.settings.imageRight
+      , size: '1200x' %}
+      <div class="absolute top-1/2 -translate-y-1/2 right-30 text-vertical is-left leading-100 font-serif text-cream text-80">
+        {{ section.settings.titleRight }}
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="text-secondary rotate-180">
+  {% include 'icon-wave' %}
+</div>
+
+{% schema %}
+  {
+    "name": "Steps",
+    "tag": "section",
+    "class": "mb-90",
+    "settings": [
+      {
+        "type": "text",
+        "id": "titleLeft",
+        "label": "Left Title"
+      },
+      {
+        "type": "image_picker",
+        "id": "imageLeft",
+        "label": "Left Image"
+      },
+      {
+        "type": "text",
+        "id": "titleRight",
+        "label": "Right Title"
+      },
+      {
+        "type": "image_picker",
+        "id": "imageRight",
+        "label": "Right Image"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Step",
+        "type": "step",
+        "settings": [
+          {
+            "type": "text",
+            "id": "number",
+            "label": "Number"
+          },
+          {
+            "type": "richtext",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "text",
+            "id": "connector",
+            "label": "Connector"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Steps"
+      }
+    ]
+  }
+{% endschema %}

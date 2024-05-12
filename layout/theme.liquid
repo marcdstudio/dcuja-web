@@ -1,0 +1,55 @@
+<!doctype html>
+<html class="is-loading" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+
+    <link
+      rel="preconnect"
+      href="https://cdn.shopify.com"
+      crossorigin>
+    <link
+      rel="preconnect"
+      href="https://fonts.shopifycdn.com"
+      crossorigin>
+
+    <link rel="stylesheet" href="https://use.typekit.net/pjp5ydm.css">
+
+    {%- liquid
+      render 'head-seo'
+      render 'head-metas'
+      render 'head-settings'
+      render 'head-assets'
+    -%}
+
+    <!-- Header hook for plugins -->
+    {{ content_for_header }}
+
+    {{ 'fonts.css' | asset_url | stylesheet_tag }}
+
+
+  </head>
+  <body
+    class="text-14 m:text-16 bg-cream text-primary leading-[1.1] font-sans font-400 tracking-normal{% if settings.showBanner == true %} announce{% endif %}"
+    data-shoptitle="{{shop.name | default: "D'Cuja"}}"
+    data-theme="kiwi-vacation"
+    style="--headerHeight:65px;--primary: #38573A; --secondary: #B7B74B; --tertiary: #EFF0A3;">
+    {% comment %} Accessibilty snippet {% endcomment %}
+    {%- render 'component-a11y' -%}
+
+    {%- section 'header' -%}
+    <main
+      id="MainContent"
+      role="main"
+      class=""
+      tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+
+    {% include 'cart-drawer' %}
+    {%- section 'footer' -%}
+
+  </body>
+  <script src="{{- 'base.js' | asset_url -}}" defer='defer'></script>
+</html>

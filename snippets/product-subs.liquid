@@ -1,0 +1,12 @@
+{% assign current_variant = product.selected_or_first_available_variant | default: product.variants.first %}
+{% assign current_selling_plan_allocation = current_variant.selected_selling_plan_allocation %}
+{% if current_selling_plan_allocation == nil and current_variant.requires_selling_plan %}
+    {% assign current_selling_plan_allocation = current_variant.selling_plan_allocations | first %}
+{% endif %}
+{% assign price = current_variant.price %}
+{% assign offer = current_selling_plan_allocation | default: current_variant %}
+{% for allocation in current_variant.selling_plan_allocations %}
+  {% if forloop.first %}{% assign current_plan = allocation.selling_plan.options[0].value %}{% endif %}
+  {% assign adjustment = 100 | minus: allocation.selling_plan.price_adjustments[0].value %}
+  {% assign discountPrice = price | times: adjustment | divided_by: 100 %}
+{% endfor %}

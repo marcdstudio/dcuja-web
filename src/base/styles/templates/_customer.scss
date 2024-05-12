@@ -1,0 +1,151 @@
+.customer {
+  &.login,
+  &.activate,
+  &.register,
+  &.account,
+  &.addresses,
+  &.order,
+  &.reset-password
+  &.activate {
+    max-width: 80rem;
+    margin: 0 auto;
+
+    @apply px-15 m:px-30 py-100;
+
+    .h1,
+    .h2,
+    h1,
+    h2 {
+      font-size: 3.6rem;
+    }
+
+    input {
+      border: 1px solid white;
+      padding: 1rem;
+      width: 100%;
+      color: black;
+      background: $cream;
+
+      &::placeholder {
+        color: black;
+        opacity: 0.5 !important;
+        font-family: "Unica ExtraBold", sans-serif;
+      }
+    }
+
+    form{
+      @apply gap-x-15 gap-y-20
+    }
+
+    td {
+      padding: 1rem 1rem 0 0;
+    }
+
+    th {
+      padding: 0.5rem 2rem 0 0;
+      color: currentColor;
+    }
+
+    th,
+    td:not(.text-right) {
+      text-align: left;
+    }
+
+    table {
+      font-size: 1.4rem;
+    }
+  }
+
+  &.login,
+  &.activate,
+  &.register,
+  &.reset-password,
+  &.activate{
+    // max-width: 60rem;
+  }
+
+  &.account,
+  &.addresses {
+    max-width: 80rem;
+    padding-top: 5rem;
+
+    .select {
+      border: 1px solid currentColor;
+    }
+  }
+
+  &.addresses {
+    label {
+      display: none;
+    }
+
+    input {
+      margin-top: 1.5rem;
+    }
+  }
+
+  .btn-red {
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+}
+
+.account {
+  &-header {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid currentColor;
+    margin-bottom: 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    @media (max-width: $mqm) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}
+
+.order {
+  &-content {
+    a {
+      text-decoration: underline;
+      color: currentColor;
+      transition: color 0.25s ease;
+
+      &:hover {
+        color: currentColor;
+      }
+    }
+
+    // th,
+    // td {
+    //   width: 25%;
+    // }
+
+    tfoot{
+      margin-top: 3.5rem;
+
+      td:last-child{
+        text-align: right!important;
+      }
+    }
+  }
+}
+
+table{
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.shopify-challenge__container{
+  @apply pt-150;
+
+  .shopify-challenge__message{
+    @apply mb-20
+  }
+
+  .g-recaptcha{
+    @apply mb-20
+  }
+}

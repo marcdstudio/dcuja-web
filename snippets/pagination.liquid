@@ -1,0 +1,35 @@
+{%- if paginate.parts.size > 0 -%}
+    <nav class="flex items-center w-full justify-between mt-25" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
+        <ul class="flex items-center mx-auto" role="list">
+            {%- if paginate.previous -%}
+                <li class="flex mr-20">
+                    <a class="block link-primary w-[1.2rem] rotate-180" href="{{ paginate.previous.url }}" aria-label="{{ 'general.pagination.previous' | t }}">
+                        {% include 'icon-chevron' %}
+                    </a>
+                </li>
+            {%- endif -%}
+
+            {%- for part in paginate.parts -%}
+                <li class="flex mx-5">
+                    {%- if part.is_link -%}
+                    <a class="link-primary{% if paginate.current_page %} underline{% endif %}" href="{{ part.url }}" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">{{ part.title }}</a>
+                    {%- else -%}
+                    {%- if part.title == paginate.current_page -%}
+                        <span aria-current="page" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">{{ part.title }}</span>
+                    {%- else -%}
+                        <span>{{ part.title }}</span>
+                    {%- endif -%}
+                    {%- endif -%}
+                </li>
+            {%- endfor -%}
+
+            {%- if paginate.next -%}
+                <li class="flex ml-20">
+                    <a class="block link-primary w-[1.2rem]" href="{{ paginate.next.url }}" aria-label="{{ 'general.pagination.next' | t }}" >
+                        {% include 'icon-chevron' %}
+                    </a>
+                </li>
+            {%- endif -%}
+        </ul>
+    </nav>
+{%- endif -%} 

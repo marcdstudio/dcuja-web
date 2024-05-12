@@ -1,0 +1,130 @@
+<div
+  class="product-info flex"
+  data-component="product {% if product.images.size > 1 %} productCarouselAlternate{% endif %}"
+  data-pagetitle="{{ page_title }}"
+  data-primary="{{ product.metafields.custom.primary_color }}"
+  data-secondary="{{ product.metafields.custom.secondary_color }}"
+  data-tertiary="{{ product.metafields.custom.tertiary_color }}"
+  style="--primary: {{ product.metafields.custom.primary_color }};--secondary: {{ product.metafields.custom.secondary_color }};--tertiary: {{ product.metafields.custom.tertiary_color }};">
+  {% include 'product-head' %}
+  {% assign meta = product.metafields.custom %}
+  {% assign primary = meta.primary_color | metafield_tag | downcase %}
+  <script class="js-productImages">
+    {
+      "images": [
+        {% for image in product.images %}
+          { "src": "{{ image.src | escape }}", "alt": "{{ image.alt | escape }}" }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }
+  </script>
+  <div
+    data-currentvariant="{{ current_variant.id }}"
+    data-currentproduct="{{ product.id }}"
+    class="w-full flex flex-col m:flex-row">
+    <div class="w-full m:flex-1 h-[100vw] m:h-hero relative m:sticky m:top-[var(--headerHeight)]">
+      <div class="w-full">
+        <div class="js-carousel m:z-2 w-full overflow-hidden h-[100vw] m:h-hero">
+          <div class="flex select-none w-full h-[100vw] m:h-hero m:min-h-[calc(100vh-13rem)]">
+            {% for media in product.media %}
+              <div class="w-full h-full product-img m:px-0 relative min-w-[100%] overflow-hidden">
+                {%
+                  include 'lazy' with className: 'w-full h-full object-cover absolute left-0 top-0'
+                  , src: media
+                  , size: '1200x' %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% if product.images.size > 1 %}
+        <div class="w-full flex items-center justify-center gap-x-10 absolute left-0 bottom-20 js-btns">
+          {% for media in product.media %}
+            {% if current_variant.title == media.alt or media.alt == 'All' %}
+              <button class="js-counter carousel-dot" data-index="{{ forloop.index }}"></button>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="w-full m:w-1/3 px-15 m:px-40 m:min-w-[55rem] flex-shrink-0 py-20 m:py-30 flex flex-col justify-end">
+      <div class="w-full mx-auto max-w-[50rem]">
+        <div class="">
+          <div class="">
+            <h1 class="title-lg uppercase font-bold">
+              {{ product.title }}
+            </h1>
+            {% if meta.display_subtitle %}
+              <div class="title-sm uppercase mt-5">{{ meta.display_subtitle }}</div>
+            {% endif %}
+          </div>
+          <div class="text-16 mt-5 rte">
+            {{ product.description }}
+          </div>
+          {% if meta.shipping_note %}
+            <div class="uppercase mt-15 text-green font-sansb">{{ meta.shipping_note }}</div>
+          {% endif %}
+          <div class="product-title-stars mb-5 junip-dark">
+            <span class="junip-product-summary" data-product-id="{{ product.id }}"></span>
+          </div>
+        </div>
+        {% include 'product-form-alternate' %}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Product Info",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "breakdown_background",
+        "label": "Breakdown Image Background"
+      },
+      {
+        "type": "text",
+        "id": "about_title",
+        "label": "About Title"
+      },
+      {
+        "type": "richtext",
+        "id": "about_body",
+        "label": "About Body"
+      },
+      {
+        "type": "image_picker",
+        "id": "about_image",
+        "label": "About Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "reviews_background",
+        "label": "Reviews Background"
+      },
+      {
+        "type": "text",
+        "id": "reviews_title",
+        "label": "Reviews Title"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Press",
+        "type": "press",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Logo"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

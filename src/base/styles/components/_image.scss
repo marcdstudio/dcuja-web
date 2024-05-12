@@ -1,0 +1,25 @@
+.rnd {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.img {
+  &-50 {
+    height: calc(50vw - 3rem);
+
+    @media (max-width: $mqs) {
+      height: 100vw;
+    }
+  }
+
+  &-half {
+    height: 60rem;
+  }
+
+  &-bound {
+    height: auto;
+    width: auto;
+    max-height: 100%;
+    max-width: 100%;
+  }
+}

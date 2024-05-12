@@ -1,0 +1,17 @@
+<{{ tag | default: 'a' }}
+  {% if href %}href='{{ href }}{% if anchor %}#contact{% endif %}'{% endif %}
+  {% if name %}name='{{ name }}'{% endif %}
+  {% if disabled %}disabled{% endif %}
+  {% if type == 'button' %}type='button'aria-label="{{ text | strip }}"{% endif %}
+  class='{{ className }}'>
+  {{ text | strip }}
+</{{ tag | default: 'a' }}>
+
+{% assign text = blank %}
+{% assign className = blank %}
+{% assign href = blank %}
+{% assign name = blank %}
+{% assign disabled = false %}
+{% assign anchor = false %}
+{% assign type = 'button' %}
+{% assign cx = '' %}

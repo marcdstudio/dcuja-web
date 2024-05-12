@@ -1,0 +1,11 @@
+<img
+  class="{{ className }}"
+  {% if dataTitle %}dataTitle="{{ dataTitle }}"{% endif %}
+  {% unless force %}data-src="{% if isFile %}{{ src | file_img_url: size }}{% else %}{{ src | img_url: size }}{% endif %}"{% endunless %}
+  src="{% if isFile %}{% if force %}{{ src | file_img_url: size }}{% else %}{{ src | file_img_url: '10x' }}{% endif %}{% elsif force %}{{ src | img_url: size }}{% else %}{{ src | img_url: '10x' }}{% endif %}"
+  alt="{{ src.alt | downcase | default: src.alt }}" />
+
+{% assign className = null %}
+{% assign src = null %}
+{% assign size = null %}
+{% assign force = false %}

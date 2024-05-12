@@ -1,0 +1,123 @@
+{% for block in section.blocks %}
+  {% if block.type == 'item' %}
+    {% assign firstProduct = block.settings.product %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+<div
+  class="w-screen h-screen relative hero"
+  data-primary="{{ firstProduct.metafields.custom.primary }}"
+  data-secondary="{{ firstProduct.metafields.custom.secondary }}"
+  data-tertiary="{{ firstProduct.metafields.custom.tertiary }}"
+  data-theme="{{ firstProduct.title | handleize  }}"
+  data-component="hero">
+
+  <script class="js-products hidden">
+    {
+      "products": [{% for block in section.blocks %}
+          {% assign meta = block.settings.product.metafields.custom %}
+          {% assign product = block.settings.product %}
+          { "icon": "{{ meta.product_icon | img_url: '600x'  }}", "hero": "{{ meta.hero | img_url: '2000x' }}", "primary": "{{ meta.primary }}", "secondary": "{{ meta.secondary }}", "tertiary": "{{ meta.tertiary }}", "url": "{{ block.settings.product.url }}" }{% unless forloop.last %},{% endunless %}
+        {% endfor %}]
+    }
+  </script>
+
+  {% assign meta = firstProduct.metafields.custom %}
+
+  <div class="absolute left-0 top-0 w-full h-full">
+    {% include 'lazy' with className: 'w-full h-full object-cover js-hero'
+      , src: meta.hero
+      , force: true
+      , size: '2000x' %}
+  </div>
+  <div class="absolute bottom-0 left-0 p-30 pt-50 bg-cream w-full">
+    <div class="absolute left-0 top-0 translate-y-[calc(-100%+.1rem)] w-full text-cream">{% include 'icon-wave' %}</div>
+
+    <div class="tag-hero rotate-[-15deg] left-30">
+      {% assign splitTitle = section.settings.tagLeft | split: ' ' %}
+      {% for word in splitTitle %}
+        <span>{{ word }}</span>
+      {% endfor %}
+    </div>
+    <div class="tag-hero rotate-[-5deg] left-[20rem]">
+      {% assign splitTitle = section.settings.tagRight | split: ' ' %}
+      {% for word in splitTitle %}
+        <span>{{ word }}</span>
+      {% endfor %}
+    </div>
+    <h1 class="title-2xl max-w-[80rem]">{{ section.settings.title }}</h1>
+  </div>
+
+  <div class="absolute right-30 top-90 z-2 w-[var(--nav)] max-w-[60rem] min-w-[40rem] h-[calc(100vh-11rem)] bg-glass border border-solid border-primary rounded-[.5rem] overflow-hidden">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[calc(100%-7rem)] flex items-center justify-center">
+      {% include 'lazy' with className: 'w-[85%] h-[85%] object-contain js-icon'
+        , src: meta.product_icon
+        , force: true
+        , size: '800x' %}
+    </div>
+
+    <div class="absolute top-20 right-20 flex flex-col gap-15">
+      {% for block in section.blocks %}
+        {% assign product = block.settings.product %}
+        {% assign meta = product.metafields.custom %}
+
+        <button
+          class="w-35 h-35 js-toggle{% if forloop.first %} active{% endif %}"
+          data-theme="{{ product.title | handleize  }}"
+          data-primary="{{ meta.primary }}"
+          data-secondary="{{ meta.secondary }}"
+          data-tertiary="{{ meta.tertiary }}"
+          data-index="{{ forloop.index }}">
+          {% include 'lazy' with className: 'w-full h-full rounded-full overflow-hidden object-cover pointer-events-none'
+            , src: product.metafields.custom.hero
+            , size: '200x' %}
+        </button>
+      {% endfor %}
+    </div>
+
+    <a class="btn-theme btn-hero js-link" href="{{ firstProduct.url }}">{{ firstProduct.title }}</a>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Hero",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "tagLeft",
+        "label": "Left Tag"
+      },
+      {
+        "type": "text",
+        "id": "tagRight",
+        "label": "Right Tag"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Item",
+        "type": "item",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero"
+      }
+    ]
+  }
+{% endschema %}

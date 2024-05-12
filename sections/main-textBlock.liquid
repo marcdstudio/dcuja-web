@@ -1,0 +1,44 @@
+<div class="px-15 m:px-60 my-90 m:my-120">
+  <div>
+    {% if section.settings.icon %}
+      <div class="w-[10vw] h-[10vw] absolute right-0 top-0 -translate-y-1/4 translate-x-1/4">
+        {%
+          include 'lazy' with className: 'h-full w-full object-contain'
+          , src: section.settings.icon
+          , size: '1000x' %}
+      </div>
+    {% endif %}
+    <div class="title-lg flex gap-30 flex-col items-center justify-center m:block text-center m:text-left">
+      {% if section.settings.subtitle.size > 0 %}
+        <span class="bg-lime rounded-full uppercase inline-block text-14 px-15 py-5 m:-translate-y-7">{{ section.settings.subtitle }}</span>
+      {% endif %}
+      {{ section.settings.title }}
+    </div>
+  </div>
+
+
+</div>
+
+{% schema %}
+  {
+    "name": "Text Block",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Text Block"
+      }
+    ]
+  }
+{% endschema %}

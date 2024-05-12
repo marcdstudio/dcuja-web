@@ -1,0 +1,35 @@
+{
+  "current": {
+    "cart_drawer_emptyMessage": "",
+    "favicon": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/Group_309.png",
+    "checkout_logo_size": "small",
+    "checkout_body_background_color": "#f6eedb",
+    "checkout_accent_color": "#87a679",
+    "checkout_button_color": "#87a679",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "menu_main": "",
+          "menu_mobile": "",
+          "banner": ""
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "title": "Only the good stuff, straight to your inbox.",
+          "success": "Thanks for signing up!",
+          "cta": "Sign Up",
+          "shop_menu": "",
+          "page_menu": "",
+          "social_menu": ""
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  }
+}

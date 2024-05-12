@@ -1,0 +1,51 @@
+.blog{
+
+    &.has-tag{
+
+        .article-card{
+            @apply mt-0;
+        }
+        .blog-feature-content{
+            width: 33%;
+
+            @media (max-width: $mqm) {
+                width: 100%;
+            }
+
+            .feature{
+                &-img{
+                    display: none;
+                }
+
+                &-secondary{
+                    display: block;
+                }
+
+                &-content{
+                    background: none;
+                    border: none; 
+                    padding: 0;
+                    box-shadow: none;
+                }
+
+                &-subtitle,
+                &-cta{
+                    display: none;
+                }
+
+                &-title{
+                    font-size: 2.4rem;
+                    margin-top: 1rem;
+                }
+
+                &-excerpt{
+                    font-size: 2rem;
+                }
+
+                &-tag{
+                    display: block;
+                }
+            }
+        }
+    }
+}

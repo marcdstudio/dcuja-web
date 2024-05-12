@@ -1,0 +1,22 @@
+<form class="w-full" data-component="signup">
+  <p class="flex hidden js-success mt-15 font-20 w-full text-left">{{ stngs.success }}</p>
+  <div class="js-formContent flex flex-col m:flex-row items-center justify-between rounded-[.5rem] m:rounded-[1rem] border border-grey border-solid bg-egg text-black m:pr-5 bg-tertiary">
+    <input
+      class="w-full m:text-20 js-email py-15 m:py-15 px-15 text-center m:text-left"
+      type="email"
+      value=""
+      placeholder="Email Address"
+      name="contact[email]"
+      id="Email"
+      class="input-group-field x"
+      aria-label="Your Email"
+      autocorrect="off"
+      autocapitalize="off">
+    <button
+      class="btn is-signup js-submit is-black is-small flex-shrink-0 w-full m:w-[fit-content]"
+      type="button"
+      aria-label="Submit">
+      <span class="">Signup</span>
+    </button>
+  </div>
+</form>

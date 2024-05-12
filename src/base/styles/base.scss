@@ -1,0 +1,81 @@
+// ==========================================================================
+// ## BASE/MAIN
+// ==========================================================================
+
+/// @content
+///   DO NOT ADD CLASSES OR RULES IN THIS FILE DIRECTLY.
+///   Instead, use imports to add extensions or snippets you made along the project.
+///
+///
+/// Production build weights only ~12kb (~3kb gzipped)
+///
+
+/// - SETTINGS & TOOLS (MUST BE AT THE TOP)
+/// Common settings and tools.
+//
+@import 'base/styles/settings/settings';
+
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import 'tailwindcss/base';
+
+/// - GENERIC
+@import 'base/styles/generic/normalize';
+@import 'base/styles/generic/print';
+@import 'base/styles/generic/page';
+@import 'base/styles/generic/media';
+@import 'base/styles/generic/elements';
+@import 'base/styles/generic/theme';
+
+/// - COMPONENTS
+@import 'base/styles/components/a11y';
+@import 'base/styles/components/button';
+@import 'base/styles/components/cartDrawer';
+@import 'base/styles/components/rte';
+@import 'base/styles/components/image';
+@import 'base/styles/components/tag';
+@import 'base/styles/components/form';
+
+/// - OBJECTS
+@import 'base/styles/objects/icon';
+
+/// - SECTIONS
+@import 'base/styles/sections/header';
+@import 'base/styles/sections/footer';
+@import 'base/styles/sections/mainHero';
+@import 'base/styles/sections/feature';
+@import 'base/styles/sections/slideshow';
+@import 'base/styles/sections/marquee';
+@import 'base/styles/sections/infoCard';
+@import 'base/styles/sections/testimonial';
+@import 'base/styles/sections/imageTextOverlay';
+@import 'base/styles/sections/faqs';
+@import 'base/styles/sections/icons';
+@import 'base/styles/sections/hero';
+
+/// - TEMPLATES
+@import 'base/styles/templates/product';
+@import 'base/styles/templates/page';
+@import 'base/styles/templates/general';
+@import 'base/styles/templates/body';
+@import 'base/styles/templates/customer';
+@import 'base/styles/templates/password';
+@import 'base/styles/templates/collection';
+@import 'base/styles/templates/instafeed';
+// @import 'base/styles/templates/junip';
+@import 'base/styles/templates/blog';
+@import 'base/styles/templates/article';
+@import 'base/styles/templates/grid';
+@import 'base/styles/templates/about';
+
+/// - Vendors
+///
+@import 'base/styles/vendors/flickity';
+@import 'base/styles/vendors/embla';
+@import 'base/styles/vendors/trustoo';
+@import 'base/styles/vendors/junip';
+
+// #preview-bar-iframe,
+// .none {
+//   display: none !important;
+// }

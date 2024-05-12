@@ -1,0 +1,126 @@
+.faq {
+  &-toggle {
+    @apply w-full rounded-10 overflow-hidden flex items-center justify-between gap-20 text-14 m:text-28 px-15 m:px-40 py-15 m:py-20;
+  }
+
+  &-body {
+    @apply p-15 m:p-40 rounded-10 mt-2 w-full;
+
+    @media screen and (min-width: 950px) {
+      width: calc(100vw - 6rem) !important;
+    }
+  }
+
+  &-wrap {
+    &:nth-child(11n + 1) {
+      @apply w-[100%];
+
+      .faq-toggle,
+      .faq-body {
+        @apply bg-[#E05638];
+      }
+    }
+    &:nth-child(11n + 2) {
+      @apply w-[100%];
+
+      .faq-toggle,
+      .faq-body {
+        @apply bg-[#83B45C];
+      }
+    }
+    &:nth-child(11n + 3) {
+      @apply w-full m:w-[60%];
+
+      .faq-toggle,
+      .faq-body {
+        @apply bg-[#2452B4];
+      }
+    }
+    &:nth-child(11n + 4) {
+      @apply w-full m:w-[40%];
+
+      .faq-toggle,
+      .faq-body {
+        @apply bg-[#E0B15F];
+      }
+
+      .faq-body {
+        @apply m:translate-x-[-60%];
+      }
+    }
+    &:nth-child(11n + 5) {
+      @apply w-[100%];
+
+      .faq-toggle,
+      .faq-body {
+        @apply bg-[#E0C22D];
+      }
+    }
+    &:nth-child(11n + 6) {
+      @apply w-full m:w-[40%];
+
+      .faq-toggle,
+      .faq-body {
+        @apply bg-[#B4A689];
+      }
+    }
+    &:nth-child(11n + 7) {
+      @apply w-full m:w-[60%];
+
+      .faq-toggle,
+      .faq-body {
+        @apply bg-[#2A8544];
+      }
+
+      .faq-body {
+        @apply m:translate-x-[-40%];
+      }
+    }
+    &:nth-child(11n + 8) {
+      @apply w-[100%];
+
+      .faq-toggle,
+      .faq-body {
+        @apply bg-[#C28942];
+      }
+    }
+    &:nth-child(11n + 9) {
+      @apply w-full m:w-[60%];
+
+      .faq-toggle,
+      .faq-body {
+        @apply bg-[#CDB57C];
+      }
+    }
+    &:nth-child(11n + 10) {
+      @apply w-full m:w-[40%];
+
+      .faq-toggle,
+      .faq-body {
+        @apply bg-[#AF1C6D];
+      }
+
+      .faq-body {
+        @apply m:translate-x-[-60%];
+      }
+    }
+    &:nth-child(11n + 11) {
+      @apply w-[100%];
+
+      .faq-toggle,
+      .faq-body {
+        @apply bg-[#A4C236];
+      }
+    }
+
+    &.active {
+      .js-plus {
+        @apply rotate-45;
+      }
+
+      .faq-body {
+        display: block !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+<section class='cart-drawer-outer fixed right-0 top-0 left-0 w-screen flex' data-component='cartDrawer'>
+  <div class='cart-drawer-overlay js-overlay'></div>
+
+  <div class='cart-drawer m:border-l border-solid flex flex-col w-full bg-cream'>
+    <div class="cart-header w-full h-50 m:h-70 px-15 m:px-30 border-b border-solid flex items-center justify-center">
+      <div class="w-full flex justify-between items-center">
+        <div class='flex items-center'>
+          <span class="uppercase">
+            {% if settings.cart_promotion %}
+              {{ settings.cart_promotion }}{% else %}Cart{% endif %}
+          </span>
+        </div>
+        <button aria-label="close cart" class='js-close flex items-center w-15 flex-shrink-0'>
+          <span class="title-medium uppercase">{%- include 'icon-close' -%}</span>
+        </button>
+      </div>
+    </div>
+    <div class="cart-empty__wrapper hidden p-20">
+      <div class="title-xl">{{ settings.cart_drawer_emptyMessage | default: 'Looks like your cart needs a drink.' }}</div>
+      <a class="mt-25 btn w-[fit-content]" href="{{settings.cart_drawer_emptyLink | default: '/collections/shop-all'}}">Shop Now</a>
+    </div>
+
+    <div class='cart-drawer__items overflow-y-auto flex-auto pb-250'>
+      <form
+        class='js-cartForm'
+        id="cart"
+        method="post"
+        action="/checkout">
+        <div class='js-items'></div>
+      </form>
+    </div>
+
+    <div class="w-full absolute bottom-0 left-0 js-cartFooter">
+      {% if settings.cart_message %}
+        <div class="w-full mb-20 title-medium uppercase px-15 m:px-30 relative z-3 js-cartnote">
+          <label class="uppercase hidden" for="CartNote">{{ settings.cart_message }}</label>
+          <textarea
+            class="w-full mt-5 border border-solid p-5"
+            name="note"
+            placeholder="{{ settings.cart_message }}"
+            form="cart"
+            id="CartNote"></textarea>
+        </div>
+      {% endif %}
+      <div class="w-full flex items-center p-15 m:p-30 bg-cream">
+        <div class="flex items-center justify-center flex-col w-full overflow-hidden">
+          <div class="w-full flex justify-between items-center uppercase py-10">
+            <span class="block">Subtotal:</span>
+            <span class="flex items-center">$<span class='js-subtotal block'>$-.--</span>
+            </span>
+          </div>
+          <button class="js-checkout uppercase is-solid w-full font-bold text-26 py-10 rounded-full border border-solid border-black transition-colors duration-300 hover:bg-black hover:text-egg" data-component="checkout">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

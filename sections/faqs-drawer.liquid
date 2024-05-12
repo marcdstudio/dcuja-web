@@ -1,0 +1,60 @@
+<script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+     "@type": "FAQPage",
+     "mainEntity": [{% for block in section.blocks %}
+    {
+    "@type": "Question",
+    "name": "{{ block.settings.title }}",
+    "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "{{ block.settings.body | replace: '"', "'" }}"
+    }
+  }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+  ]
+  }
+</script>
+
+<div class="relative px-15 m:px-30 my-90">
+  <h2 class="title-xl">{{ section.settings.title }}</h2>
+  <div class="">
+    {%- include 'faqs-drawer' with large: true -%}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "FAQs Drawer",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "FAQ",
+        "type": "text",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          }, {
+            "type": "richtext",
+            "id": "body",
+            "label": "Body"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "FAQs Drawer"
+      }
+    ]
+  }
+{% endschema %}

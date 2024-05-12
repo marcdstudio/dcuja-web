@@ -1,0 +1,65 @@
+<div class="{{ class }}" data-component="product">
+  <div class="w-full relative pb-[100%] rounded-[1rem] overflow-hidden text-cream">
+    {% include 'lazy' with className: 'absolute top-0 left-0 w-full h-full'
+      , src: meta.thumbnail
+      , size: '1200x' %}
+    <div class="absolute top-30 left-30">
+      <div class="title-lg flex flex-col leading-100">
+        {% for word in splitTitle %}
+          <span>{{ word }}</span>
+        {% endfor %}
+      </div>
+      <div class="flex gap-10 font-serif text-20 mt-10">
+        <span>{{ meta.quantity }}</span>
+        <span>|</span>
+        <span>{{ product.price | money_without_trailing_zeros }}</span>
+      </div>
+    </div>
+    <div class="absolute left-0 bottom-0 p-30 flex gap-10 z-2 w-full">
+      {% if product.available %}
+        <div class="product-variant-wrap hidden{% if current_variant.selling_plan_allocations.size > 0 %} is-subscription{% endif %}">
+          <select
+            name="id"
+            data-productid="{{ product.id }}"
+            id="ProductSelect-{{ section.id }}"
+            data-productid="{{product.id}}"
+            class="product-single__variants visually-hidden">
+            {% for variant in product.variants %}
+              <option
+                class="js-variantOption"
+                {% if variant.id == product.selected_or_first_available_variant.id %}
+                selected="selected"
+                {% endif %}
+                data-sku="{{ variant.sku }}"
+                data-quantity=""
+                data-id="{{ variant.id }}"
+                value="{{ variant.id }}"
+                data-inventory="{{ variant.inventory_quantity }}"
+                data-title="{{ variant.title | downcase }}">{{ variant.title }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      {% endif %}
+
+      <a class="btn is-glass flex-shrink-0" href="{{ product.url }}">Learn More</a>
+      <button
+        class="js-add-to-cart flex-grow btn is-light"
+        name="add"
+        type="button"
+        form="productForm"
+        aria-label="add to cart"
+        {% unless product.available %}
+        disabled{% endunless %}
+        data-price="{{ price | money_without_trailing_zeros }}"
+        data-preorder="{{ product.metafields.custom.pre_order }}">
+        <span class="js-addText pointer-events-none">
+          {% if product.available %}
+            Add To Cart
+          {% else %}
+            Out of Stock
+          {% endif %}
+        </span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,98 @@
+<div
+  class="product-info flex mb-90"
+  data-component="product productOptions productVariant productDetails{% if product.images.size > 1 %} productCarousel{% endif %}"
+  data-pagetitle="{{ page_title }}"
+  data-primary="{{ product.metafields.custom.primary }}"
+  data-secondary="{{ product.metafields.custom.secondary }}"
+  data-tertiary="{{ product.metafields.custom.tertiary }}"
+  style="--primary: {{ product.metafields.custom.primary }};--secondary: {{ product.metafields.custom.secondary }};--tertiary: {{ product.metafields.custom.tertiary }};">
+  {% include 'product-head' %}
+  {% assign meta = product.metafields.custom %}
+  {% assign primary = meta.primary_color | metafield_tag | downcase %}
+  <script class="js-productImages">
+    {
+      "images": [
+        {% for image in product.images %}
+          { "src": "{{ image.src | escape }}", "alt": "{{ image.alt | escape }}" }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }
+  </script>
+  <div
+    data-currentvariant="{{ current_variant.id }}"
+    data-currentproduct="{{ product.id }}"
+    class="w-full flex flex-col m:flex-row px-20 gap-20 py-20 h-screen">
+    <div class="pt-80 flex flex-col gap-10">
+      {% for media in product.media %}
+        <button class="w-[10rem] h-[10rem] rounded-[.5rem] overflow-hidden translate-x-0 js-thumb" data-index="{{ forloop.index }}">
+          {%
+            include 'lazy' with className: 'w-full h-full object-cover absolute left-0 top-0 pointer-events-none'
+            , src: media
+            , size: '1200x' %}
+        </button>
+      {% endfor %}
+    </div>
+    <div class="flex-grow w-full m:flex-1 h-[100vw] m:h-full relative">
+      <div class="js-carousel m:z-2 w-full overflow-hidden h-[100vw] m:h-full">
+        <div class="flex select-none w-full h-[100vw] m:h-full m:min-h-[calc(100vh-13rem)]">
+          {% for media in product.media %}
+            <div class="w-full h-full product-img m:px-0 relative min-w-[100%]">
+              {%
+                include 'lazy' with className: 'w-full h-full object-cover absolute left-0 top-0 rounded-[1rem]'
+                , src: media
+                , size: '1200x' %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% if product.images.size > 1 %}
+        <div class="w-full flex m:hidden items-center justify-center gap-x-5 m:gap-x-10 absolute left-0 bottom-20 js-btns">
+          {% for media in product.media %}
+            {% if current_variant.title == media.alt or media.alt == 'All' %}
+              <button class="js-counter carousel-dot" data-index="{{ forloop.index }}"></button>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="flex-shrink-0 flex flex-col justify-end">
+      <div class="w-full mx-auto max-w-[60rem] m:w-[var(--nav)] m:min-w-[40rem]">
+        <div class="">
+          <div class="">
+            {% if meta.quantity %}
+              <div class="title-sm uppercase">{{ meta.quantity }}</div>
+            {% endif %}
+            <h1 class="title-xl uppercase font-bold flex flex-col mt-10">
+              {% assign splitTitle = product.title | split: ' ' %}
+              {% for word in splitTitle %}
+                <span>{{ word }}</span>
+              {% endfor %}
+            </h1>
+
+          </div>
+          <div class="text-24 mt-5 rte">
+            {{ product.description }}
+          </div>
+          {% if meta.shipping_note %}
+            <div class="uppercase mt-15">{{ meta.shipping_note }}</div>
+          {% endif %}
+          <div class="product-title-stars mb-5 junip-dark">
+            <span class="junip-product-summary" data-product-id="{{ product.id }}"></span>
+          </div>
+        </div>
+        {% include 'product-form' %}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Product Info",
+    "tag": "section",
+    "settings": []
+  }
+{% endschema %}

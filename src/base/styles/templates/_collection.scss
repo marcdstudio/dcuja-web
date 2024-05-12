@@ -1,0 +1,111 @@
+.collection {
+  &-btn {
+    position: relative;
+    padding: 1rem;
+    background: $black;
+    color: $black;
+    transition: color 0.25s ease, background-color 0.25s ease;
+    margin-bottom: 0.7rem;
+    margin-right: 0.5rem;
+    border-radius: 0.2rem;
+
+    &:hover {
+      background-color: $black;
+    }
+
+    &.active {
+      &:after {
+        content: "";
+        position: absolute;
+        width: calc(100% + 0.4rem);
+        height: calc(100% + 0.4rem);
+        left: -0.2rem;
+        top: -0.2rem;
+        pointer-events: none;
+        border: 1px solid $black;
+        border-radius: 0.2rem;
+      }
+    }
+  }
+
+  &-card {
+    &-wide {
+      @media (min-width: $mqs) {
+        width: 66% !important;
+      }
+    }
+  }
+
+  &-block {
+    &-text,
+    &-image {
+      @media (min-width: $mqs) {
+        height: calc(50vw - 25rem);
+      }
+    }
+  }
+}
+
+.js {
+  &-pixer {
+    transition: background-color 0.25s ease;
+    &.active {
+      background: white;
+      color: $black;
+      border: none;
+    }
+  }
+
+  &-undiez,
+  &-undiezFull{
+    z-index: 99999;
+  }
+}
+
+.collection {
+  .bg-black {
+    .border-orange {
+      border-color: $black;
+    }
+  }
+}
+
+.undie{ 
+  &-1{
+    left: 5vw;
+    top: 5vh;
+    width: 15vw;
+  }
+  &-2{
+    right: 30vw;
+    top: 12vh;
+    width: 18vw;
+  }
+  &-3{
+    left: 30vw;
+    top: 50vh;
+    width: 12vw;
+  }
+  &-4{
+    left: 10vw;
+    bottom: 15vh;
+    width: 11vw;
+  }
+  &-5{
+    right: 8vw;
+    bottom: 10vh;
+    width: 10vw;
+  }
+
+  &-1,
+  &-2,
+  &-3,
+  &-4,
+  &-5{
+    position: absolute;
+
+    @media (max-width: $mqm){
+      width: 50vw;
+    }
+  }
+}

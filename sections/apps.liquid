@@ -1,0 +1,49 @@
+<div class="px-15 m:px-30 py-50 m:py-60{% if section.settings.reviews %} max-w-[60rem] mx-auto{% else %} max-w-800 mx-auto{% endif %}" data-section-id="{{ section.id }}">
+  {% if section.settings.title %}
+    <h2 class="title-large text-center mb-20">{{ section.settings.title }}</h2>
+  {% endif %}
+  <div class="{% if section.settings.social %}px-10 m:px-20{% else %}px-15 m:px-30{% endif %}">
+    {% if section.settings.reviews %}
+      <div class="flex justify-between w-full"></div>
+    {% endif %}
+
+    {% for block in section.blocks %}
+      {% render block %}
+    {% endfor %}
+  </div>
+  {% if section.settings.btnLink %}
+    <a class="hidden m:flex justify-end flex-grow flex-auto link-blue items-center flex-shrink-0 mr-15 m:mr-30" href="{{ section.settings.btnLink }}">
+      <div class="mr-5">{{ section.settings.btnText }}</div>
+      <div class="w-20">{% include 'icon-arrow-angle' %}</div>
+    </a>
+  {% endif %}
+</div>
+
+{% schema %}
+  {
+    "name": "App wrapper",
+    "tag": "section",
+    "class": "s-apps",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }, {
+        "type": "checkbox",
+        "id": "reviews",
+        "label": "Reviews"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "@app"
+      }
+    ],
+    "presets": [
+      {
+        "name": "App wrapper"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,26 @@
+<div class="w-full relative overflow-hidden">
+<div class="flex items-center marquee-wrap w-full h-full whitespace-nowrap py-5 border-t border-b border-solid border-current{% if section.settings.background == 'primary' %} bg-primary text-cream{% else %} bg-cream text-primary{% endif %}">
+    <div class="flex items-center marquee text-right whitespace-nowrap overflow-visible" data-component="marquee">
+      <div class="js-primary leading-120 flex items-center w-auto whitespace-nowrap flex-shrink-0">
+        {% for block in section.blocks %}
+          <span class="marquee-item">
+              <span class="marquee-title">{{ block.settings.text }}</span>
+          </span>
+        {% endfor %}
+      </div>
+      <div class="js-copy leading-120 flex items-center flex-shrink-0">
+        {% for block in section.blocks %}
+          <span class="marquee-item">
+              <span class="marquee-title">{{ block.settings.text }}</span>
+          </span>
+        {% endfor %}
+        {% for block in section.blocks %}
+          <span class="marquee-item">
+              <span class="marquee-title">{{ block.settings.text }}</span>
+          </span>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+

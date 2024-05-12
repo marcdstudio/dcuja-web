@@ -1,0 +1,78 @@
+.cart {
+  &-drawer {
+    transform: translateX(100%);
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    height: calc(var(--vh, 1vh) * 100);
+
+    @apply s:max-w-[60rem];
+
+    &-outer {
+      pointer-events: none;
+      z-index: 999;
+      height: calc(var(--vh, 1vh) * 100);
+
+      &.is-active {
+        pointer-events: unset;
+
+        .cart-drawer-overlay {
+          opacity: 1;
+        }
+      }
+    }
+
+    &-overlay {
+      width: 100vw;
+      height: 100vh;
+      height: calc(var(--vh, 1vh) * 100);
+      -webkit-backdrop-filter: blur(4px);
+      background: rgb(0 0 0 / 35%);
+      backdrop-filter: blur(4px);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+  }
+
+  &-image {
+    @apply h-[10rem] w-[10rem] block rounded-10 overflow-hidden mr-10 flex-shrink-0;
+  }
+
+  &-item {
+    &--detail {
+      @apply relative text-12 mt-5;
+    }
+
+    &__qty {
+      @apply w-80 rounded-[.5rem];
+    }
+  }
+
+  &-shipping {
+    &-progress {
+      transition: width 0.25s ease;
+    }
+
+    &-wrap {
+      &.tier2 {
+        .cart-shipping-progress {
+          background: $black;
+        }
+      }
+    }
+  }
+
+  &-footer {
+    &:before {
+      content: '';
+      @apply absolute top-0 left-0 w-full h-[15rem] z-2 bg-gradient-to-t from-cream to-transparent -translate-y-full pointer-events-none;
+    }
+  }
+}

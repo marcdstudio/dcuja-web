@@ -1,0 +1,92 @@
+<form
+  action="/cart/add"
+  data-productid="{{ product.id }}"
+  id="productForm"
+  method="post"
+  enctype="multipart/form-data"
+  class="mt-4 m:mt-6">
+
+  {% if product.available %}
+    <div class="product-variant-wrap hidden{% if current_variant.selling_plan_allocations.size > 0 %} is-subscription{% endif %}">
+      <select
+        name="id"
+        data-productid="{{ product.id }}"
+        id="ProductSelect-{{ section.id }}"
+        data-productid="{{product.id}}"
+        class="product-single__variants visually-hidden">
+        {% for variant in product.variants %}
+          <option
+            class="js-variantOption"
+            {% if variant.id == product.selected_or_first_available_variant.id %}
+            selected="selected"
+            {% endif %}
+            data-sku="{{ variant.sku }}"
+            data-quantity=""
+            data-id="{{ variant.id }}"
+            value="{{ variant.id }}"
+            data-inventory="{{ variant.inventory_quantity }}"
+            data-title="{{ variant.title | downcase }}">{{ variant.title }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    {% if product.variants.size > 1 %}
+      <div class="">
+        {% for option in product.options_with_values %}
+        {% assign name = option.name | downcase %}
+            <div class="mt-15 m:mt-20">
+                <div class="flex items-center text-12 gap-5 uppercase font-sansb">
+                  <span class="text-grey">Color:</span> <span class="js-variantTitle">{{ option.values | first }}</span>
+                </div>
+                <div class="flex mt-5 gap-10" role="radiogroup">
+                    {% for variant in product.variants %}
+                      <button role="radio" aria-checked="{% if forloop.first %}true{% else %}false{% endif %}" aria-label="select {{ value }}" type="button" class="js-swatch product-swatch{% if forloop.first %} active{% endif %}" data-inventory="{{ variant.inventory_quantity }}" data-title="{{ variant.title | downcase }}">
+                          <img class="w-[3.5rem] h-[3.5rem] rounded-[.5rem] pointer-events-none" src="{{ variant.metafields.custom.swatch | img_url: '300x' }}"/>
+                      </button>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endif %}
+
+  <div class="w-full mt-35">
+    <div class="product-qty border-grey border border-solid bg-egg rounded-[.5rem] flex items-center justify-center h-50 mb-15" data-component="productCounter">
+    <div class="product-single-qty w-full flex justify-center items-center">
+        <button
+          aria-label="subtract"
+          type="button"
+          class="js-remove btn-qty--inc text-20 px-10">–</button>
+        <input
+          aria-label="quantity"
+          min="1"
+          class="js-quantity btn-qty--amnt text-center flex items-center justify-center text-14"
+          id="Quantity"
+          name="quantity"
+          value="1"
+          min="1">
+        <button
+          aria-label="add"
+          type="button"
+          class="js-add btn-qty--inc text-20 px-10">+</button>
+      </div>
+    </div>
+    <button
+      class="js-add-to-cart"
+      name="add"
+      type="button"
+      form="productForm"
+      aria-label="add to cart"
+      {% unless product.available %}disabled{% endunless %}
+      data-price="{{ price | money_without_trailing_zeros }}"
+      data-preorder="{{ product.metafields.custom.pre_order }}">
+      <span class="js-addText pointer-events-none">
+        {% if product.available %}
+        {% if product.metafields.custom.preorder %}Add To Cart{% else %} Pre-Order{% endif %} | <span class="js-addPrice">{{ product.price | money_without_trailing_zeros }}</span>
+        {% else %}
+          Out of Stock
+        {% endif %}
+      </span>
+    </button>
+  </div>
+</form>

@@ -1,0 +1,15 @@
+<div class="max-w-800 w-full pt-30 m:pt-40 pb-80 px-15 m:px-30">
+  <h1 class="w-full text-center font-bold text-24 m:text-40">{{ page.title }}</h1>
+  <div class="mt-30 m:mt-35 rte" style="font-family: Helvetica, Arial, sans-serif">
+    {{ page.content }}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "General",
+    "tag": "section",
+    "class": "flex justify-center",
+    "settings": []
+  }
+{% endschema %}

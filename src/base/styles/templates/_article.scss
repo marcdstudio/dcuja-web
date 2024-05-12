@@ -1,0 +1,49 @@
+.article{
+    &-content{
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6{
+            @apply  mb-15 leading-110;
+        }
+
+        h1{
+            font-size: 3rem;
+        }
+
+        h2{
+            font-size: 2.4rem;
+        }
+
+        h3{
+            font-size: 2rem;
+        }
+
+        h4, h5{
+            font-size: 1.4rem;
+        }
+
+        h6{
+            font-size: 1.2rem;
+        }
+
+        p:not(:last-child){
+            @apply pb-15 m:mb-20
+        }
+
+        img{
+           @apply rounded-20 mb-30;
+        }
+
+        blockquote{
+            @apply mb-25 font-serif text-36;
+
+            @media (max-width: $mqm){
+                font-size: 2rem;
+                margin: 2rem 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+{% include 'marquee-content' %}
+
+{% schema %}
+  {
+    "name": "Marquee",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "select",
+        "id": "background",
+        "label": "Background",
+        "options": [
+            {
+              "value": "cream",
+              "label": "Cream"
+            },
+            {
+              "value": "primary",
+              "label": "Primary"
+            }
+          ],
+          "default": "cream"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Text",
+        "type": "text",
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Marquee"
+      }
+    ]
+  }
+{% endschema %}

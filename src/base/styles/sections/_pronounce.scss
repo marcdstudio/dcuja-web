@@ -1,0 +1,28 @@
+.audio {
+  &-1,
+  &-2,
+  &-3,
+  &-4,
+  &-5 {
+    @apply hover:bg-black hover:text-egg transition-colors duration-300 w-45 m:w-55 h-45 m:h-55 rounded-full bg-egg border border-solid border-black p-10 absolute z-2 flex items-center justify-center;
+  }
+  &-1 {
+    @apply left-[15%] top-[15%];
+  }
+
+  &-2 {
+    @apply left-[0%] bottom-[20%];
+  }
+
+  &-3 {
+    @apply left-[60%] m:left-[10%] bottom-[15%];
+  }
+
+  &-4 {
+    @apply right-[15%] top-[15%] m:top-[35%];
+  }
+
+  &-5 {
+    @apply hidden m:block right-[0%] bottom-[35%];
+  }
+}

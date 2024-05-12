@@ -1,0 +1,24 @@
+.slideshow {
+  &-btn {
+    position: relative;
+    @apply text-20 text-primary transition-colors duration-300;
+
+    &:hover {
+      @apply text-black;
+    }
+
+    &.active {
+      @apply underline text-black;
+
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -0.5rem;
+        height: 0.2rem;
+        width: 100%;
+        background: $black;
+      }
+    }
+  }
+}

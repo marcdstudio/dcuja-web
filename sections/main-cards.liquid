@@ -1,0 +1,85 @@
+{% assign stngs = section.settings %}
+{% assign product = all_products[product] %}
+<div class="w-full relative overflow-hidden my-90" data-component="cards">
+  <div class="flex items-start justify-between px-20 mb-20">
+    <h2 class="title-lg pt-5">{{ section.settings.title }}</h2>
+    <div class="flex gap-15">
+      <button class="js-prev w-[4rem] h-[4rem] rounded-full border border-solid border-primary flex items-center justify-center p-10 rotate-180">{% include 'icon-arrow' %}</button>
+      <button class="js-next w-[4rem] h-[4rem] rounded-full border border-solid border-primary flex items-center justify-center p-10">{% include 'icon-arrow' %}</button>
+    </div>
+  </div>
+  <div class="w-full">
+    <div class="js-carousel m:z-2 w-full overflow-hidden pl-20">
+      <div class="flex select-none w-full relative">
+        {% for block in section.blocks %}
+          {% if section.settings.theme %}
+            {% if block.settings.theme == product %}
+              {% include 'card' %}
+            {% endif %}
+          {% else %}
+            {% include 'card' %}
+          {% endif %}
+
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Cards",
+    "tag": "section",
+    "class": "my-90",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "checkbox",
+        "id": "theme",
+        "label": "Theme Based"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Card",
+        "type": "card",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "text",
+            "id": "subtitle",
+            "label": "Subtitle"
+          },
+          {
+            "type": "richtext",
+            "id": "body",
+            "label": "Body"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "product",
+            "id": "theme",
+            "label": "Theme"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Cards"
+      }
+    ]
+  }
+{% endschema %}

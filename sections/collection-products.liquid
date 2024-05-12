@@ -1,0 +1,28 @@
+<div class="w-full py-50 m:py-60" data-pagetitle="{{ page_title }}">
+  <div class="grid grid-cols-12 m:gap-x-30 px-15 m:px-60 gap-y-35">
+    {% for product in collections[collection.handle].products %}
+      <div class="col-span-12 m:col-span-4">
+        {% include 'product-card' %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Collection Products",
+    "class": "collection",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Collection Products"
+      }
+    ]
+  }
+{% endschema %}

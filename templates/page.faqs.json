@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "faqs-drawer": {
+      "type": "faqs-drawer"
+    }
+  },
+  "order": [
+    "faqs-drawer"
+  ]
+}

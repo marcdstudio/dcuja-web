@@ -1,0 +1,12 @@
+.hero {
+  .js-toggle{
+    &.active{
+      @apply relative;
+
+      &:after{
+        content: '';
+        @apply pointer-events-none w-[4.1rem] h-[4.1rem] rounded-full border border-solid border-primary absolute -left-3 -top-3;
+      }
+    }
+  }
+}

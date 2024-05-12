@@ -1,0 +1,48 @@
+.bord {
+  border: 1px solid;
+
+  &-r {
+    border-right: 1px solid;
+  }
+
+  &-l {
+    border-left: 1px solid;
+  }
+
+  &-t {
+    border-top: 1px solid;
+  }
+
+  &-b {
+    border-bottom: 1px solid;
+  }
+}
+
+.radi {
+  border-radius: 1rem;
+}
+
+.under {
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    bottom: -0.5rem;
+    background: currentColor;
+    transition: transform 0.2s ease;
+  }
+}
+
+a {
+  &.under {
+    &:hover {
+      &:after {
+        transform: translateY(-0.2rem);
+      }
+    }
+  }
+}

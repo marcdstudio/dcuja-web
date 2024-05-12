@@ -1,0 +1,27 @@
+<div class="w-full faqs">
+  <ul class="w-full mt-20 flex flex-wrap">
+    {% for block in section.blocks %}
+      <li
+        class="items-center faq-wrap mt-2"
+        data-index="{{ forloop.index }}"
+        data-component="faqs">
+        <button
+          aria-label="toggle faqs"
+          data-index="{{ forloop.index }}"
+          class="faq-toggle js-faq">
+          <h2 class="title-medium text-left pointer-events-none">
+            {{ block.settings.title }}
+          </h2>
+          <div class="rounded-full flex items-center justify-center bg-white border border-solid border-black w-25 m:w-35 h-25 m:h-35 pointer-events-none flex-shrink-0">
+            <span class="js-plus w-[1.7rem] h-[1.7rem] flex items-center">
+              {%- include 'icon-plus' -%}
+            </span>
+          </div>
+        </button>
+        <div class="faq-body js-body hidden rte">
+          <div class="max-w-[80rem]">{{ block.settings.body }}</div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

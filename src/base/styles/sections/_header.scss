@@ -1,0 +1,13 @@
+.header {
+
+}
+
+.js-logo{
+  @apply w-[10rem];
+}
+
+.logo{
+  .js-logo{
+    @apply w-[55rem]
+  }
+}

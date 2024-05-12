@@ -1,0 +1,44 @@
+<div
+  class="my-90 m:my-120 px-15 m:px-30"
+  data-section="{{ section.settings.anchor_title | handleize }}"
+  data-title="{{ section.settings.anchor_title }}">
+  {%
+    include 'video' with className: 'w-full rounded-[1.5rem] m:rounded-[2rem]'
+    , src: section.settings.video.sources[1].url
+    , size: '2000x' %}
+  {% if section.settings.caption %}
+    <div class="flex m:justify-end items-start gap-10 uppercase mt-15">
+      <div class="w-10 m:w-15 h-10 m:h-15 bg-lime rounded-full flex-shrink-0 mt-3 m:mt-0"></div>
+      <div class="max-w-[30rem] m:max-w-[unset] text-12 m:text-14">{{ section.settings.caption }}</div>
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+  {
+    "name": "Video",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "video",
+        "id": "video",
+        "label": "Video"
+      },
+      {
+        "type": "text",
+        "id": "caption",
+        "label": "Caption"
+      },
+      {
+        "type": "text",
+        "id": "anchor_title",
+        "label": "Anchor Title"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Video"
+      }
+    ]
+  }
+{% endschema %}

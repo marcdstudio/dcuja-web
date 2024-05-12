@@ -1,0 +1,39 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Marcd",
+    "theme_version": "1.0",
+    "theme_author": "Marcd",
+    "theme_documentation_url": "https:\/\/workflow.younessidbakkasse\/",
+    "theme_support_url": "https:\/\/marcd.co"
+  },
+  {
+    "name": "Cart",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "cart_drawer_emptyMessage",
+        "label": "Empty Cart Message",
+        "info": "This displays when no items are in the cart."
+      }
+    ]
+  },
+  {
+    "name": {
+      "en": "Favicon",
+      "fr": "Favicon"
+    },
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": {
+          "en": "Favicon image"
+        },
+        "info": {
+          "en": "Will be scaled down to 180x180px"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,61 @@
+<div class="article-suggested-articles mt-60">
+    <div>
+        {% assign current_article = article %}
+        {% assign article_a = null %}
+        {% assign article_b = null %}
+        {% assign article_c = null %}
+        {% assign relatedTag = article.tags[0] | strip %}
+
+        {% for article in blog.articles %}
+            {% for tag in article.tags  %}
+                {% if relatedTag == tag %}
+                    {% if article_a == null and article.handle != current_article.handle %}
+                        {% assign article_a = article %}
+                    {% elsif article_a != article and article.handle != current_article.handle %}
+                        {% assign article_b = article %}
+                    {% elsif article_c != article and article.handle != current_article.handle %}
+                        {% assign article_c = article %}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+        {% for article in blog.articles %}
+            {% if article_a == null %}
+                {% if article.handle != current_article.handle %}
+                    {% assign article_a = article %}
+                {% endif %}
+            {% endif %}
+            {% if article_b == null %}
+                {% if article.handle != current_article.handle and article.handle != article_a.handle %}
+                    {% assign article_b = article %}
+                {% endif %}
+            {% endif %}
+            {% if article_c == null %}
+                {% if article.handle != current_article.handle and article.handle != article_a.handle and article.handle != article_b.handle %}
+                    {% assign article_c = article %}
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+        {% if article_a %}
+          <div class="w-full px-30">
+              <div class="w-full flex items-end mb-20">
+                  <h2 class="title-lg">Related Articles</h2>
+              </div>
+              <div class="grid grid-cols-12">
+                {% if article_a %}
+                  {% include 'article-card' with className: 'col-span-12 m:col-span-4'
+                , type: 'article', article: article_a %}
+                {% endif %}
+                {% if article_b %}
+                  {% include 'article-card' with className: 'col-span-12 m:col-span-4'
+                  , type: 'article', article: article_b %}
+                {% endif %}
+                {% if article_c %}
+                  {% include 'article-card' with className: 'col-span-12 m:col-span-4'
+                  , type: 'article', article: article_c %}
+                {% endif %}
+              </div>
+          </div>
+        {% endif %}
+    </div>
+</div>

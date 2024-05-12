@@ -1,0 +1,80 @@
+{
+  "name": "workflow",
+  "version": "1.1.1",
+  "description": "Modern Shopify development workflow, with Online Store 2.0 features and built with performance and accessibility in mind..",
+  "repository": "https://github.com/marcdstudio/worker-theme.git",
+  "author": "Youness Id bakkasse",
+  "license": "MIT",
+  "keywords": [
+    "workflow",
+    "webpack",
+    "babel",
+    "shopify",
+    "sass",
+    "postcss"
+  ],
+  "browserslist": [
+    "defaults"
+  ],
+  "scripts": {
+    "init": "shx rm -rf .git && git init -b main",
+    "clean": "shx rm -rf assets/* && touch assets/.gitkeep",
+    "dev": "run-p serve watch",
+    "serve": "shopify theme dev --store dcuja",
+    "build": "webpack --config .config/webpack/webpack.config.prod.js",
+    "watch": "webpack watch --config .config/webpack/webpack.config.dev.js",
+    "zip": "run-s build && shopify theme package .",
+    "lint": "shopify theme check --config .config/.theme-check.yml",
+    "format": "prettier --config .config/prettier.config.js --ignore-path .config/.prettierignore --write .",
+    "pull": "shopify theme pull --store dcuja",
+    "push": "shopify theme push --store dcuja --ignore \"config/*.json\"",
+    "deploy": "run-s format build push"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.3.0",
+    "media-query-plugin": "^1.5.0",
+    "mini-css-extract-plugin": "^2.3.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.3.6",
+    "postcss-loader": "^6.1.1",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.4.1",
+    "sass": "^1.41.0",
+    "sass-loader": "^12.1.0",
+    "shx": "^0.3.3",
+    "size-plugin": "2.0.2",
+    "tailwindcss": "^3.3.5",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-merge": "^5.10.0",
+    "webpack-remove-empty-scripts": "^0.7.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@selfaware/martha": "^0.0.11",
+    "@tailwindcss/jit": "^0.1.18",
+    "@typeform/embed": "^1.24.1",
+    "autoprefixer": "^10.3.4",
+    "choozy": "^1.0.0",
+    "css": "^3.0.0",
+    "embla-carousel": "^6.2.0",
+    "flickity": "3.0.0",
+    "gsap": "^3.12.2",
+    "ipify": "^5.0.0",
+    "klaviyo-subscribe": "^1.0.0",
+    "lazim": "^2.0.1",
+    "martha": "^4.1.0",
+    "operator": "^1.8.0",
+    "picoapp": "^3.6.2",
+    "shopify-cli": "^1.0.11",
+    "unfetch": "^4.2.0",
+    "vanilla-marquee": "^1.1.2"
+  },
+  "main": "index.js",
+  "private": true
+}

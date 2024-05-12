@@ -1,0 +1,13 @@
+.about{
+    &--anchors{
+        @apply bg-cream sticky top-[var(--headerHeight)] z-8 hidden m:flex border-b border-solid border-cream;
+    }
+}
+
+.js-anchor{
+  @apply flex-1 pt-10 pb-7 text-14 uppercase;
+
+  &.active{
+    @apply bg-primary;
+  }
+}

@@ -1,0 +1,54 @@
+.marquee {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  width: fit-content;
+
+  cursor: default;
+
+  span {
+    white-space: nowrap;
+  }
+
+  &-wrap {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    animation: marquee 20s linear infinite;
+  }
+
+  &-item {
+    @apply flex-shrink-0 ml-20 m:ml-60 flex items-center text-36 font-serif;
+  }
+
+  &-separator {
+    @apply w-45 m:w-60;
+  }
+
+  &-title {
+    @apply pt-5;
+  }
+}
+
+// @keyframes marquee {
+//   0% {
+//     transform: translateX(0);
+//   }
+//   100% {
+//     transform: translateX(-100%);
+//   }
+// }
+
+// .marquee {
+//   animation: marquee 15s linear infinite;
+// }
+
+// .marquee.speed-slow {
+//   animation: marquee 20s linear infinite;
+// }

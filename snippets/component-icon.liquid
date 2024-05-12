@@ -1,0 +1,26 @@
+{% comment %}
+    Renders a specific icon for a given name.
+
+    Accepts:
+    - icon: {string} Icon name (required)
+    - icon_size: {integer} Icon size (required)
+    - icon_class: {string} Icon class (optional)
+
+    Usage:
+    {%- render 'component-icon'
+      icon: 'arrow',
+      icon_size: 40,
+      icon_class: 'icon-class'
+    -%}
+{% endcomment %}
+
+{%- capture icon_class -%}c-icon c-icon--{{ icon }} {{ icon_class }}{%- endcapture -%}
+
+{%- case icon -%}
+  {%- when 'arrow' -%}
+    <svg class="{{- icon_class -}}" width="{{- icon_size -}}" height="{{- icon_size -}}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 9" fill="none" aria-hidden="true" focusable="false" role="presentation">
+      <path d="M0 4.5H14.875" stroke="currentColor" stroke-width="1.2"/>
+      <path d="M11.8125 1L15.3125 4.5L11.8125 8" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+    </svg>
+
+{%- endcase -%}

@@ -1,0 +1,19 @@
+.footer {
+  &-menu {
+    @apply flex flex-col col-span-4 items-start justify-start;
+  }
+}
+
+footer {
+  position: relative;
+
+  form {
+    input {
+      &::placeholder {
+        opacity: 0.5 !important;
+        color: black !important;
+        font-weight: 500;
+      }
+    }
+  }
+}

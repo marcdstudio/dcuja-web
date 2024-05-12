@@ -1,0 +1,45 @@
+<div class="px-30 my-120 flex flex-col m:flex-row product-reviews gap-15"
+  data-section-id="{{ section.id }}">
+    <div class="sticky top-80 hidden m:flex items-start justify-between flex-grow rounded-[1.5rem] m:rounded-[2rem] overflow-hidden p-15 reviews-stars h-[calc(var(--vh,1vh)*100-(var(--headerHeight))-3rem)]">
+        <div class="absolute z-2 bottom-0 left-0 w-full h-[5rem] bg-[rgba(0,0,0,.15)]">
+          <div class="absolute top-0 left-0 w-full h-[2rem] -translate-y-full bg-gradient-to-t from-[rgba(0,0,0,.15)] to-transparent"></div>
+        </div>
+        <span class="junip-product-summary junip-light is-overlay px-20 py-15 absolute left-0 bottom-0 z-2" data-product-id="{{ product.id }}"></span>
+        {%
+        include 'lazy' with className: 'w-full h-full object-cover absolute left-0 top-0'
+        , src: section.settings.image
+        , size: '1400x' %}
+    </div>
+    <div class="w-full m:w-1/2 m:min-w-[50rem]">
+      <div class="w-full max-w-[65rem] mx-auto">
+          {% for block in section.blocks %}
+            {% render block %}
+          {% endfor %}
+      </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product Reviews",
+  "tag": "section",
+  "class": "s-apps",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Reviews"
+    }
+  ]
+}
+{% endschema %}

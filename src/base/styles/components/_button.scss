@@ -1,0 +1,63 @@
+.btn {
+  @apply text-24 font-serif p-15 leading-100 rounded-[.5rem] transition-colors duration-300 bg-primary text-cream text-center hover:bg-primary hover:text-secondary;
+
+  &-cart{
+    @apply px-15 py-8 rounded-[.5rem] bg-tertiary leading-100;
+  }
+
+  &-theme{
+    @apply bg-secondary text-primary hover:bg-primary hover:text-secondary transition-colors duration-300;
+  }
+
+  &-hero{
+    @apply  text-center py-20 w-full flex items-center justify-center absolute bottom-0 text-22 uppercase font-serif;
+  }
+
+  &.is-glass{
+    @apply bg-glass border border-solid border-current text-cream;
+  }
+
+  &.is-light{
+    @apply bg-cream text-primary hover:text-secondary;
+  }
+
+  &.is-signup{
+    @apply text-20 rounded-10 py-10 px-15;
+  }
+
+  &.is-border{
+    @apply border border-solid border-primary bg-cream text-primary hover:bg-tertiary;;
+  }
+}
+
+.link {
+  &-black {
+    color: currentColor;
+    transition: color 0.25s ease;
+
+    &:hover {
+      color: currentColor;
+    }
+  }
+
+  &-line {
+    @apply hover:underline hover:border-solid hover:border-black;
+  }
+
+  &-primary {
+    color: currentColor;
+    transition: opacity 0.25s ease;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &-icon {
+    @apply h-[2.5rem] inline-block mr-20;
+  }
+
+  &-add{
+    @apply bg-primary text-cream text-24 px-30 py-30 text-center w-full uppercase font-serif rounded-[.5rem];
+  }
+}

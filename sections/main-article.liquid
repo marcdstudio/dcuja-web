@@ -1,0 +1,132 @@
+<div class="px-15 m:px-20 pt-40 m:py-60">
+    <div class="relative w-full mb-15 m:mb-80 js-filterItem flex flex-col m:flex-row blog-feature-content">
+        <a class="feature-img block w-full m:w-450 relative rounded-50 overflow-hidden flex-shrink-0 mr-20 border border-solid border-black" href="{{ article.handle }}">
+            <div class="w-full pb-[100%]">
+                {%
+                    include 'lazy' with
+                    className: 'w-full h-full object-cover absolute top-0',
+                    src: article.image,
+                    size: '1200x'
+                %}
+            </div>
+        </a>
+        <div class="flex-grow rounded-10 m:rounded-50 shadow-base bg-white border border-solid border-black px-15 m:px-35 xl:px-50 py-35 mt-15 m:mt-0 flex flex-col justify-between">
+            <div class="uppercase text-14 font-bold flex items-center whitespace-nowrap overflow-hidden">
+                <a class="link-primary" href="/">
+                    Home&nbsp;/&nbsp;
+                </a>
+                <a class="link-primary" href="/blogs/{{ blog.handle }}">
+                    Blog&nbsp;/&nbsp;
+                </a>
+                <a class="link-primary inline-block overflow-hidden max-w-[100%] w-full" href="/blogs/{{ blog.handle }}/{{ article.handle }}">
+                    <span class="m:hidden">{{ article.title | truncate: 25, '...' }}</span>
+                    <span class="hidden m:block">{{ article.title | truncate: 50, '...' }}</span>
+                </a>
+            </div>
+            <div class="w-full mt-35">
+                <div>
+                    <span class="uppercase text-16 xl:text-20 font-bold">{{ article.tags[0].title }}</span>
+                    <h1 class="font-bold text-24 s:text-30 xl:text-40 mt-15">{{ article.title }}</h1>
+                    <div class="w-full mb-10 mt-15 text-20 xl:text-24">
+                        {{ article.excerpt }}
+                    </div>
+                </div>
+            </div>
+            <div></div>
+        </div>
+    </div>
+
+    <div class="m:px-15 flex flex-col-reverse m:flex-row justify-between">
+        <div class="w-350 flex-shrink-0">
+            <div class="sticky top-100">
+                <div class="bg-white border-black border-solid border rounded-[1.5rem] m:rounded-20 p-25 m:max-w-350 m:shadow-base mt-30 m:mt-0 text-14">
+                    {% unless article.metafields.info.hide_date == true %}
+                      {% if article.metafields.info.date %}
+                        <div class="uppercase font-bold text-20 mb-25">
+                            {{ article.metafields.info.date.value | date: format: 'abbreviated_date' }}
+                        </div>
+                      {% else %}
+                        <div class="uppercase font-bold text-20 mb-25">
+                            {{ article.created_at | date: format: 'abbreviated_date' }}
+                        </div>
+                      {% endif %}
+                    {% endunless %}
+                    {% if article.tags[0] %}
+                        <div class="mb-20">
+                            <h2 class="uppercase font-bold mb-10">Tags:</h2>
+                            {% for tag in blog.tags %}
+                                <p>{{ tag.title }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    {% if article.author and article.metafields.info.hide_author != true %}
+                        <div class="mb-20">
+                            <h2 class="uppercase font-bold mb-10">Written By:</h2>
+                            <p>{{ article.author }}</p>
+                        </div>
+                    {% endif %}
+                    <div>
+                        <h2 class="uppercase font-bold mb-10">Share:</h2>
+                        <ul class="flex items-center">
+                            <li>
+                                <a class="w-25 block" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/sharer.php?u=https://www.welltaken.com/blogs/news/{{ article.handle }}">
+                                    {% include 'icon-facebook' %}
+                                </a>
+                            </li>
+                            <li class="ml-10">
+                                <a class="w-25 block" target="_blank" rel="noopener noreferrer" href="mailto:?&subject={{ article.title | handleize }}=https://www.curehydration.com/blogs/news/{{ article.handle }}">
+                                    {% include 'icon-email' %}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                {% if article.metafields.info.product %}
+                    <div class="bg-white border-black border-solid border rounded-[1.5rem] m:rounded-20 p-25 m:max-w-350 m:shadow-base mt-25 text-center flex flex-col items-center">
+                        {%- assign product = all_products[article.metafields.info.product] -%}
+                        <h2 class="text-20 font-bold uppercase" style="color:{{ product.metafields.info.primary_color }}">{{ product.title }}</h2>
+                        <p class="text-18 font-bold uppercase my-10">{{ product.metafields.info.product_flavor}}</p>
+                        <a class="cta btn-cream font-bold" href="{{ product.url }}">Shop Now</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="w-full m:pl-30 mt-35 m:mt-0">
+            <div class="max-w-[80rem] mx-auto border-t border-solid border-black pt-35">
+                <div class="w-full article-content">{{ article.content }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="max-w-[90rem] mx-auto mt-100">
+        <h2 class="w-full text-center text-24 m:text-40 font-bold">{{ section.settings.titleRelated }}</h2>
+        <div class="flex flex-col m:flex-row m:mt-35">
+            {% assign curHandle = article.handle %}
+            {% for article in blog.articles %}
+                {% unless article.handle == curHandle %}
+                    {% include 'article-card' with isRelated: true %}
+                {% endunless %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Article Content",
+  "tag": "section",
+  "class": "article-main",
+  "settings": [
+    {
+        "type": "text",
+        "id": "titleRelated",
+        "label": "More Posts Title",
+        "default": "Continue Reading"
+    },
+    {
+        "type": "product",
+        "id": "product",
+        "label": "Featured Product"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,86 @@
+{% capture allTags %}
+  <a class="js-filter cta btn-cream blog-filter mb-10 font-bold mr-10" href="/blogs/{{ blog.handle }}">All Posts</a>
+  {% for tag in blog.all_tags %}
+    <a class="js-filter cta btn-cream blog-filter mb-10 font-bold mr-10" href="/blogs/{{ blog.handle }}/tagged/{{ tag.title | handleize }}">{{ tag.title }}</a>
+  {% endfor %}
+{% endcapture %}
+
+{% assign bannerClass = 'w-full flex whitespace-nowrap overflow-x-auto m:whitespace-[unset] m:overflow-x-[unset] m:flex-wrap m:justify-center items-center pl-15 m:pl-0' %}
+
+{% paginate blog.articles by 15 -%}
+
+  <div
+    class="blog pt-35 m:pt-60 pb-80 m:pb-150"
+    data-pagetitle="{{ page_title }}"
+    data-component="blog">
+    <div class="flex flex-wrap w-full max-w-[160rem] mx-auto px-15 m:px-30">
+      <div class="{{ bannerClass }} js-filterTop hidden mb-25 m:mb-50">
+        {{ allTags }}
+      </div>
+      {% if paginate.previous %}
+        {% for article in blog.articles %}
+          {% include 'article-card' %}
+        {% endfor %}
+      {% else %}
+        {% for article in blog.articles %}
+          {% if forloop.first %}
+            <div class="relative w-full mb-15 m:mb-30 js-filterItem flex flex-col m:flex-row blog-feature-content px-15" data-tags="{% for tag in article.tags %}{% unless tag contains 'Related:' or tag contains 'related:' %}{{ tag | handleize }}{% endunless %} {% endfor %}">
+              <a class="feature-img block w-full pb-[100%] m:pb-0 m:h-450 m:w-450 relative rounded-50 overflow-hidden flex-shrink-0 mr-40 border border-solid border-black" href="{{ article.handle }}">
+                {%
+                   include 'lazy' with
+                   className: 'w-full h-full object-cover absolute top-0',
+                   src: article.image,
+                   size: '900x' %}
+              </a>
+              <div class="w-full rounded-10 m:rounded-50 shadow-base bg-white border border-solid border-black px-15 m:px-50 py-35 mt-15 m:mt-0 flex flex-col justify-between items-start feature-content">
+                <div class="w-full">
+                  <div class="w-full pb-[100%] rounded-50 overflow-hidden relative hidden feature-secondary border border-solid border-black">
+                    {%
+                       include 'lazy' with
+                       className: 'w-full h-full object-cover absolute top-0',
+                       src: article.image,
+                       size: '900x' %}
+                  </div>
+                  <span class="uppercase text-14 font-bold feature-subtitle">{{ section.settings.featuredTitle }}</span>
+                  <div class="uppercase font-black text-14 feature-tag hidden mt-15">{{ article.tags[0] }}</div>
+                  <h1 class="font-bold text-24 m:text-40 mt-25 feature-title">{{ article.title }}</h1>
+                  <div class="w-full mb-10 mt-15 text-20 m:text-24 feature-excerpt">
+                    {{ article.excerpt }}
+                  </div>
+                </div>
+                <a class="cta btn-white mt-15 m:mt-50 font-bold feature-cta" href="/blogs/{{ article.handle }}">Read Now</a>
+              </div>
+            </div>
+            <div class="{{ bannerClass }} js-filterCenter mt-35 m:mt-50">
+              {{ allTags }}
+            </div>
+          {% else %}
+            {% include 'article-card' %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </div>
+    {%- if paginate.pages > 1 -%}
+      {% include 'pagination' %}
+    {%- endif -%}
+  </div>
+
+{% endpaginate %}
+
+{% schema %}
+  {
+    "name": "Blog",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }, {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      }
+    ]
+  }
+{% endschema %}

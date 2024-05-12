@@ -1,0 +1,103 @@
+.product {
+  &-img {
+    position: relative;
+    display: block;
+    width: 100%;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+  }
+
+  &-info {
+    .carousel-dot {
+      background-color: var(--primary);
+      @apply border border-solid border-black rounded-full w-15 m:w-20 h-15 m:h-20;
+
+      &.is-active {
+        @apply bg-cream;
+      }
+    }
+
+    video{
+      @apply w-full h-full object-cover
+    }
+  }
+
+  &-details{
+    background-color: var(--secondary);
+  }
+
+  &-swatch{
+    @apply relative;
+
+    &:after{
+      content: '';
+      @apply w-[calc(100%+.4rem)] h-[calc(100%+.4rem)] border border-solid border-black rounded-[.5rem] absolute -top-2 -left-2 transition-opacity duration-300 opacity-0;
+    }
+
+    &:not(.active):hover{
+      &:after{
+        @apply opacity-30;
+      }
+    }
+
+    &.active{
+      &:after{
+        @apply opacity-100;
+      }
+    }
+  }
+}
+
+.js {
+  &-addon{
+    @apply rounded-[.5rem] bg-cream border border-solid border-grey w-full p-10 text-12 uppercase flex justify-between items-center;
+
+    div,
+    img{
+      @apply pointer-events-none;
+    }
+    .addon-dot{
+      @apply w-10 h-10 border border-black border-solid rounded-full relative;
+
+      &:after{
+        content: '';
+        position: absolute;
+        left: .2rem;
+        top: .2rem;
+        height: .4rem;
+        width: .4rem;
+        border-radius: 100%;
+        opacity: 0;
+        background: black;
+      }
+    }
+
+    &.selected{
+      @apply border-black;
+      .addon-dot{
+        &:after{
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &-add-to-cart {
+    &:hover {
+    }
+    &.oos {
+      @apply bg-grey text-black;
+
+      &:hover {
+        @apply bg-grey text-black;
+      }
+    }
+  }
+}

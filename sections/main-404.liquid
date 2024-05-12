@@ -1,0 +1,44 @@
+<div class="w-full error relative py-25 pt-100 px-15 m:px-30">
+  <h1 class='text-30 m:text-40 font-bold w-full max-w-650'>{{ section.settings.title }}</h1>
+  {% if section.settings.body %}
+    <div class="mt-15 w-full max-w-650 rte">
+      {{ section.settings.body }}
+    </div>
+  {% endif %}
+  {% if section.settings.ctalink %}
+    <a class="mt-35 inline-block cta btn-white" href="{{ section.settings.ctalink }}">
+      {{ section.settings.ctatext }}
+    </a>
+  {% endif %}
+</div>
+
+
+{% schema %}
+  {
+    "name": "404",
+    "class": "main-404",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "default": "Oops! We can't find the page you're looking for.",
+        "label": "Title"
+      }, {
+        "type": "text",
+        "id": "body",
+        "default": "In the meantime, browse our collection.",
+        "label": "Body"
+      }, {
+        "type": "text",
+        "id": "ctatext",
+        "default": "Shop Now",
+        "label": "CTA Text"
+      }, {
+        "type": "url",
+        "id": "ctalink",
+        "label": "CTA Link"
+      }
+    ]
+  }
+{% endschema %}

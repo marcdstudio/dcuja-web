@@ -1,0 +1,200 @@
+{% assign stngs = section.settings %}
+
+{% for block in section.blocks %}
+  {% if block.type == 'item' %}
+    {% assign firstProduct = block.settings.product %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+<div class="relative z-3" data-component="footer">
+  <script class="js-images hidden">
+    {
+      "images": [{% for block in section.blocks %}
+          {% assign product = block.settings.product %}
+          { "image": "{{ block.settings.image | img_url: '600x'  }}", "theme": "{{ product.title | handleize }}" }{% unless forloop.last %},{% endunless %}
+        {% endfor %}]
+    }
+  </script>
+
+  <div class='relative px-20'>
+    <div class="">
+      <div class="w-full">
+        <div class="w-full">
+          <div class="w-full flex flex-col m:flex-row justify-between">
+            <div class="w-full m:w-1/2 grid grid-cols-12 gap-y-30 mt-50 m:mt-0">
+              {% assign pages_menu = stngs.pages_menu %}
+
+              {% if linklists[pages_menu].links.size > 0 %}
+                <ul class='footer-menu'>
+                  <li class="font-serif uppercase mb-15 m:mb-20">{{ pages_menu.title }}</li>
+                  {% for link in linklists[pages_menu].links %}
+                    <li class='inline-block mb-5 text-20'>
+                      <a
+                        class="link-line"
+                        href="{{ link.url }}"
+                        {% if link.url contains 'http' %}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        {% endif %}>{{ link.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+
+              {% assign services_menu = stngs.services_menu %}
+
+              {% if linklists[services_menu].links.size > 0 %}
+                <ul class='footer-menu'>
+                  <li class="font-serif uppercase mb-15 m:mb-20">{{ services_menu.title }}</li>
+                  {% for link in linklists[services_menu].links %}
+                    <li class='inline-block mb-5 text-20'>
+                      <a
+                        class="link-line"
+                        href="{{ link.url }}"
+                        {% if link.url contains 'http' %}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        {% endif %}>{{ link.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+
+              {% assign connect_menu = stngs.connect_menu %}
+
+              {% if linklists[connect_menu].links.size > 0 %}
+                <ul class='footer-menu'>
+                  <li class="font-serif uppercase mb-15 m:mb-20">{{ connect_menu.title }}</li>
+                  {% for link in linklists[connect_menu].links %}
+                    <li class='inline-block mb-5 text-20'>
+                      <a
+                        class="link-line"
+                        href="{{ link.url }}"
+                        {% if link.url contains 'http' %}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        {% endif %}>{{ link.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+
+            <div class="w-full max-w-[60rem]">
+              <h2 class="max-w-[80rem] title-lg mb-25">{{ stngs.title_signup }}</h2>
+              {% include 'form-signup' %}
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="flex justify-between items-center mt-70">
+        <div class="flex gap-10">
+          <div>{{ 'now' | date: '%Y' }} © D'Cuja</div>
+          {% assign legal_menu = stngs.legal_menu %}
+
+          {% if linklists[legal_menu].links.size > 0 %}
+            <ul class='flex gap-10'>
+              {% for link in linklists[legal_menu].links %}
+                <li class='inline-block mb-5'>
+                  <a
+                    class="link-line"
+                    href="{{ link.url }}"
+                    {% if link.url contains 'http' %}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    {% endif %}>{{ link.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+        <a
+          class="block link-line"
+          href="https://marcd.co"
+          target="_blank"
+          rel="noopener noreferrer">Site Credits</a>
+      </div>
+    </div>
+  </div>
+  <div class="w-full h-[60rem] rounded-tl-[6rem] rounded-tr-[6rem] overflow-hidden translate-x-0 mt-20">
+    {% include 'lazy' with className: 'w-full h-full object-cover js-image object-bottom'
+      , src: section.blocks[0].settings.image
+      , force: true
+      , size: '2000x' %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "class": "footer",
+    "tag": "footer",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title_primary",
+        "label": "Primary Title"
+      },
+      {
+        "type": "text",
+        "id": "cta",
+        "label": "Primary CTA"
+      },
+      {
+        "type": "url",
+        "id": "link",
+        "label": "Primary Link"
+      },
+      {
+        "type": "text",
+        "id": "title_signup",
+        "label": "Signup Title"
+      },
+      {
+        "type": "text",
+        "id": "success",
+        "label": "Signup Success Message"
+      },
+      {
+        "type": "link_list",
+        "id": "pages_menu",
+        "label": "Pages Menu"
+      },
+      {
+        "type": "link_list",
+        "id": "services_menu",
+        "label": "Sevices Menu"
+      },
+      {
+        "type": "link_list",
+        "id": "connect_menu",
+        "label": "Connect Menu"
+      },
+      {
+        "type": "link_list",
+        "id": "legal_menu",
+        "label": "Legal Menu"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Theme Image",
+        "type": "image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,23 @@
+<a class="article-card relative text-egg {{ className }}" href="{{ article.url }}">
+  <div class="w-full min-h-[38rem] m:min-h-[50rem] rounded-[1.5rem] m:rounded-[2rem] overflow-hidden relative">
+      {%
+          include 'lazy' with
+        className: 'w-full h-full object-cover absolute top-0',
+        src: article.image,
+        size: '1200x' %}
+        {% for tag in article.tags %}
+          {% if forloop.first %}
+            <div class="absolute top-20 left-20 rounded-full px-20 py-5 border border-solid bg-[rgba(0,0,0,.25)] backdrop-blur-lg text-14 uppercase">{{ tag.title }}</div>
+          {% endif %}
+        {% endfor  %}
+    <div class="absolute left-0 bottom-0 block w-full p-20 pt-0">
+      <div class="absolute bottom-0 left-0 w-full bg-[rgba(0,0,0,.5)] h-full">
+        <div class="absolute top-0 left-0 -translate-y-full w-full h-50 bg-gradient-to-t from-[rgba(0,0,0,.5)] to-transparent"></div>
+      </div>
+      <div class="w-full relative z-2">
+        <div class="text-14 absolute top-0 left-0">{{ article.published_at | date: "%m.%d.%y" }}</div>
+        <div class="text-18 m:text-24 w-full indent-[6.5rem]">{{ article.title }}</div>
+      </div>
+    </div>
+  </div>
+</a>

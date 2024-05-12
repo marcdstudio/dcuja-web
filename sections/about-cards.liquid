@@ -1,0 +1,97 @@
+{% assign stngs = section.settings %}
+<div
+  data-section="{{ section.settings.anchor_title | handleize }}"
+  data-title="{{ section.settings.anchor_title }}"
+  class="w-full relative m:py-60 overflow-hidden px-15{% if page.template_suffix == 'about' %} py-30{% else %} py-50{% endif %}">
+  <div class="w-full flex justify-between items-end">
+    {% if stngs.title %}
+      <h2 class="title-large">{{ stngs.title }}</h2>
+    {% endif %}
+    {% if stngs.cta %}
+      {% include 'cta' with
+       className: 'btn',
+       text: section.settings.cta,
+       href: section.settings.link %}
+    {% endif %}
+  </div>
+  <div class="flex flex-col m:flex-row relative gap-15 mt-15 m:mt-30">
+    {% for block in section.blocks %}
+      <button
+        class="relative flex-1 group"
+        aria-label="Toggle {{ block.settings.title }} Info"
+        data-component="aboutCard">
+        <div class="relative flex flex-col justify-center items-center">
+          <div class="w-full h-full relative block group">
+            <div class="w-full relative overflow-hidden rounded-[1.5rem] m:rounded-20 border border-solid translate-x-0 pb-[75%] m:pb-[160%]">
+              {%
+                 include 'lazy' with
+               className: 'h-full w-full object-cover absolute top-0 left-0',
+               src: block.settings.image,
+               size: '1000x' %}
+            </div>
+          </div>
+        </div>
+        <div class="uppercase absolute z-2 top-0 left-0 w-full flex flex-col justify-between bg-cream border-black border-solid border rounded-tr-[2rem] rounded-tl-[2rem] js-wrap">
+          <div class="flex items-center justify-between p-15">
+            <div class="">{{ block.settings.title }}</div>
+            <div class="w-30 h-30 flex items-center justify-center rounded-full border border-black border-solid p-[.7rem] js-plus group-hover:bg-black group-hover:text-cream transition-colors duration-300">
+              {% include 'icon-plus' %}
+            </div>
+          </div>
+          <div class="w-full bg-cream flex-grow js-content hidden text-12 p-15 text-left flex flex-col justify-end">{{ block.settings.body }}</div>
+        </div>
+      </button>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "About Cards",
+    "tag": "section",
+    "max_blocks": 4,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "default": "Our Products",
+        "label": "Title"
+      }, {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      }, {
+        "type": "text",
+        "id": "anchor_title",
+        "label": "Anchor Title",
+        "info": "Used for anchor link"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Card",
+        "type": "card",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          }, {
+            "type": "richtext",
+            "id": "body",
+            "label": "Body"
+          }, {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "About Cards"
+      }
+    ]
+  }
+{% endschema %}

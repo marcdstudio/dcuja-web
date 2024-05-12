@@ -1,0 +1,41 @@
+.section-imageTextOverlay {
+  &.config {
+    &-vertical {
+      .overlay-content {
+        @apply left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 max-w-[67.5rem] text-center flex flex-col items-center px-30 m:px-0;
+      }
+    }
+
+    &-horizontal {
+      .overlay {
+        &-content {
+          @apply bottom-0 left-0 flex justify-between w-full p-15 m:p-30;
+        }
+
+        &-inner {
+          @apply flex flex-col m:flex-row justify-between items-start m:items-end w-full px-15 m:px-30;
+        }
+
+        &-body {
+          @apply max-w-[60rem];
+        }
+      }
+    }
+
+    &-hero {
+      .overlay {
+        &-content {
+          @apply top-1/2 -translate-y-1/2 left-0 flex flex-col justify-center items-center w-full p-15 m:p-30;
+        }
+
+        &-inner {
+          @apply flex flex-col items-center justify-center text-center w-full px-15 m:px-30;
+        }
+
+        &-body {
+          @apply max-w-[60rem];
+        }
+      }
+    }
+  }
+}

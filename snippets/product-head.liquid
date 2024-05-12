@@ -1,0 +1,98 @@
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- assign featured_image = current_variant.featured_image | default:
+  product.featured_image -%}
+{% assign price = current_variant.price %}
+{% assign meta = product.metafields.info %}
+
+{% assign current_selling_plan_allocation = current_variant.selected_selling_plan_allocation %}
+{% if current_selling_plan_allocation == nil and current_variant.requires_selling_plan %}
+  {% assign current_selling_plan_allocation = current_variant.selling_plan_allocations | first %}
+{% endif %}
+{% assign price = current_variant.price %}
+{% assign offer = current_selling_plan_allocation | default: current_variant %}
+{% assign current_plan = current_variant.selling_plan_allocations[0].selling_plan.options[0].value %}
+{% for allocation in current_variant.selling_plan_allocations %}
+  {% if forloop.first %}
+    {% assign subscriptionDiscount = allocation.selling_plan.price_adjustments[0].value %}
+    {% assign adjustment = 100 | minus: allocation.selling_plan.price_adjustments[0].value %}
+    {% assign discountPercent = 100 | minus: adjustment %}
+    {% assign discountPrice = price | times: adjustment | divided_by: 100 %}
+  {% endif %}
+{% endfor %}
+
+
+<meta itemprop="name" content="{{ product.title }}{% unless product.has_only_default_variant %} - {{ current_variant.title }}{% endunless %}">
+<meta itemprop="url" content="{{ shop.url }}{{ current_variant.url }}">
+<meta itemprop="brand" content="{{ product.vendor }}">
+<meta itemprop="image" content="{{ featured_image | img_url: '600x600' }}">
+<meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+<script type="application/ld+json">
+  {
+  "@context": "http://schema.org/",
+      "@type": "Product",
+      "name": "{{ product.title }}",
+  "url": "{{ shop.url }}{{ current_variant.url }}",
+  "sku": "{{ current_variant.sku }}",
+  "image": "{{ featured_image | img_url: '600x600' }}",
+  "description": "{{ product.description | strip_html | escape }}",
+  "brand": {
+        "@type": "Thing",
+        "name": "{{ product.vendor }}"
+  },
+  {% if current_variant.barcode.size == 12 %}
+    "gtin12": {{ current_variant.barcode }},
+  {%- endif -%}
+  {%- if current_variant.barcode.size == 13 -%}
+    "gtin13": {{ current_variant.barcode }},
+  {%- endif -%}
+  {%- if current_variant.barcode.size == 14 -%}
+    "gtin14": {{ current_variant.barcode }},
+  {%- endif -%}
+  {% if product.metafields.yotpo.reviews_count and product.metafields.yotpo.reviews_count != "0" %}
+    "aggregateRating": {
+    "@type": "AggregateRating",
+            "ratingValue": "{{ product.metafields.yotpo.reviews_average }}",
+    "ratingCount": "{{ product.metafields.yotpo.reviews_count }}"
+    },
+  {% endif %}
+  "offers": [
+  {
+          "@type": "Offer",
+          "availability": "http://schema.org/{% if current_variant.available %}InStock{% else %}OutOfStock{% endif %}",
+  "price": "{{ current_variant.price | money_without_currency }}",
+  "priceCurrency": "{{ shop.currency }}",
+  "url": "{{ shop.url }}{{ current_variant.url }}",
+  "itemOffered": {
+            "@type": "Product",
+            "name": "{{ product.title }}",
+  "sku": "{{ current_variant.sku }}",
+  "brand": {
+              "@type": "Thing",
+              "name": "{{ product.vendor }}"
+  },
+            "description" : {{ product.description | strip_html | json }},
+  {% if current_variant.barcode.size == 12 %}
+    "gtin12": {{ current_variant.barcode }},
+  {%- endif -%}
+  {%- if current_variant.barcode.size == 13 -%}
+    "gtin13": {{ current_variant.barcode }},
+  {%- endif -%}
+  {%- if current_variant.barcode.size == 14 -%}
+    "gtin14": {{ current_variant.barcode }},
+  {%- endif -%}
+  "image": "{{ featured_image | img_url: '600x600' }}"
+  },
+          "priceValidUntil": "{{ 'now' | date: '%s' | plus: 31536000 | date: '%Y-%m-%d' | uri_encode | replace: '+', '%20' }}"
+  }
+      ]
+    }</script>
+
+<script class='js-product-json' type='text/template'>
+  {
+  "selectedOrFirstAvailableVariant": {{ current_variant.id | json }},
+  "product": {{ product | json }}
+  }
+</script>
+
+{% assign productCard = null %}

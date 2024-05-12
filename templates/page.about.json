@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "anchors": {
+      "type": "about-anchors"
+    },
+    "hero": {
+      "type": "about-hero"
+    }
+  },
+  "order": [
+    "anchors",
+    "hero"
+  ]
+}
