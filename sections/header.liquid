@@ -1,20 +1,21 @@
-<div class="z-[9] header fixed top-0 right-0 pr-20 pt-20 font-serif" data-component="header">
-  <div class="header-content">
-    <button class="js-menuOpen flex m:hidden items-center relative z-8 uppercase pt-3">
-      Menu
-    </button>
+<div class="z-[9] header fixed top-0 right-0 pr-15 m:pr-20 pt-15 m:pt-20 pl-15 m:pl-0 font-serif w-full m:w-[unset]" data-component="header">
+  <div class="js-nav relative z-2 header-content bg-cream border border-solid border-primary rounded-[.5rem] pr-10 py-10 pl-10 m:pl-20 flex justify-between w-full">
+    <div class="block m:hidden">
+      <a
+        href="/"
+        class="block js-logo"
+        aria-label="home">
+        {% include 'icon-logotype' %}
+      </a>
+    </div>
 
     <ul
-      class="js-nav bg-cream hidden m:flex gap-20 items-center flex-shrink-0 pr-10 py-10 pl-20 border border-solid border-primary rounded-[.5rem]"
+      class="hidden m:flex gap-20 items-center flex-shrink-0"
       role="list"
       tabindex="-1">
       {%- for link in section.settings.menu_main.links -%}
-        <li class="nav-icon relative" data-component="headerIcon">
-          <a
-            href="{{ link.url }}"
-            data-path="{{ link.url }}"
-            class="flex items-center btn-nav relative js-link"
-            data-title="{{ link.title }}">
+        <li class="nav-icon relative">
+          <a href="{{ link.url }}" class="flex items-center btn-nav relative js-link">
 
             <span>{{ link.title | escape }}</span>
             {% if link.links != blank %}
@@ -26,61 +27,97 @@
 
       <li class="">
         <button aria-label="toggle cart" class="js-cartToggle flex items-center gap-5 relative btn-cart">
-          <span class="block">Cart</span>
+          <span class="hidden m:block">Cart</span>
           <div>
             (<span class="js-cartCount">{{ cart.item_count }}</span>)
           </div>
-        {% comment %} <div class="js-cartCount text-[.9rem] bg-black rounded-full text-center w-[1.4rem] h-[1.4rem] flex items-center justify-center text-cream translate-y-[-50%] ml-[.2rem]">
-                      <span>{{ cart.item_count }}</span>
-                  </div> {% endcomment %}
         </button>
       </li>
     </ul>
 
-    <button aria-label="toggle cart" class="js-cartToggle flex m:hidden items-center gap-2 relative z-8 uppercase pt-3">
-      <span class="">
-        cart
-      </span>
-      <div>
-        (<span class="js-cartCount">{{ cart.item_count }}</span>)
+    <div class="flex m:hidden gap-10 items-center">
+      <button class="w-30 js-navToggle">
+        <div class="w-30 js-open">
+          {% include 'icon-menu-open' %}
+        </div>
+        <div class="w-30 js-close hidden">
+          {% include 'icon-menu-close' %}
+        </div>
+      </button>
+      <button aria-label="toggle cart" class="js-cartToggle flex m:hidden items-center gap-2 relative z-8 uppercase pt-3 btn-cart">
+        <div>
+          (<span class="js-cartCount">{{ cart.item_count }}</span>)
+        </div>
+      </button>
+    </div>
+  </div>
+  <div
+    class="flex-1 absolute top-[calc(var(--headerHeight)-2rem)] js-menu overflow-hidden w-[calc(100%-3rem)] border border-solid border-primary rounded-bl-[1rem] rounded-br-[1rem]"
+    role="list"
+    tabindex="-1">
+    <div class="bg-cream px-10 pt-40 pb-20 h-menu w-full relative">
+      <ul class="flex flex-col gap-10">
+        {%- for link in section.settings.menu_main.links -%}
+          <li class="nav-icon relative">
+            <a href="{{ link.url }}" class="flex font-serif text-48 leading-100 uppercase">
+              <span>{{ link.title | escape }}</span>
+            </a>
+          </li>
+        {%- endfor -%}
+
+        <li class="mt-10">
+          <ul
+            class="gap-20 items-center flex-shrink-0"
+            role="list"
+            tabindex="-1">
+            <li class="font-serif uppercase mb-10">{{ section.settings.menu_social.title }}</li>
+            {%- for link in section.settings.menu_social.links -%}
+              <li class="relative">
+                <a
+                  href="{{ link.url }}"
+                  class="text-24 js-link font-sans"
+                  rel="noopener noreferrer"
+                  target="_blank">
+                  <span>{{ link.title | escape }}</span>
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </li>
+      </ul>
+      <div class="absolute bottom-0 left-0 px-10 pb-20 flex flex-col gap-20 w-full">
+        <ul
+          class="flex flex-col"
+          role="list"
+          tabindex="-1">
+          {%- for link in section.settings.menu_social.links -%}
+            <li class="relative">
+              <a
+                href="{{ link.url }}"
+                class="text-24 js-link font-sans"
+                rel="noopener noreferrer"
+                target="_blank">
+                <span>{{ link.title | escape }}</span>
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+        <div class="flex justify-between items-center w-full">
+          <div>{{ 'now' | date: '%Y' }} © D'Cuja</div>
+          <a
+            class="block link-line"
+            href="https://marcd.co"
+            target="_blank"
+            rel="noopener noreferrer">Site Credits</a>
+        </div>
       </div>
-    {% comment %} <div class="js-cartCount text-[.8rem] bg-black rounded-full text-center w-[1.2rem] h-[1.2rem] flex items-center justify-center text-cream translate-y-[-50%] ml-[.2rem]">
-              <span>{{ cart.item_count }}</span>
-          </div> {% endcomment %}
-    </button>
+    </div>
   </div>
 </div>
 
 <button class="w-screen h-screen fixed left-0 top-0 js-menuClose hidden js-closeZone" aria-label="close menu"></button>
 
-<div class="nav-menu-wrap fixed top-0 left-0 h-full w-full m:hidden -translate-x-full flex flex-col" data-component="navMobile">
-  <ul
-    class="menu-list flex items-start flex-col bg-white pb-55 px-15 h-full pt-80"
-    role="list"
-    tabindex="-1">
-    <div class="divider mb-15"></div>
-    {%- for link in section.settings.menu_mobile.links -%}
-      <li class="text-primary w-full my-10{% if link.links[0] %} js-mobileDrop{% endif %}" data-title="{{ link.title }}">
-        <a href="{{ link.url }}" class="js-menuClose text-48 font-serif leading-100">
-          {{ link.title | escape }}
-        </a>
-      </li>
-    {%- endfor -%}
-  </ul>
-
-  <div class="flex flex-row justify-between items-center text-12 absolute bottom-0 left-0 p-15 w-full">
-    <div class="">
-      {{ 'now' | date: '%Y' }} © D'Cuja
-    </div>
-    <a
-      class="block"
-      href="https://marcd.co"
-      target="_blank"
-      rel="noopener noreferrer">Site Credits</a>
-  </div>
-</div>
-
-<div class="fixed z-9 top-0 left-0 pt-20 pl-20">
+<div class="hidden m:block fixed z-9 top-0 left-0 pt-20 pl-20">
   <a
     href="/"
     class="block js-logo"
@@ -103,13 +140,13 @@
       },
       {
         "type": "link_list",
-        "id": "menu_mobile",
-        "label": "Mobile Menu"
+        "id": "menu_social",
+        "label": "Social Menu"
       },
       {
-        "type": "text",
-        "id": "banner",
-        "label": "Banner Text"
+        "type": "link_list",
+        "id": "menu_legal",
+        "label": "legal Menu"
       }
     ]
 

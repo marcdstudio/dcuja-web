@@ -17,8 +17,20 @@
 </script>
 
 <div class="relative px-15 m:px-30 my-90">
-  <h2 class="title-xl">{{ section.settings.title }}</h2>
-  <div class="">
+  {% if section.index == 1 %}
+    <h2 class="title-3xl w-full text-center mb-75">{{ page.title }}</h2>
+  {% endif %}
+  {% if section.settings.image %}
+    <div class="js-faqImage faq-image sticky top-120" data-component="faqsImage">
+      {%
+        include 'lazy' with
+      className: 'js-faqImage w-full h-full object-cover rounded-tr-[2rem] rounded-br-[2rem] overflow-hidden',
+      src: section.settings.image,
+      size: '1400x' %}
+    </div>
+  {% endif %}
+
+  <div class="w-full">
     {%- include 'faqs-drawer' with large: true -%}
   </div>
 </div>
@@ -32,6 +44,12 @@
         "type": "text",
         "id": "title",
         "label": "Title"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image",
+        "info": "Only use for the first section."
       }
     ],
     "blocks": [

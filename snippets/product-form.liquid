@@ -62,7 +62,7 @@
       data-preorder="{{ product.metafields.custom.pre_order }}">
       <span class="js-addText pointer-events-none">
         {% if product.available %}
-        {% if product.metafields.custom.preorder %}Add To Cart{% else %} Pre-Order{% endif %} | <span class="js-addPrice">{{ product.price | money_without_trailing_zeros }}</span>
+          Add To Cart
         {% else %}
           Out of Stock
         {% endif %}

@@ -140,6 +140,7 @@ module.exports = {
       full: '100%',
       screen: 'calc(var(--vh, 1vh) * 100)',
       hero: 'calc(var(--vh, 1vh) * 100 - (var(--headerHeight)))',
+      menu: 'calc(var(--vh, 1vh) * 100 - (var(--headerHeight)))',
       '20vw': '2vw',
       '25vw': '2.5vw',
       '35vw': '3.5vw',

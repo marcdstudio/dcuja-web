@@ -41,11 +41,16 @@
 }
 
 .title {
+  &-3xl,
   &-2xl,
   &-xl,
   &-lg,
   &-md {
     @apply my-0;
+  }
+
+  &-3xl {
+    @apply text-36 m:text-100 font-serif leading-100;
   }
 
   &-2xl {

@@ -34,7 +34,7 @@
     class="text-14 m:text-16 bg-cream text-primary leading-[1.1] font-sans font-400 tracking-normal{% if settings.showBanner == true %} announce{% endif %}"
     data-shoptitle="{{shop.name | default: "D'Cuja"}}"
     data-theme="kiwi-vacation"
-    style="--headerHeight:65px;--primary: #38573A; --secondary: #B7B74B; --tertiary: #EFF0A3;">
+    style="--headerHeight:75px;--primary: #38573A; --secondary: #B7B74B; --tertiary: #EFF0A3;">
     {% comment %} Accessibilty snippet {% endcomment %}
     {%- render 'component-a11y' -%}
 
@@ -42,7 +42,7 @@
     <main
       id="MainContent"
       role="main"
-      class=""
+      class="{{ page.title | handleize }}"
       tabindex="-1">
       {{ content_for_layout }}
     </main>

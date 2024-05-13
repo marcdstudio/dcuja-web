@@ -3,11 +3,20 @@
 }
 
 .js-logo{
-  @apply w-[10rem];
+  @apply w-[6.8rem] m:w-[10rem];
 }
 
 .logo{
   .js-logo{
     @apply w-[55rem]
+  }
+}
+
+.js-menu{
+  @apply max-h-0 transition-[max-height] duration-500;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+
+  &.is-open{
+    @apply max-h-[calc(100vh-var(--headerHeight))]
   }
 }

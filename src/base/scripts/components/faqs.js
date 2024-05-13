@@ -1,17 +1,17 @@
-import { component } from 'picoapp'
-import choozy from 'choozy'
-import { on, toggle, qsa, qs, remove, add } from '@selfaware/martha'
+import { component } from "picoapp";
+import choozy from "choozy";
+import { on, toggle, qsa, qs, remove, add } from "@selfaware/martha";
 
 export default component((node, ctx) => {
-  let { faq, body } = choozy(node)
+  let { faq, body, inner, plus } = choozy(node);
 
-  on(faq, 'click', (e) => {
-    let openDrawer = qs('.faq-wrap.active')
+  console.log('faqs');
 
-    if (openDrawer && openDrawer?.dataset.index != e.target.dataset.index) {
-      // console.log('openDrawer', qs('.js-faq', openDrawer));
-      remove(openDrawer, 'active')
-    }
-    toggle(node, 'active')
-  })
-})
+  node.style.setProperty('--drawerHeight', `${inner.offsetHeight}px`)
+
+  on(faq, "click", (e) => {
+    toggle(body, "open");
+    toggle(node, "active");
+    toggle(plus, "rotate-45");
+  });
+});

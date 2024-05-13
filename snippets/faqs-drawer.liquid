@@ -1,8 +1,9 @@
-<div class="w-full faqs">
-  <ul class="w-full mt-20 flex flex-wrap">
+<div class="w-full relative faqs-section border border-solid border-primary rounded-[1rem] pt-50 pb-20">
+  <h2 class="absolute left-0 top-0 px-100 py-15 bg-tertiary border border-solid border-primary rounded-[100%] -translate-x-30 -translate-y-30 font-serif text-24 uppercase leading-100">{{ section.settings.title }}</h2>
+  <ul class="w-full flex flex-col gap-20">
     {% for block in section.blocks %}
       <li
-        class="items-center faq-wrap mt-2"
+        class="items-center faq-wrap"
         data-index="{{ forloop.index }}"
         data-component="faqs">
         <button
@@ -12,14 +13,14 @@
           <h2 class="title-medium text-left pointer-events-none">
             {{ block.settings.title }}
           </h2>
-          <div class="rounded-full flex items-center justify-center bg-white border border-solid border-black w-25 m:w-35 h-25 m:h-35 pointer-events-none flex-shrink-0">
-            <span class="js-plus w-[1.7rem] h-[1.7rem] flex items-center">
+          <div class="rounded-full flex items-center justify-centerm:w-15 m:h-15 pointer-events-none flex-shrink-0">
+            <span class="js-plus w-full h-full flex items-center transition-transform duration-300">
               {%- include 'icon-plus' -%}
             </span>
           </div>
         </button>
-        <div class="faq-body js-body hidden rte">
-          <div class="max-w-[80rem]">{{ block.settings.body }}</div>
+        <div class="faq-body js-body rte">
+          <div class="max-w-[80rem] js-inner"><div class="pt-20">{{ block.settings.body }}</div></div>
         </div>
       </li>
     {% endfor %}

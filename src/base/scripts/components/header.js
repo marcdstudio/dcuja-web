@@ -4,7 +4,7 @@ import { add, remove, on, qs, qsa, toggle } from '@selfaware/martha'
 import { gsap, Expo } from 'gsap'
 
 export default component((node, ctx) => {
-  let { cartToggle, menuOpen, announceBar, announceClose, anchor, nav } =
+  let { cartToggle, announceBar, announceClose, menu, anchor, nav, open, close, navToggle } =
     choozy(node)
 
   let headerClose = qs('.header-close')
@@ -27,17 +27,12 @@ export default component((node, ctx) => {
   })
 
   //define nav sizing
-  qs('body').style.setProperty(
-    '--headerHeight',
-    `${qs('header').offsetHeight}px`
-  )
-
   document.body.style.setProperty('--nav', `${nav.offsetWidth}px`); // Change to desired color
 
   on(window, 'resize', () => {
     qs('body').style.setProperty(
       '--headerHeight',
-      `${qs('header').offsetHeight}px`
+      `${qs('header').offsetHeight - 2}px`
     )
 
     document.body.style.setProperty('--nav', `${nav.offsetWidth}px`); // Change to desired color
@@ -46,26 +41,19 @@ export default component((node, ctx) => {
   setTimeout(() => {
     qs('body').style.setProperty(
       '--headerHeight',
-      `${qs('header').offsetHeight}px`
+      `${node.offsetHeight - 2}px`
     )
   }, 1000)
 
-  on(menuOpen, 'click', () => {
-    gsap.fromTo(
-      '.nav-menu-wrap',
-      { x: '-100%' },
-      { x: 0, duration: 0.5, ease: Expo.easeOut }
-    )
+  on(navToggle, 'click', () => {
+    toggle(open, 'hidden')
+    toggle(close, 'hidden')
 
-    add(menuOpen, 'hidden')
-    remove(headerClose, 'hidden')
-    remove(closeZone, 'hidden')
+    toggle(menu, 'is-open')
   })
 
-  qsa('.js-menuClose').forEach((btn) => {
-    on(btn, 'click', () => {
-      ctx.emit('menu:close')
-    })
+  on(window, 'resize', () => {
+    node.style.setProperty('--menuOffset', `${node.offsetHeight}`)
   })
 
   ctx.on('cart:updated', (state) => {
@@ -107,11 +95,4 @@ export default component((node, ctx) => {
       window.location.href = '/#cart'
     }
   }
-
-  if (anchor) {
-    on(anchor, 'click', (e) => {
-      window.location.href = e.target.dataset.link
-    })
-  }
-
 })

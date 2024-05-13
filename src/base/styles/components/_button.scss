@@ -28,6 +28,10 @@
   &.is-border{
     @apply border border-solid border-primary bg-cream text-primary hover:bg-tertiary;;
   }
+
+  &-add{
+    @apply bg-primary text-cream text-24 px-30 py-30 text-center w-full uppercase font-serif rounded-[.5rem];
+  }
 }
 
 .link {
@@ -55,9 +59,5 @@
 
   &-icon {
     @apply h-[2.5rem] inline-block mr-20;
-  }
-
-  &-add{
-    @apply bg-primary text-cream text-24 px-30 py-30 text-center w-full uppercase font-serif rounded-[.5rem];
   }
 }

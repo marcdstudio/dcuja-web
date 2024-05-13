@@ -2,16 +2,13 @@
   <div class='cart-drawer-overlay js-overlay'></div>
 
   <div class='cart-drawer m:border-l border-solid flex flex-col w-full bg-cream'>
-    <div class="cart-header w-full h-50 m:h-70 px-15 m:px-30 border-b border-solid flex items-center justify-center">
+    <div class="cart-header w-full h-75 m:h-70 px-15 m:px-20 border-b border-solid flex items-center justify-center">
       <div class="w-full flex justify-between items-center">
-        <div class='flex items-center'>
-          <span class="uppercase">
-            {% if settings.cart_promotion %}
-              {{ settings.cart_promotion }}{% else %}Cart{% endif %}
-          </span>
+        <div class="flex gap-5 uppercase font-serif pt-3"><span>Cart</span>
+          <span>(<span class="js-cartCount">{{ cart.item_count }}</span>)</span>
         </div>
-        <button aria-label="close cart" class='js-close flex items-center w-15 flex-shrink-0'>
-          <span class="title-medium uppercase">{%- include 'icon-close' -%}</span>
+        <button aria-label="close cart" class='js-close flex items-center w-30 flex-shrink-0'>
+          <span class="title-medium uppercase">{%- include 'icon-menu-close' -%}</span>
         </button>
       </div>
     </div>
