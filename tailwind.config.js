@@ -33,6 +33,8 @@ module.exports = {
       'gap-15',
       'rotate-45',
       'indent-[4rem]',
+      'bg-glass',
+      'm:bg-glass'
     ],
   },
   darkMode: false,

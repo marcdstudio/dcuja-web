@@ -3,8 +3,8 @@
 
   <div class='cart-drawer m:border-l border-solid flex flex-col w-full bg-cream'>
     <div class="cart-header w-full h-75 m:h-70 px-15 m:px-20 border-b border-solid flex items-center justify-center">
-      <div class="w-full flex justify-between items-center">
-        <div class="flex gap-5 uppercase font-serif pt-3"><span>Cart</span>
+      <div class="w-full flex justify-between items-center font-serif uppercase text-16">
+        <div class="flex gap-5 pt-3"><span>Cart</span>
           <span>(<span class="js-cartCount">{{ cart.item_count }}</span>)</span>
         </div>
         <button aria-label="close cart" class='js-close flex items-center w-30 flex-shrink-0'>
@@ -41,12 +41,12 @@
       {% endif %}
       <div class="w-full flex items-center p-15 m:p-30 bg-cream">
         <div class="flex items-center justify-center flex-col w-full overflow-hidden">
-          <div class="w-full flex justify-between items-center uppercase py-10">
-            <span class="block">Subtotal:</span>
+          <div class="w-full flex justify-between items-center py-10 text-20">
+            <span class="block">Subtotal</span>
             <span class="flex items-center">$<span class='js-subtotal block'>$-.--</span>
             </span>
           </div>
-          <button class="js-checkout uppercase is-solid w-full font-bold text-26 py-10 rounded-full border border-solid border-black transition-colors duration-300 hover:bg-black hover:text-egg" data-component="checkout">Checkout</button>
+          <button class="js-checkout btn-add uppercase w-full" data-component="checkout">Checkout</button>
         </div>
       </div>
     </div>

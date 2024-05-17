@@ -1,16 +1,16 @@
 <div
-  class="w-[100rem] min-w-[100rem] h-[40rem] relative mr-20 p-20 bg-cream rounded-[1.5rem] m:rounded-[2rem] flex gap-20 border border-solid border-primary">
-  <div class="block w-[36rem] h-[36rem] relative rounded-[1.5rem] m:rounded-[2rem] overflow-hidden translate-x-0 flex-shrink-0">
+  class="w-[calc(100%-1.5rem)] m:w-[100rem] min-w-[calc(100%-1.5rem)] m:min-w-[100rem] m:h-[40rem] relative mr-20 p-10 m:p-20 bg-cream rounded-[1.5rem] m:rounded-[2rem] flex flex-col m:flex-row gap-20 border border-solid border-primary">
+  <div class="block w-full m:w-[36rem] h-[80vw] m:h-[36rem] relative rounded-[1.5rem] m:rounded-[2rem] overflow-hidden translate-x-0 flex-shrink-0">
     {%
       include 'lazy' with className: 'h-full w-full object-cover absolute top-0 left-0'
       , src: block.settings.image
       , size: '800x' %}
   </div>
-  <div class="flex flex-col justify-between py-20">
+  <div class="flex flex-col justify-between m:py-20 px-10 pb-10">
     <div>
       <div class="title-sm">{{ block.settings.subtitle }}</div>
       <div class="title-2xl mt-5">{{ block.settings.title }}</div>
     </div>
-    <div class="text-24 leading-115">{{ block.settings.body }}</div>
+    <div class="text-18 m:text-24 leading-115 mt-10">{{ block.settings.body }}</div>
   </div>
 </div>

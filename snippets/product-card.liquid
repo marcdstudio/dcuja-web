@@ -1,21 +1,21 @@
 <div class="{{ class }}" data-component="product">
-  <div class="w-full relative pb-[100%] rounded-[1rem] overflow-hidden text-cream">
-    {% include 'lazy' with className: 'absolute top-0 left-0 w-full h-full'
+  <div class="w-full relative pb-[130%] m:pb-[100%] rounded-[1rem] overflow-hidden text-cream">
+    {% include 'lazy' with className: 'absolute top-0 left-0 w-full h-full object-cover'
       , src: meta.thumbnail
       , size: '1200x' %}
-    <div class="absolute top-30 left-30">
+    <div class="absolute left-20 m:left-30 top-20 m:top-30">
       <div class="title-lg flex flex-col leading-100">
         {% for word in splitTitle %}
           <span>{{ word }}</span>
         {% endfor %}
       </div>
-      <div class="flex gap-10 font-serif text-20 mt-10">
+      <div class="flex gap-10 font-serif text-16 m:text-20 mt-10">
         <span>{{ meta.quantity }}</span>
         <span>|</span>
         <span>{{ product.price | money_without_trailing_zeros }}</span>
       </div>
     </div>
-    <div class="absolute left-0 bottom-0 p-30 flex gap-10 z-2 w-full">
+    <div class="absolute left-0 bottom-0 p-10 m:p-30 flex flex-col m:flex-row gap-10 z-2 w-full">
       {% if product.available %}
         <div class="product-variant-wrap hidden{% if current_variant.selling_plan_allocations.size > 0 %} is-subscription{% endif %}">
           <select

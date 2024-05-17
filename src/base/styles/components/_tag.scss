@@ -2,10 +2,10 @@
   @apply w-[25rem] h-[7rem] bg-tertiary border border-solid border-primary text-24 font-serif leading-100 rotate-[-15deg] flex flex-col items-center justify-center text-center rounded-[100%];
 
   &-hero{
-    @apply absolute z-2 -top-60 flex flex-col text-center items-center justify-center origin-left w-[27rem] h-[9rem] border-2 border-solid border-primary rounded-[100%] bg-cream font-serif text-24 leading-100;
+    @apply text-16 m:text-24 absolute z-2 -top-55 m:-top-60 flex-col text-center items-center justify-center origin-left w-[17rem] m:w-[27rem] h-[5.5rem] m:h-[9rem] border m:border-2 border-solid border-primary rounded-[100%] bg-cream font-serif leading-100;
   }
 
   &-btn{
-    @apply absolute z-2 flex flex-col text-center items-center justify-center origin-left w-[calc(100%-4rem)] left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 h-[14rem] border-2 border-solid border-primary rounded-[100%] bg-tertiary font-serif text-24 leading-100;
+    @apply absolute z-2 flex-col text-center items-center justify-center origin-left w-[calc(100%-4rem)] left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 h-[14rem] border-2 border-solid border-primary rounded-[100%] bg-tertiary font-serif text-24 leading-100;
   }
 }

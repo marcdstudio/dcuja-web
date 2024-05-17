@@ -9,6 +9,15 @@ export default component((node, ctx) => {
 
   node.style.setProperty('--drawerHeight', `${inner.offsetHeight}px`)
 
+  //jank
+  setTimeout(() => {
+    node.style.setProperty('--drawerHeight', `${inner.offsetHeight}px`)
+  }, 500);
+
+  on(window, 'resize', () => {
+    node.style.setProperty('--drawerHeight', `${inner.offsetHeight}px`)
+  })
+
   on(faq, "click", (e) => {
     toggle(body, "open");
     toggle(node, "active");

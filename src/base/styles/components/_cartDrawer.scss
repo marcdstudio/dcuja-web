@@ -7,7 +7,7 @@
     z-index: 2;
     height: calc(var(--vh, 1vh) * 100);
 
-    @apply s:max-w-[60rem];
+    @apply s:max-w-[50rem];
 
     &-outer {
       pointer-events: none;
@@ -42,7 +42,7 @@
   }
 
   &-image {
-    @apply h-[10rem] w-[10rem] block rounded-10 overflow-hidden mr-10 flex-shrink-0;
+    @apply h-[13rem] w-[10rem] block rounded-[.5rem] overflow-hidden mr-10 flex-shrink-0;
   }
 
   &-item {

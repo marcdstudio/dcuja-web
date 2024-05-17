@@ -1,22 +1,19 @@
 <div class="px-15 m:px-60 my-90 m:my-120">
-  <div>
-    {% if section.settings.icon %}
-      <div class="w-[10vw] h-[10vw] absolute right-0 top-0 -translate-y-1/4 translate-x-1/4">
-        {%
-          include 'lazy' with className: 'h-full w-full object-contain'
-          , src: section.settings.icon
-          , size: '1000x' %}
+  <div class="w-full max-w-[80rem] mx-auto flex flex-col items-center text-center">
+    {% if section.settings.title.size > 0 %}
+      <h2 class="title-2xl">{{ section.settings.title }}</h2>
+    {% endif %}
+    {% if section.settings.body.size > 0 %}
+      <div class="w-full text-30 mt-25">
+        {{ section.settings.body }}
       </div>
     {% endif %}
-    <div class="title-lg flex gap-30 flex-col items-center justify-center m:block text-center m:text-left">
-      {% if section.settings.subtitle.size > 0 %}
-        <span class="bg-lime rounded-full uppercase inline-block text-14 px-15 py-5 m:-translate-y-7">{{ section.settings.subtitle }}</span>
-      {% endif %}
-      {{ section.settings.title }}
-    </div>
+    {% if section.settings.cta.size > 0 %}
+      {% include 'cta' with className: 'btn mt-35'
+        , text: section.settings.cta
+        , href: section.settings.link %}
+    {% endif %}
   </div>
-
-
 </div>
 
 {% schema %}
@@ -31,8 +28,18 @@
       },
       {
         "type": "text",
-        "id": "subtitle",
-        "label": "Subtitle"
+        "id": "body",
+        "label": "Body"
+      },
+      {
+        "type": "text",
+        "id": "cta",
+        "label": "CTA"
+      },
+      {
+        "type": "url",
+        "id": "link",
+        "label": "Link"
       }
     ],
     "presets": [

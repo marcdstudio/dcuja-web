@@ -36,7 +36,7 @@ function createItem({
       ? `data-planid='${item.selling_plan_allocation.selling_plan.id}'`
       : ``
   }>
-  <div class='relative w-full border-b border-solid p-20'>
+  <div class='relative w-full border-b border-solid p-15 m:p-20'>
     <div class="flex justify-between w-full">
       <div class="flex w-full">
         <a href='${url}' class="cart-image" aria-label="view ${title}">
@@ -45,8 +45,8 @@ function createItem({
         <div class="pl-10 flex items-start flex-col justify-between font-bold flex-grow">
           <div class="w-full flex-grow">
             <div class="w-full flex justify-between">
-              <a href='${url}' class='title-small uppercase'>${title}</a>
-              <div class='cart-drawer__item--price flex-shrink-0'>
+              <a href='${url}' class='title-cart uppercase'>${title}</a>
+              <div class='cart-drawer__item--price flex-shrink-0 text-20'>
                 ${
                   original_price > price
                     ? `<span class="js-price line-through">$${formatMoney(
@@ -64,12 +64,12 @@ function createItem({
             }
           </div>
           <div class="w-full flex justify-between items-end">
-            <div class='cart-item__qty flex justify-between px-10 flex-shrink-0 items-center leading-100 text-14 py-5 border border-solid h-25'>
+            <div class='cart-item__qty flex justify-between px-10 flex-shrink-0 items-center leading-100 text-20 py-5 border border-solid h-25'>
               <div class='cart-quantity btn-quantity js-remove-single cursor-pointer'><span class="block">&ndash;</span></div>
               <div class='js-single-quantity mx-5'>${quantity}</div>
               <div class='cart-quantity btn-quantity js-add-single cursor-pointer'><span class="block">+</span></div>
             </div>
-            <button class='button--reset js-remove-item text-right text-12 cart-item__remove lh100' aria-label="remove item"><span class="block underline">REMOVE</span></button>
+            <button class='button--reset js-remove-item text-right text-14 cart-item__remove lh100' aria-label="remove item"><span class="block underline">REMOVE</span></button>
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 {% assign stngs = section.settings %}
-<div class="w-full relative px-30 my-120">
+<div class="w-full relative px-30 my-60 m:my-120">
   {% if stngs.title %}
     <h2 class="title-sm bg-tertiary text-center px-30 py-15 rounded-full border border-solid border-primary mx-auto w-[fit-content] mb-30">{{ stngs.title }}</h2>
   {% endif %}
@@ -7,7 +7,7 @@
   {% assign meta = product.metafields.custom %}
   {% assign splitTitle = product.title | split: ' ' %}
 
-  <div class="flex flex-col m:flex-row gap-20" data-product="product">
+  <div class="hidden m:flex flex-col m:flex-row gap-20" data-product="product">
     <div class="w-1/2 h-[65rem] relative">
       {% include 'lazy' with className: 'absolute top-0 left-0 w-full h-full rounded-[1rem]'
         , src: meta.thumbnail
@@ -82,6 +82,9 @@
         </button>
       </div>
     </div>
+  </div>
+  <div class="m:hidden" data-component="product">
+    {% include 'product-card' %}
   </div>
 </div>
 

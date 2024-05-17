@@ -1,5 +1,5 @@
 <div
-  class="product-info flex mb-90"
+  class="product-info flex mb-60 m:mb-90"
   data-component="product productOptions productVariant productDetails{% if product.images.size > 1 %} productCarousel{% endif %}"
   data-pagetitle="{{ page_title }}"
   data-primary="{{ product.metafields.custom.primary }}"
@@ -21,8 +21,8 @@
   <div
     data-currentvariant="{{ current_variant.id }}"
     data-currentproduct="{{ product.id }}"
-    class="w-full flex flex-col m:flex-row px-20 gap-20 py-20 h-screen">
-    <div class="pt-80 flex flex-col gap-10">
+    class="w-full flex flex-col m:flex-row px-15 m:px-20 gap-20 pt-[calc(var(--headerHeight)+1.5rem)] m:py-20 m:h-screen">
+    <div class="pt-80 hidden m:flex flex-col gap-10">
       {% for media in product.media %}
         <button class="w-[10rem] h-[10rem] rounded-[.5rem] overflow-hidden translate-x-0 js-thumb" data-index="{{ forloop.index }}">
           {%
@@ -71,7 +71,7 @@
             </h1>
 
           </div>
-          <div class="text-24 mt-5 rte">
+          <div class="text-18 m:text-24 mt-5 rte">
             {{ product.description }}
           </div>
           {% if meta.shipping_note %}

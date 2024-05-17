@@ -1,5 +1,5 @@
 .btn {
-  @apply text-24 font-serif p-15 leading-100 rounded-[.5rem] transition-colors duration-300 bg-primary text-cream text-center hover:bg-primary hover:text-secondary;
+  @apply text-20 m:text-24 font-serif p-15 leading-100 rounded-[.5rem] transition-colors duration-300 bg-primary text-cream text-center hover:bg-primary hover:text-secondary;
 
   &-cart{
     @apply px-15 py-8 rounded-[.5rem] bg-tertiary leading-100;
@@ -10,7 +10,7 @@
   }
 
   &-hero{
-    @apply  text-center py-20 w-full flex items-center justify-center absolute bottom-0 text-22 uppercase font-serif;
+    @apply text-center py-15 m:py-20 w-full flex items-center justify-center absolute bottom-0 text-22 uppercase font-serif;
   }
 
   &.is-glass{
@@ -22,7 +22,7 @@
   }
 
   &.is-signup{
-    @apply text-20 rounded-10 py-10 px-15;
+    @apply text-20 rounded-[.5rem] m:rounded-[1rem] py-10 px-15;
   }
 
   &.is-border{

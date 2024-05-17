@@ -1,9 +1,9 @@
 {% assign stngs = section.settings %}
 
-<div class="w-full flex flex-col m:flex-row pl-140 pr-20 gap-20 py-20 h-screen relative">
-  <h1 class="text-100 font-serif uppercase leading-100 bg-tertiary border border-solid border-primary rounded-[100%] absolute z-2 top-[10rem] left-[-6rem] text-center px-[13rem] pb-[3rem] pt-[4rem]">{{ section.settings.title }}</h1>
+<div class="w-full flex flex-col m:flex-row pl-15 m:pl-140 pr-15 m:pr-20 gap-20 py-20 m:h-screen relative pt-[calc(var(--headerHeight)+1.5rem)] m:pt-0">
+  <h1 class="text-36 m:text-100 font-serif uppercase leading-100 bg-tertiary border border-solid border-primary rounded-[100%] absolute z-2 top-[10rem] left-[-6rem] text-center px-90 m:px-[13rem] pb-[2rem] m:pb-[3rem] pt-[2rem] m:pt-[4rem]">{{ section.settings.title }}</h1>
   <div class="flex-grow w-full m:flex-1 h-[100vw] m:h-full relative">
-    <div class="js-carousel m:z-2 w-full overflow-hidden h-[100vw] m:h-full">
+    <div class="w-full overflow-hidden h-[100vw] m:h-full">
       {%
         include 'lazy' with className: 'w-full h-full object-cover absolute left-0 top-0 rounded-[1rem]'
         , src: section.settings.image
@@ -13,7 +13,7 @@
 
   <div class="flex-shrink-0 flex flex-col justify-end pb-[2rem]">
     <div class="w-full mx-auto max-w-[60rem] m:w-[var(--nav)] m:min-w-[40rem] flex items-end">
-      <div class="text-24 mt-5 rte">
+      <div class="text-20 m:text-24 mt-5 rte">
         {{ section.settings.body }}
       </div>
     </div>
@@ -25,7 +25,7 @@
   {
     "name": "Image Text Overlay",
     "tag": "section",
-    "class": "mb-90",
+    "class": "mb-60 m:mb-90",
     "settings": [
       {
         "type": "image_picker",

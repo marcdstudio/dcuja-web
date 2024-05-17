@@ -1,6 +1,6 @@
 .footer {
   &-menu {
-    @apply flex flex-col col-span-4 items-start justify-start;
+    @apply flex flex-col col-span-12 m:col-span-4 items-start justify-start;
   }
 }
 

@@ -3,10 +3,10 @@
     <div class="absolute z-2 left-0 top-0 w-full text-cream rotate-180">{% include 'icon-wave' %}</div>
   {% endif %}
 
-  <div class="w-1/2 min-h-[50rem] py-50 flex items-center justify-center">
+  <div class="w-full m:w-1/2 m:min-h-[50rem] pb-50 pt-10 m:py-50 flex items-center justify-center px-15 relative z-3">
     <div class="w-full max-w-[60rem] relative">
       {% if section.settings.subtitle.size > 0 %}
-        <div class="tag -translate-y-30">
+        <div class="tag translate-x-[-8rem] m:translate-x-0 -translate-y-30">
           {% assign splitTitle = section.settings.subtitle | split: ' ' %}
           {% for word in splitTitle %}
             <span>{{ word }}</span>
@@ -18,19 +18,23 @@
       {% endif %}
 
       {% if section.settings.body.size > 0 %}
-        <div class="mt-60 m:mt-25 rte text-24">{{ section.settings.body }}</div>
+        <div class="mt-15 m:mt-25 rte text-18 m:text-24">{{ section.settings.body }}</div>
+      {% endif %}
+
+      {% if section.settings.link %}
+        <a class="btn flex m:hidden mt-25 m:mt-0" href="{{ section.settings.link }}">{{ section.settings.cta }}</a>
       {% endif %}
     </div>
   </div>
-  <div class="w-1/2 relative">
-    <div class="block w-full h-full relative rounded-[1.5rem]">
+  <div class="w-full m:w-1/2 relative">
+    <div class="block w-full h-[70vw] m:h-full relative rounded-[1.5rem]">
       {%
         include 'lazy' with className: 'w-full h-full object-cover absolute left-0 top-0'
         , src: section.settings.image
         , size: '1400x' %}
     </div>
     {% if section.settings.link %}
-      <a class="tag-btn" href="{{ section.settings.link }}">{{ section.settings.cta }}</a>
+      <a class="tag-btn hidden m:flex" href="{{ section.settings.link }}">{{ section.settings.cta }}</a>
     {% endif %}
   </div>
 

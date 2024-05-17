@@ -5,7 +5,7 @@
   {% endif %}
 {% endfor %}
 
-<div class="flex my-90 flex-wrap" data-component="banner">
+<div class="flex my-60 m:my-90 flex-wrap" data-component="banner">
   <script class="js-images hidden">
     {
       "images": [{% for block in section.blocks %}
@@ -15,15 +15,20 @@
     }
   </script>
 
-  <div class="flex flex-wrap font-serif text-120 leading-100 px-50 gap-20" data-size="{{ section.blocks.size }}">
+  <div class="flex flex-wrap font-serif text-48 m:text-[7vw] leading-100 px-15 m:px-50 gap-20" data-size="{{ section.blocks.size }}">
     {% assign currentWord = 0 %}
     {% for block in section.blocks %}
       {% if block.type == 'text' %}
         {% assign currentWord = currentWord | plus: 1 %}
+
         <div class="flex-shrink-0{% if currentWord == 1 %}{% endif %}">{{ block.settings.text }}</div>
-        <div class="flex-1 min-w-[30rem] relative rounded-[100%] overflow-hidden{% if wordCount == 3 %} min-w-[20%]{% endif %}"><img class="js-image absolute left-0 top-0 w-full h-full object-cover"></img></div>
+
+        {% unless currentWord == 4 and wordCount == 4 %}
+          <div class="flex-1 min-w-[10rem] m:min-w-[20vw] relative rounded-[100%] overflow-hidden{% if wordCount == 3 %} min-w-[20%]{% endif %}"><img class="js-image absolute left-0 top-0 w-full h-full object-cover"></img></div>
+        {% endunless %}
+
         {% if currentWord == 2 and wordCount == 4 %}
-          <div class="flex-1 min-w-[30rem] relative rounded-[100%] overflow-hidden"><img class="js-image absolute left-0 top-0 w-full h-full object-cover"></img></div>
+          <div class="flex-1 min-w-[10rem] m:min-w-[20vw] relative rounded-[100%] overflow-hidden"><img class="js-image absolute left-0 top-0 w-full h-full object-cover"></img></div>
         {% endif %}
       {% endif %}
     {% endfor %}

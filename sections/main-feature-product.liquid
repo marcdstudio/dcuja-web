@@ -1,29 +1,29 @@
-<div class="w-full px-20 mt-200 mb-90 flex flex-col items-center">
+<div class="w-full overflow-hidden px-20 pt-100 m:pt-200 mb-60 m:mb-90 flex flex-col items-center">
   <div class="relative">
-    <div class="w-[27rem] h-[15rem] rounded-[100%] overflow-hidden absolute rotate-[11deg] left-[-5rem] -translate-y-100">
+    <div class="w-[22rem] m:w-[27rem] h-[13rem] m:h-[15rem] rounded-[100%] overflow-hidden absolute rotate-[11deg] left-[-15rem] m:left-[-5rem] -translate-y-50 m:-translate-y-100">
       {% include 'lazy' with className: 'w-full h-full object-fit'
         , src: section.settings.imageLeft
         , size: '1200x' %}
     </div>
-    <div class="w-[27rem] h-[15rem] rounded-[100%] overflow-hidden absolute rotate-[80deg] left-1/2 -translate-x-1/2 -translate-y-50">
+    <div class="w-[22rem] m:w-[27rem] h-[13rem] m:h-[15rem] rounded-[100%] overflow-hidden absolute rotate-[80deg] left-1/2 -translate-x-1/2 translate-y-10 m:-translate-y-50">
       {% include 'lazy' with className: 'w-full h-full object-fit'
         , src: section.settings.imageCenter
         , size: '1200x' %}
     </div>
-    <div class="w-[27rem] h-[15rem] rounded-[100%] overflow-hidden absolute rotate-[-20deg] -right-50 -translate-y-40">
+    <div class="w-[22rem] m:w-[27rem] h-[13rem] m:h-[15rem] rounded-[100%] overflow-hidden absolute rotate-[-20deg] -right-150 m:-right-50 translate-y-10 m:-translate-y-40">
       {% include 'lazy' with className: 'w-full h-full object-fit'
         , src: section.settings.imageRight
         , size: '1200x' %}
     </div>
     <h2 class="relative z-2 title-sm text-center w-[fit-content] px-30 py-15 rounded-full border border-solid border-primary bg-tertiary text-primary">{{ section.settings.title }}</h2>
   </div>
-  <div class="flex gap-20 w-full mt-40">
+  <div class="flex flex-col m:flex-row gap-20 w-full mt-40">
     {% for block in section.blocks %}
       {% assign product = block.settings.product %}
       {% assign meta = product.metafields.custom %}
       {% assign splitTitle = product.title | split: ' ' %}
 
-      {% include 'product-card' with class: 'flex-grow' %}
+      {% include 'product-card' with class: 'flex-grow w-full m:w-[unset]' %}
     {% endfor %}
   </div>
 </div>

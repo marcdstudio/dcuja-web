@@ -54,27 +54,31 @@
   }
 
   &-2xl {
-    @apply text-36 m:text-60 font-serif leading-100;
+    @apply text-48 m:text-60 font-serif leading-100;
   }
 
   &-xl {
-    @apply text-30 m:text-50 font-serif leading-115;
+    @apply text-48 m:text-50 font-serif leading-115;
   }
 
   &-lg {
-    @apply text-22 m:text-36 font-serif leading-115;
+    @apply text-24 m:text-36 font-serif leading-115;
   }
 
   &-md {
-    @apply text-30 font-sans leading-115;
+    @apply text-24 m:text-30 font-serif leading-115;
   }
 
   &-sm {
-    @apply text-24 font-serif leading-115;
+    @apply text-18 m:text-24 font-serif leading-115;
   }
 
   &-xs {
     @apply text-20 font-serif leading-115;
+  }
+
+  &-cart {
+    @apply text-20 font-serif leading-115 w-50;
   }
 }
 

@@ -7,7 +7,7 @@ export default component((node, ctx) => {
   let { subDetailToggle, subDetail, quantity } = choozy(node)
 
   const json = JSON.parse(qs('.js-product-json', node).innerHTML)
-  const addBtn = qs('.js-add-to-cart', node)
+  const addBtn = qs('.btn-add', node)
   const addText =
     addBtn.innerHTML ||
     `${addBtn.dataset?.preorder == 'true' ? 'Pre-Order' : 'Add To Cart'} | ${

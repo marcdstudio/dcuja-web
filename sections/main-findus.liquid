@@ -1,0 +1,21 @@
+<div class="w-full pt-160 px-20 mb-90" data-pagetitle="{{ page_title }}">
+  <div class="w-full max-w-[100rem] mx-auto">
+    <h1 class="title-2xl mb-35 m:mb-50 w-full text-center">{{ page.title }}</h1>
+    <div class="rte text-18">
+      {{ page.content }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Find Us",
+    "tag": "section",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Default Page Content"
+      }
+    ]
+  }
+{% endschema %}

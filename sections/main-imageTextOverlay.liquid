@@ -1,32 +1,35 @@
 {% assign stngs = section.settings %}
 
 <div class="relative mb-90 m:mb-90">
-  <div class="overflow-hidden relative z-2 h-[60rem]">
+  <div class="overflow-hidden relative z-2 h-[60vw] m:h-[60rem]">
     {%
       include 'lazy' with className: 'w-full h-full object-cover absolute left-0 top-0'
       , src: stngs.image
       , size: '1400x' %}
+      <div class="m:hidden w-full text-cream absolute bottom-0 left-0">{% include 'icon-wave' %}</div>
+
   </div>
-  <div class="w-full max-w-[120rem] absolute z-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-glass border border-solid border-primary rounded-[1rem] p-50">
-    <div class="flex justify-between gap-20">
-      <div class="w-full max-w-[60rem] text-cream">
+
+  <div class="overlay-card">
+    <div class="flex flex-col m:flex-row justify-between gap-20">
+      <div class="w-full max-w-[60rem] m:text-cream mt-25 m:mt-0">
         {% if stngs.title.size > 0 %}
-          <h2 class="title-xl">{{ stngs.title }}</h2>
+          <h2 class="title-lg m:title-xl">{{ stngs.title }}</h2>
         {% endif %}
 
         {% if stngs.body.size > 0 %}
-          <div class="mt-25 rte text-24">{{ stngs.body }}</div>
+          <div class="mt-10 m:mt-25 rte text-18 m:text-24">{{ stngs.body }}</div>
         {% endif %}
       </div>
 
       {% if stngs.link.size > 0 %}
         {% include 'cta' with href: section.settings.link
           , text: section.settings.cta
-          , className: 'block bg-cream border border-solid border-primary w-[40rem] flex-shrink-0 flex items-center justify-center rounded-[1rem]' %}
+          , className: 'block bg-primary m:bg-cream text-cream m:text-primary border border-solid border-primary w-full m:w-[40rem] py-15 m:py-0 flex-shrink-0 flex items-center justify-center rounded-[.5rem] m:rounded-[1rem] text-24 font-serif uppercase leading-100' %}
       {% endif %}
     </div>
   </div>
-  <div class="absolute z-2 left-0 bottom-0 w-full text-cream">{% include 'icon-wave' %}</div>
+  <div class="hidden m:block absolute z-2 left-0 bottom-0 w-full text-cream">{% include 'icon-wave' %}</div>
 </div>
 
 {% schema %}
