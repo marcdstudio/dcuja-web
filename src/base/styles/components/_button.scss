@@ -34,7 +34,7 @@
   }
 
   &-add{
-    @apply bg-primary text-cream text-24 px-30 py-30 text-center w-full uppercase font-serif rounded-[.5rem];
+    @apply bg-primary text-cream text-24 px-30 py-30 text-center w-full uppercase font-serif rounded-[.5rem] transition-colors duration-300 hover:text-secondary;
   }
 }
 
@@ -59,6 +59,10 @@
     &:hover {
       opacity: 0.5;
     }
+  }
+
+  &-nav{
+    @apply hover:text-secondary transition-colors duration-300;
   }
 
   &-icon {

@@ -1,0 +1,8 @@
+.js-step{
+  &.is-active{
+    .step-bg{
+      @apply scale-[1.1];
+    }
+
+  }
+}

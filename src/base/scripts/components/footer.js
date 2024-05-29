@@ -4,8 +4,12 @@ import { remove, add } from '@selfaware/martha'
 
 import { update } from 'lazim'
 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 export default component((node, ctx) => {
-  let { images, image } = choozy(node);
+  let { images, image, container, footerImage } = choozy(node);
 
   const allImages = JSON.parse(images?.innerHTML).images;
 
@@ -19,9 +23,22 @@ export default component((node, ctx) => {
     update()
   }
 
-  themeImages()
+  setTimeout(() => {
+    themeImages()
+  }, 500);
 
   ctx.on('theme', () => {
     themeImages()
   })
+
+  //handle parallax
+  gsap.to(footerImage, {
+    y: -100,
+    scrollTrigger: {
+      trigger: container,
+      start: "top bottom",
+      end: "bottom bottom",
+      scrub: true
+    }
+  });
 })

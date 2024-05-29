@@ -1,6 +1,6 @@
 <div class="z-[9] header fixed top-0 right-0 pr-15 m:pr-20 pt-15 m:pt-20 pl-15 m:pl-0 font-serif w-full m:w-[unset]" data-component="header">
   <div class="js-nav relative z-2 header-content bg-cream border border-solid border-primary rounded-[.5rem] pr-10 py-10 pl-10 m:pl-20 flex justify-between w-full">
-    <div class="block m:hidden">
+    <div class="block m:hidden text-current transition-colors duration-300">
       <a
         href="/"
         class="block js-logo"
@@ -14,7 +14,7 @@
       role="list"
       tabindex="-1">
       {%- for link in section.settings.menu_main.links -%}
-        <li class="nav-icon relative">
+        <li class="link-nav relative">
           <a href="{{ link.url }}" class="flex items-center btn-nav relative js-link">
 
             <span>{{ link.title | escape }}</span>
@@ -26,7 +26,7 @@
       {%- endfor -%}
 
       <li class="">
-        <button aria-label="toggle cart" class="js-cartToggle flex items-center gap-5 relative btn-cart">
+        <button aria-label="toggle cart" class="js-cartToggle flex items-center gap-5 relative btn-cart link-nav">
           <span class="hidden m:block">Cart</span>
           <div>
             (<span class="js-cartCount">{{ cart.item_count }}</span>)

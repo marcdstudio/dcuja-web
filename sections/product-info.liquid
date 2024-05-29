@@ -1,10 +1,11 @@
 <div
   class="product-info flex mb-60 m:mb-90"
-  data-component="product productOptions productVariant productDetails{% if product.images.size > 1 %} productCarousel{% endif %}"
+  data-component="product productOptions productVariant productDetails productTheme{% if product.images.size > 1 %} productCarousel{% endif %}"
   data-pagetitle="{{ page_title }}"
   data-primary="{{ product.metafields.custom.primary }}"
   data-secondary="{{ product.metafields.custom.secondary }}"
   data-tertiary="{{ product.metafields.custom.tertiary }}"
+  data-theme="{{ product.title | handleize  }}"
   style="--primary: {{ product.metafields.custom.primary }};--secondary: {{ product.metafields.custom.secondary }};--tertiary: {{ product.metafields.custom.tertiary }};">
   {% include 'product-head' %}
   {% assign meta = product.metafields.custom %}

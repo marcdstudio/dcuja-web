@@ -1,6 +1,6 @@
 <div class="w-full bg-secondary flex pb-[calc(6rem+2rem)] pt-60 overflow-hidden relative" data-component="steps">
   <div class="flex w-full justify-center flex-shrink-0">
-    <div class="flex-1 m:rounded-tr-full rounded-bl-full m:rounded-bl-none rounded-br-full overflow-hidden absolute m:relative left-1/2 m:left-[unset] -translate-x-1/2 m:translate-x-0 top-0 m:top-[unset] h-[20rem] m:h-[unset] w-full m:w-[unset]">
+    <div class="flex-1 m:rounded-tr-full rounded-bl-full m:rounded-bl-none rounded-br-full overflow-hidden absolute m:relative z-2 left-1/2 m:left-[unset] -translate-x-1/2 m:translate-x-0 top-0 m:top-[unset] h-[20rem] m:h-[unset] w-full m:w-[unset]">
       {% include 'lazy' with className: 'w-full h-full object-cover'
         , src: section.settings.imageLeft
         , size: '1200x' %}
@@ -10,14 +10,14 @@
     </div>
     <div class="px-[2rem] hidden m:flex">
       {% for block in section.blocks %}
-        {% include 'step' %}
+        {% include 'step' with animate: true %}
       {% endfor %}
     </div>
     <div class="w-full m:hidden relative z-3">
       <div class="js-carousel m:z-2 w-full overflow-hidden">
         <div class="flex select-none w-full relative">
           {% for block in section.blocks %}
-            {% include 'step' %}
+            {% include 'step' with animate: false %}
           {% endfor %}
         </div>
       </div>

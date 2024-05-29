@@ -1,43 +1,29 @@
-import { component } from 'picoapp'
-import choozy from 'choozy'
-import { has } from '@selfaware/martha'
-import flickity from 'flickity'
+import { component } from "picoapp";
+import choozy from "choozy";
+import { has } from "@selfaware/martha";
+import flickity from "flickity";
+
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 export default component((node, ctx) => {
-  let { carousel, next, prev, thumb } = choozy(node)
+  let { carousel, next, prev, thumb } = choozy(node);
 
-  const options = {
-    cellAlign: 'left',
-    contain: true,
-    prevNextButtons: false,
-    pageDots: false,
-    wrapAround: true,
-    lazyLoad: true,
-    draggable: true,
-    imagesLoaded: true,
-  }
+  // scroll animation
 
-  let flkty
-
-  const initFlkty = () => {
-    flkty = new flickity(carousel, options)
-  }
-
-  if (document.documentElement.clientWidth < 850) {
-    initFlkty()
-
-    setTimeout(() => {
-      flkty.resize()
-    }, 1000)
-  }
-
-  window.addEventListener('resize', () => {
-    if (document.documentElement.clientWidth < 850) {
-      initFlkty()
-    } else {
-      if (has(carousel, 'flickity-enabled')) {
-        flkty.destroy()
-      }
+  // Create a gsap.timeline
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: node,
+      start: "top bottom", // Start the animation when the container is at the top of the viewport
+      end: "center center", // End the animation when the container is at the bottom of the viewport
+      scrub: .2, // Smoothly animate as you scroll
     }
-  })
-})
+  });
+
+  // Add rotation animations for each element to the timeline
+  gsap.utils.toArray('.js-vign').forEach(element => {
+    tl.to(element, { rotation: "+=20", duration: 1 }, "-=0.5"); // Adjust the timing overlap as needed
+  });
+});

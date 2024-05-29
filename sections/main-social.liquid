@@ -1,5 +1,6 @@
 {% assign stngs = section.settings %}
-<div class="w-full relativeoverflow-hidden">
+{% assign btnClass = 'absolute z-3 top-1/2 -translate-y-1/2 bg-cream w-40 h-40 border border-solid border-primary rounded-full flex items-center justify-center' %}
+<div class="w-full relative overflow-hidden">
   <div class="w-full bg-secondary pb-40 pt-30 m:py-60" data-component="social">
     <div class="js-carousel m:z-2 w-full overflow-hidden">
       <div class="flex select-none w-full relative">
@@ -27,6 +28,12 @@
         {% endfor %}
       </div>
     </div>
+    <button class="{{ btnClass }} js-prev left-20">
+      <div class="w-[2rem]">{% include 'icon-arrow' %}</div>
+    </button>
+    <button class="{{ btnClass }} js-next rotate-180 right-20">
+      <div class="w-[2rem]">{% include 'icon-arrow' %}</div>
+    </button>
   </div>
 </div>
 <div class="text-secondary rotate-180">

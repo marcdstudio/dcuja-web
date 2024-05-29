@@ -23,22 +23,23 @@
   data-secondary="{{ firstProduct.metafields.custom.secondary }}"
   data-tertiary="{{ firstProduct.metafields.custom.tertiary }}"
   data-theme="{{ firstProduct.title | handleize  }}"
-  data-component="hero">
+  data-component="hero"
+  class="">
 
   <script class="js-products hidden">
     {
       "products": [{% for block in section.blocks %}
           {% assign meta = block.settings.product.metafields.custom %}
           {% assign product = block.settings.product %}
-          { "icon": "{{ meta.product_icon | img_url: '600x'  }}", "hero": "{{ meta.hero | img_url: '2000x' }}", "primary": "{{ meta.primary }}", "secondary": "{{ meta.secondary }}", "tertiary": "{{ meta.tertiary }}", "url": "{{ block.settings.product.url }}" }{% unless forloop.last %},{% endunless %}
+          { "icon": "{{ meta.product_icon | img_url: '600x'  }}", "hero": "{{ meta.hero | img_url: '2000x' }}", "primary": "{{ meta.primary }}", "secondary": "{{ meta.secondary }}", "tertiary": "{{ meta.tertiary }}", "url": "{{ block.settings.product.url }}", "title": "{{ block.settings.product.title }}" }{% unless forloop.last %},{% endunless %}
         {% endfor %}]
     }
   </script>
 
   {% assign meta = firstProduct.metafields.custom %}
 
-  <div class="absolute left-0 top-0 w-full h-full">
-    {% include 'lazy' with className: 'w-full h-full object-cover js-hero'
+  <div class="absolute left-0 top-0 w-full h-full js-heroImage bg-secondary transition-colors duration-300">
+    {% include 'lazy' with className: 'w-full h-full object-cover js-hero js-themeElement'
       , src: meta.hero
       , force: true
       , size: '2000x' %}
@@ -46,18 +47,18 @@
   <div class="absolute bottom-0 left-0 p-30 pt-50 bg-cream w-full">
     <div class="absolute left-0 top-0 translate-y-[calc(-100%+.1rem)] w-full text-cream">{% include 'icon-wave' %}</div>
 
-    <div class="tag-hero rotate-[-15deg] left-30 hidden m:flex">
+    <div class="tag-hero rotate-[-15deg] left-30 hidden m:flex transition-colors duration-300">
       {{ tagLeft }}
     </div>
-    <div class="tag-hero rotate-[-5deg] left-[20rem] hidden m:flex">
+    <div class="tag-hero rotate-[-5deg] left-[20rem] hidden m:flex transition-colors duration-300">
       {{ tagRight }}
     </div>
-    <h1 class="title-2xl max-w-[80rem] hidden m:block">{{ section.settings.title }}</h1>
+    <h1 class="title-2xl max-w-[80rem] hidden m:block transition-colors duration-300">{{ section.settings.title }}</h1>
   </div>
 
   <div class="absolute right-15 m:right-20 top-90 z-2 w-[calc(100%-3rem)] m:w-[var(--nav)] max-w-[60rem] m:min-w-[40rem] h-[calc(100vh-11rem)] bg-glass border border-solid border-primary rounded-[.5rem] overflow-hidden">
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[calc(100%-12rem)] m:h-[calc(100%-7rem)] flex items-center justify-center">
-      {% include 'lazy' with className: 'w-[85%] h-[85%] object-contain js-icon'
+      {% include 'lazy' with className: 'w-[85%] h-[85%] object-contain js-icon js-themeElement'
         , src: meta.product_icon
         , force: true
         , size: '800x' %}
@@ -73,7 +74,7 @@
       <div class="font-serif text-30 uppercase leading-100 w-full">{{ section.settings.title }}</div>
     </div>
 
-    <div class="absolute top-20 right-20 flex flex-col gap-15">
+    <div class="absolute top-20 right-20 flex flex-col gap-15 js-toggles">
       {% for block in section.blocks %}
         {% assign product = block.settings.product %}
         {% assign meta = product.metafields.custom %}
@@ -92,7 +93,10 @@
       {% endfor %}
     </div>
 
-    <a class="btn-theme btn-hero js-link" href="{{ firstProduct.url }}">{{ firstProduct.title }}</a>
+    <a class="btn-theme btn-hero js-link flex gap-10 group" href="{{ firstProduct.url }}">
+      <span class="block pt-2 js-cta">{{ firstProduct.title }}</span>
+      <span class="block w-[2rem] rotate-180 transition-transform duration-300 group-hover:translate-x-5">{% include 'icon-arrow' %}</span>
+    </a>
   </div>
 </div>
 

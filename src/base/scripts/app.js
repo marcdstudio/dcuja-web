@@ -32,6 +32,8 @@ import social from 'base/scripts/components/social.js'
 import cards from 'base/scripts/components/cards.js'
 import faqsImage from 'base/scripts/components/faqsImage.js'
 import steps from 'base/scripts/components/steps.js'
+import productFeature from 'base/scripts/components/productFeature.js'
+import productTheme from 'base/scripts/components/productTheme.js'
 
 const state = {
   cartOpen: false,
@@ -70,6 +72,8 @@ const components = {
   cards,
   faqsImage,
   steps,
+  productFeature,
+  productTheme,
 }
 
 export default picoapp(components, state)
