@@ -23,12 +23,12 @@
         <div class="w-full">
           <div class="w-full flex flex-col-reverse m:flex-row justify-between gap-50 m:gap-0">
             <div class="w-full m:w-1/2 grid grid-cols-12 gap-y-30 mt-0">
-              {% assign pages_menu = stngs.pages_menu %}
+              {% assign shop_menu = stngs.shop_menu %}
 
-              {% if linklists[pages_menu].links.size > 0 %}
+              {% if linklists[shop_menu].links.size > 0 %}
                 <ul class='footer-menu'>
-                  <li class="font-serif uppercase mb-15 m:mb-20">{{ pages_menu.title }}</li>
-                  {% for link in linklists[pages_menu].links %}
+                  <li class="font-serif uppercase mb-15 m:mb-20">{{ shop_menu.title }}</li>
+                  {% for link in linklists[shop_menu].links %}
                     <li class='inline-block mb-5 text-20'>
                       <a
                         class="link-line"
@@ -42,12 +42,12 @@
                 </ul>
               {% endif %}
 
-              {% assign services_menu = stngs.services_menu %}
+              {% assign company_menu = stngs.company_menu %}
 
-              {% if linklists[services_menu].links.size > 0 %}
+              {% if linklists[company_menu].links.size > 0 %}
                 <ul class='footer-menu'>
-                  <li class="font-serif uppercase mb-15 m:mb-20">{{ services_menu.title }}</li>
-                  {% for link in linklists[services_menu].links %}
+                  <li class="font-serif uppercase mb-15 m:mb-20">{{ company_menu.title }}</li>
+                  {% for link in linklists[company_menu].links %}
                     <li class='inline-block mb-5 text-20'>
                       <a
                         class="link-line"
@@ -159,13 +159,13 @@
       },
       {
         "type": "link_list",
-        "id": "pages_menu",
-        "label": "Pages Menu"
+        "id": "shop_menu",
+        "label": "Shop Menu"
       },
       {
         "type": "link_list",
-        "id": "services_menu",
-        "label": "Sevices Menu"
+        "id": "company_menu",
+        "label": "Company Menu"
       },
       {
         "type": "link_list",

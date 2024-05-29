@@ -1,10 +1,393 @@
 {
   "sections": {
     "hero": {
-      "type": "main-hero"
+      "type": "main-hero",
+      "blocks": {
+        "item_9abF4q": {
+          "type": "item",
+          "settings": {
+            "product": "kiwi-vacation"
+          }
+        },
+        "item_9iL8fh": {
+          "type": "item",
+          "settings": {
+            "product": "passionfruit-heatwave"
+          }
+        }
+      },
+      "block_order": [
+        "item_9abF4q",
+        "item_9iL8fh"
+      ],
+      "settings": {
+        "title": "Non-alcoholic Cocktail Mixers",
+        "tagLeft": "Real Juice!",
+        "tagRight": "Natural Ingredients!"
+      }
+    },
+    "main_feature_product_7izNWi": {
+      "type": "main-feature-product",
+      "blocks": {
+        "product_m3KTMG": {
+          "type": "product",
+          "settings": {
+            "product": "kiwi-vacation"
+          }
+        },
+        "product_47PeP3": {
+          "type": "product",
+          "settings": {
+            "product": "passionfruit-heatwave"
+          }
+        }
+      },
+      "block_order": [
+        "product_m3KTMG",
+        "product_47PeP3"
+      ],
+      "settings": {
+        "title": "grab a case for your next party. Mix it or drink by itself!",
+        "imageLeft": "shopify:\/\/shop_images\/two-women-in-bathing-suits-sitting-on-a-beach-vuyXcJFb7oU_b263b7fc-6175-4fde-b1ed-7cb6a419e5aa.jpg",
+        "imageCenter": "shopify:\/\/shop_images\/a-group-of-people-toasting-with-drinks-in-a-pool-I3IYOMYMvdE_4157c056-00c8-497c-a5cd-3ec80ab46ef8.jpg",
+        "imageRight": "shopify:\/\/shop_images\/people-on-beach-during-daytime-E2zsl_oGPhk.jpg"
+      }
+    },
+    "main_marquee_6WPMDx": {
+      "type": "main-marquee",
+      "blocks": {
+        "text_kKYFAy": {
+          "type": "text",
+          "settings": {
+            "text": "As Easy As"
+          }
+        },
+        "text_7MeaFh": {
+          "type": "text",
+          "settings": {
+            "text": "Shake"
+          }
+        },
+        "text_t6itca": {
+          "type": "text",
+          "settings": {
+            "text": "Pop"
+          }
+        },
+        "text_VjRaMy": {
+          "type": "text",
+          "settings": {
+            "text": "Enjoy"
+          }
+        }
+      },
+      "block_order": [
+        "text_kKYFAy",
+        "text_7MeaFh",
+        "text_t6itca",
+        "text_VjRaMy"
+      ],
+      "settings": {
+        "background": "cream"
+      }
+    },
+    "main_steps_EdtkqT": {
+      "type": "main-steps",
+      "blocks": {
+        "step_d68V8V": {
+          "type": "step",
+          "settings": {
+            "number": "1",
+            "title": "<p>Shake<br\/>Well<\/p>",
+            "connector": ""
+          }
+        },
+        "step_pmE34X": {
+          "type": "step",
+          "settings": {
+            "number": "2",
+            "title": "<p>Pop<br\/>The<br\/>Top<\/p>",
+            "connector": ""
+          }
+        },
+        "step_k7N97K": {
+          "type": "step",
+          "settings": {
+            "number": "3",
+            "title": "<p>Drink<br\/>Dry<\/p>",
+            "connector": "or"
+          }
+        },
+        "step_nTREMq": {
+          "type": "step",
+          "settings": {
+            "number": "3",
+            "title": "<p>Add<br\/>Spirit<\/p>",
+            "connector": ""
+          }
+        },
+        "step_k7nLyQ": {
+          "type": "step",
+          "settings": {
+            "number": "4",
+            "title": "<p>Enjoy!<\/p>",
+            "connector": ""
+          }
+        }
+      },
+      "block_order": [
+        "step_d68V8V",
+        "step_pmE34X",
+        "step_k7N97K",
+        "step_nTREMq",
+        "step_k7nLyQ"
+      ],
+      "settings": {
+        "titleLeft": "How To",
+        "imageLeft": "shopify:\/\/shop_images\/people_in_pool_crop.jpg",
+        "titleRight": "Do You",
+        "imageRight": "shopify:\/\/shop_images\/feet_05609523-3355-4589-91a8-1df935a5155c.jpg"
+      }
+    },
+    "main_image_text_banner_jEiPLf": {
+      "type": "main-imageTextBanner",
+      "blocks": {
+        "text_JhYnQh": {
+          "type": "text",
+          "settings": {
+            "text": "Made"
+          }
+        },
+        "image_86EEUJ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/kiwi.jpg",
+            "theme": "kiwi-vacation"
+          }
+        },
+        "image_BAzwHr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Mask_group_0c83a140-a4b8-40af-85eb-ff512bf0c8c2.jpg",
+            "theme": "passionfruit-heatwave"
+          }
+        },
+        "text_k3nNYx": {
+          "type": "text",
+          "settings": {
+            "text": "With"
+          }
+        },
+        "image_mLGXky": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_73.jpg",
+            "theme": "kiwi-vacation"
+          }
+        },
+        "image_B4Htzw": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_76.jpg",
+            "theme": "passionfruit-heatwave"
+          }
+        },
+        "text_hahDdB": {
+          "type": "text",
+          "settings": {
+            "text": "Real"
+          }
+        },
+        "image_Uk9pxz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/maryam-sicard-2Wc_pUOviaU-unsplash_1.jpg",
+            "theme": "kiwi-vacation"
+          }
+        },
+        "image_EmX6ia": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_74.jpg",
+            "theme": "passionfruit-heatwave"
+          }
+        },
+        "text_cmXtJx": {
+          "type": "text",
+          "settings": {
+            "text": "Juice"
+          }
+        },
+        "image_rYEjAt": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/lime.jpg",
+            "theme": "kiwi-vacation"
+          }
+        },
+        "image_9tVxdC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/lime.jpg",
+            "theme": "passionfruit-heatwave"
+          }
+        }
+      },
+      "block_order": [
+        "text_JhYnQh",
+        "image_86EEUJ",
+        "image_BAzwHr",
+        "text_k3nNYx",
+        "image_mLGXky",
+        "image_B4Htzw",
+        "text_hahDdB",
+        "image_Uk9pxz",
+        "image_EmX6ia",
+        "text_cmXtJx",
+        "image_rYEjAt",
+        "image_9tVxdC"
+      ],
+      "settings": {
+        "text": ""
+      }
+    },
+    "main_marquee_EB3Ejt": {
+      "type": "main-marquee",
+      "blocks": {
+        "text_XxngUg": {
+          "type": "text",
+          "settings": {
+            "text": "A DRINK FOR EVERYONE, ANYWHERE"
+          }
+        },
+        "text_zhknxa": {
+          "type": "text",
+          "settings": {
+            "text": "A DRINK FOR EVERYONE, ANYWHERE"
+          }
+        }
+      },
+      "block_order": [
+        "text_XxngUg",
+        "text_zhknxa"
+      ],
+      "settings": {
+        "background": "primary"
+      }
+    },
+    "main_image_text2up_G3EQtX": {
+      "type": "main-imageText2up",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/a-swimming-pool-with-chairs-and-umbrellas-next-to-a-building-m441HaQntUg.jpg",
+        "title": "The Mission",
+        "subtitle": "Real Talk!",
+        "body": "<p>Our mission is to foster inclusivity and connection in social settings. Sober or not, we believe that everyone deserves to feel included and valued. Our alcohol-free cocktail mixers allow everyone to raise a glass together, eliminating the barriers that separate non-alcoholic drinkers from those who enjoy alcohol and creating memorable experiences for all.<\/p>",
+        "cta": "Lean More",
+        "link": "shopify:\/\/pages\/about",
+        "config": "imageRight",
+        "theme": "light",
+        "wave": "none"
+      }
+    },
+    "main_marquee_QHzB7z": {
+      "type": "main-marquee",
+      "blocks": {
+        "text_Ti34Ce": {
+          "type": "text",
+          "settings": {
+            "text": "Follow Us"
+          }
+        },
+        "text_CJ3rH6": {
+          "type": "text",
+          "settings": {
+            "text": "@dcujabeverages"
+          }
+        }
+      },
+      "block_order": [
+        "text_Ti34Ce",
+        "text_CJ3rH6"
+      ],
+      "settings": {
+        "background": "cream"
+      }
+    },
+    "main_social_7wDqRQ": {
+      "type": "main-social",
+      "blocks": {
+        "image_aerYjP": {
+          "type": "image",
+          "settings": {
+            "title": "Beach",
+            "caption": "Kate t.",
+            "body": "<p>Bask in the sun and let the waves serenade you as you enjoy a refreshing bottle of DCuja. Perfect for cooling down and savoring the natural sweetness of real fruit juice by the shore.<\/p>",
+            "image": "shopify:\/\/shop_images\/image_71.jpg",
+            "link": ""
+          }
+        },
+        "image_7XY6mD": {
+          "type": "image",
+          "settings": {
+            "title": "Pool",
+            "caption": "Serina L",
+            "body": "<p>Make a splash with DCuja by the poolside! Dive into the vibrant flavors that complement the cool, refreshing water, making every pool day a fruity delight.<\/p>",
+            "image": "shopify:\/\/shop_images\/image_70.jpg",
+            "link": ""
+          }
+        },
+        "image_nKrAMM": {
+          "type": "image",
+          "settings": {
+            "title": "Park",
+            "caption": "Jeremy S",
+            "body": "<p>Whether you’re picnicking or taking a leisurely stroll, DCuja is your perfect park companion. Enjoy the fresh, invigorating taste of real fruit juice amidst the beauty of nature.<\/p>",
+            "image": "shopify:\/\/shop_images\/a-woman-and-a-dog-sitting-on-a-lounge-chair-AOyui74zfmM.jpg",
+            "link": ""
+          }
+        },
+        "image_qFCLNA": {
+          "type": "image",
+          "settings": {
+            "title": "Party",
+            "caption": "Devon C",
+            "body": "<p>Elevate your next party with the zestful flavors of DCuja. It’s the perfect non-alcoholic option that brings a burst of fruity fun to any celebration, ensuring everyone has a great time.<\/p>",
+            "image": "shopify:\/\/shop_images\/image_4.jpg",
+            "link": ""
+          }
+        },
+        "image_6GPFVE": {
+          "type": "image",
+          "settings": {
+            "title": "House",
+            "caption": "Menelik L",
+            "body": "<p>Relax and unwind at home with a bottle of DCuja. Its pure, natural fruit flavors are perfect for any moment, making your downtime deliciously refreshing and enjoyable.<\/p>",
+            "image": "shopify:\/\/shop_images\/image_72.jpg",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_aerYjP",
+        "image_7XY6mD",
+        "image_nKrAMM",
+        "image_qFCLNA",
+        "image_6GPFVE"
+      ],
+      "settings": {
+        "title": "Drink It At The"
+      }
     }
   },
   "order": [
-    "hero"
+    "hero",
+    "main_feature_product_7izNWi",
+    "main_marquee_6WPMDx",
+    "main_steps_EdtkqT",
+    "main_image_text_banner_jEiPLf",
+    "main_marquee_EB3Ejt",
+    "main_image_text2up_G3EQtX",
+    "main_marquee_QHzB7z",
+    "main_social_7wDqRQ"
   ]
 }

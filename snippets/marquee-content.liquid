@@ -1,6 +1,6 @@
 <div class="w-full relative overflow-hidden">
 <div class="flex items-center marquee-wrap w-full h-full whitespace-nowrap py-5{% if section.settings.background == 'primary' %} bg-primary text-cream{% else %} bg-cream text-primary border-current border-t border-b border-solid{% endif %}">
-    <div class="flex items-center marquee text-right whitespace-nowrap overflow-visible" data-component="marquee">
+    <div class="flex items-center marquee text-right whitespace-nowrap overflow-visible" data-direction="{{ section.settings.direction | default: 'rtl' }}" data-component="marquee">
       <div class="js-primary leading-120 flex items-center w-auto whitespace-nowrap flex-shrink-0">
         {% for block in section.blocks %}
           <span class="marquee-item">

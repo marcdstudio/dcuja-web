@@ -7,3 +7,8 @@ $secondary: #B7B74B;
 .bg-glass{
   @apply bg-[rgba(255,251,235,.1)] backdrop-blur-2xl;
 }
+
+.bg-frost{
+  @apply bg-[rgba(255,251,235,.3)] backdrop-blur-2xl;
+}
+

@@ -18,6 +18,28 @@ export default component((node, ctx) => {
     })
   }
 
+  const initHeader = () => {
+    if(window.location.pathname == '/'){
+      if(window.pageYOffset > 50){
+        remove(document.body, 'logo')
+      } else{
+        add(document.body, 'logo')
+      }
+    }
+  }
+
+  initHeader()
+
+  on(window, 'scroll', () => {
+    if(window.location.pathname == '/'){
+      if(window.pageYOffset > 50){
+        remove(document.body, 'logo')
+      } else{
+        add(document.body, 'logo')
+      }
+    }
+  })
+
   on(cartToggle, 'click', () => {
     ctx.emit('cart:toggle', (state) => {
       return {
@@ -77,7 +99,7 @@ export default component((node, ctx) => {
   })
 
   //handle header logo
-  if (window.location.href == '/') {
+  if (window.location.pathname == '/') {
     document.body.classList.add('logo')
   } else{
     document.body.classList.remove('logo')

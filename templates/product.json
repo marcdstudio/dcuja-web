@@ -1,10 +1,337 @@
 {
   "sections": {
     "main": {
-      "type": "product-info"
+      "type": "product-info",
+      "settings": {
+      }
+    },
+    "main_steps_FHyFGk": {
+      "type": "main-steps",
+      "blocks": {
+        "step_JhmaVm": {
+          "type": "step",
+          "settings": {
+            "number": "1",
+            "title": "<p>Shake Well<\/p>",
+            "connector": ""
+          }
+        },
+        "step_9eREqA": {
+          "type": "step",
+          "settings": {
+            "number": "2",
+            "title": "<p>Pop The Top<\/p>",
+            "connector": ""
+          }
+        },
+        "step_ymkkNW": {
+          "type": "step",
+          "settings": {
+            "number": "3",
+            "title": "<p>Drink Dry<\/p>",
+            "connector": "or"
+          }
+        },
+        "step_khxKzU": {
+          "type": "step",
+          "settings": {
+            "number": "3",
+            "title": "<p>Add Spirit<\/p>",
+            "connector": ""
+          }
+        },
+        "step_LiwgfF": {
+          "type": "step",
+          "settings": {
+            "number": "4",
+            "title": "<p>Enjoy!<\/p>",
+            "connector": ""
+          }
+        }
+      },
+      "block_order": [
+        "step_JhmaVm",
+        "step_9eREqA",
+        "step_ymkkNW",
+        "step_khxKzU",
+        "step_LiwgfF"
+      ],
+      "settings": {
+        "titleLeft": "How To",
+        "imageLeft": "shopify:\/\/shop_images\/a-group-of-people-sitting-in-a-swimming-pool-iVjvkuRoHAw.jpg",
+        "titleRight": "Do You",
+        "imageRight": "shopify:\/\/shop_images\/a-person-laying-in-a-hot-tub-with-their-feet-in-the-water-9VnJj4xgjPM.jpg"
+      }
+    },
+    "main_image_text_banner_9xQUi4": {
+      "type": "main-imageTextBanner",
+      "blocks": {
+        "text_PkpQNt": {
+          "type": "text",
+          "settings": {
+            "text": "Made"
+          }
+        },
+        "image_RTVYmC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/kiwi.jpg",
+            "theme": "kiwi-vacation"
+          }
+        },
+        "image_iWnDcb": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Mask_group_0c83a140-a4b8-40af-85eb-ff512bf0c8c2.jpg",
+            "theme": "passionfruit-heatwave"
+          }
+        },
+        "text_3UPCC8": {
+          "type": "text",
+          "settings": {
+            "text": "With"
+          }
+        },
+        "image_g67jz6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_73.jpg",
+            "theme": "kiwi-vacation"
+          }
+        },
+        "image_z3JXRi": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_76.jpg",
+            "theme": "passionfruit-heatwave"
+          }
+        },
+        "text_H7nDqL": {
+          "type": "text",
+          "settings": {
+            "text": "Real"
+          }
+        },
+        "image_eiqFme": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/maryam-sicard-2Wc_pUOviaU-unsplash_1.jpg",
+            "theme": "kiwi-vacation"
+          }
+        },
+        "image_cQRVBk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_74.jpg",
+            "theme": "passionfruit-heatwave"
+          }
+        },
+        "text_UGaiKM": {
+          "type": "text",
+          "settings": {
+            "text": "Juice"
+          }
+        },
+        "image_LHa483": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Mask_group-6.jpg",
+            "theme": "kiwi-vacation"
+          }
+        },
+        "image_nDNjxq": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/lime.jpg",
+            "theme": "passionfruit-heatwave"
+          }
+        }
+      },
+      "block_order": [
+        "text_PkpQNt",
+        "image_RTVYmC",
+        "image_iWnDcb",
+        "text_3UPCC8",
+        "image_g67jz6",
+        "image_z3JXRi",
+        "text_H7nDqL",
+        "image_eiqFme",
+        "image_cQRVBk",
+        "text_UGaiKM",
+        "image_LHa483",
+        "image_nDNjxq"
+      ],
+      "settings": {
+        "text": ""
+      }
+    },
+    "main_cards_Ty9Bpk": {
+      "type": "main-cards",
+      "blocks": {
+        "card_mf3bHe": {
+          "type": "card",
+          "settings": {
+            "title": "Kiwi",
+            "subtitle": "Tangy, Vibrant",
+            "body": "<p>Kiwi’s sweet-tart flavor with hints of citrus, brings a burst of tropical freshness that enhances the overall flavor profile of Kiwi Vacation. When combined with cucumber, the kiwi adds a zesty, invigorating sweetness that perfectly balances the cucumber creating a refreshing and well-rounded beverage.<\/p>",
+            "image": "shopify:\/\/shop_images\/kiwi.jpg",
+            "theme": "kiwi-vacation"
+          }
+        },
+        "card_atKCGw": {
+          "type": "card",
+          "settings": {
+            "title": "Cucumber",
+            "subtitle": "Crisp, Fresh",
+            "body": "<p>Cucumber, with its high water content and crisp, refreshing texture, brings a clean and mildly sweet flavor that perfectly complements the vibrant taste of kiwi in Kiwi Vacation. Together, they create a balanced, refreshing beverage that captures the essence of a tropical escape.<\/p>",
+            "image": "shopify:\/\/shop_images\/maryam-sicard-2Wc_pUOviaU-unsplash_1.jpg",
+            "theme": "kiwi-vacation"
+          }
+        },
+        "card_RrW4gQ": {
+          "type": "card",
+          "settings": {
+            "title": "Lemon",
+            "subtitle": "Zesty, Tangy",
+            "body": "<p>Lemon’s zesty flavor, brings a refreshing acidity and a touch of citrusy sharpness to Kiwi Vacation. Its crisp, tangy taste cuts through the sweetness of the kiwi and the mildness of the cucumber, adding a lively, invigorating element to the beverage. Enhancing the overall flavor profile by providing a balanced tartness that elevates the tropical freshness of Kiwi Vacation. <\/p>",
+            "image": "shopify:\/\/shop_images\/maryam-sicard-6ttnWMC41Sc-unsplash_2.jpg",
+            "theme": "kiwi-vacation"
+          }
+        },
+        "card_dMyAM8": {
+          "type": "card",
+          "settings": {
+            "title": "Mint",
+            "subtitle": "Crisp, Aromatic",
+            "body": "<p>Mint, with its aromatic, cool, and slightly sweet taste, adds a refreshing and invigorating dimension to Kiwi Vacation. The herb's natural crispness enhances the beverage's overall freshness, creating a more vibrant and lively flavor profile. When combined with kiwi and cucumber, mint provides a burst of invigorating coolness that elevates the drink, making it exceptionally refreshing.<\/p>",
+            "image": "shopify:\/\/shop_images\/image_73.jpg",
+            "theme": "kiwi-vacation"
+          }
+        },
+        "card_UQQWLy": {
+          "type": "card",
+          "settings": {
+            "title": "Passionfruit",
+            "subtitle": "Tart, Vibrant",
+            "body": "<p>Passion fruit has a distinctive, exotic flavor characterized by a rich, tropical sweetness balanced with a tangy, citrusy tartness. Its juicy pulp is intensely aromatic, with floral and fruity notes that create a unique, vibrant taste experience. In Passion Fruit Heatwave, the passion fruit's bold and tangy flavor creates a lively and invigorating beverage that captures the essence of a sun-soaked tropical paradise.<\/p>",
+            "image": "shopify:\/\/shop_images\/Mask_group_0c83a140-a4b8-40af-85eb-ff512bf0c8c2.jpg",
+            "theme": "passionfruit-heatwave"
+          }
+        },
+        "card_3JdTG9": {
+          "type": "card",
+          "settings": {
+            "title": "Carrot",
+            "subtitle": "Sweet, Earthy",
+            "body": "<p>Carrot has a naturally sweet and slightly earthy flavor, with a crisp and refreshing texture. In the Passion Fruit Heatwave drink, the carrot's sweetness subtly balances the tangy and tropical notes of the passion fruit, adding depth and a mild earthiness to the beverage.<\/p>",
+            "image": "shopify:\/\/shop_images\/image_74.jpg",
+            "theme": "passionfruit-heatwave"
+          }
+        },
+        "card_iEmMHV": {
+          "type": "card",
+          "settings": {
+            "title": "Habanero",
+            "subtitle": "Spicy, Complex",
+            "body": "<p>Habanero peppers are known for their intense heat and distinct fruity, slightly sweet flavor. The habanero adds a fiery kick that contrasts with the tropical sweetness of the passion fruit and the earthy sweetness of the carrot. This spiciness creates a dynamic, exciting flavor profile, enhancing the overall experience with a tantalizing heat that lingers and balances the drink's sweetness and tanginess.<\/p>",
+            "image": "shopify:\/\/shop_images\/image_76.jpg",
+            "theme": "passionfruit-heatwave"
+          }
+        }
+      },
+      "block_order": [
+        "card_mf3bHe",
+        "card_atKCGw",
+        "card_RrW4gQ",
+        "card_dMyAM8",
+        "card_UQQWLy",
+        "card_3JdTG9",
+        "card_iEmMHV"
+      ],
+      "settings": {
+        "title": "Our Ingredients",
+        "theme": true
+      }
+    },
+    "main_marquee_pbaFit": {
+      "type": "main-marquee",
+      "blocks": {
+        "text_bxtAhx": {
+          "type": "text",
+          "settings": {
+            "text": "Complete the party"
+          }
+        },
+        "text_RwhxD9": {
+          "type": "text",
+          "settings": {
+            "text": "A drink for all"
+          }
+        }
+      },
+      "block_order": [
+        "text_bxtAhx",
+        "text_RwhxD9"
+      ],
+      "settings": {
+        "background": "primary"
+      }
+    },
+    "main_image_text2up_WLjr8C": {
+      "type": "main-imageText2up",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/a-swimming-pool-with-chairs-and-umbrellas-next-to-a-building-m441HaQntUg.jpg",
+        "title": "Drinks for all",
+        "subtitle": "Real Talk!",
+        "body": "<p>D'Cuja is the ideal drink for everyone to enjoy together, no matter the setting. As a nonalcoholic beverage, you can enjoy D'Cuja on its own for a refreshing, dry experience, or easily add liquor to craft a spirited cocktail. With D'Cuja, inclusivity and enjoyment are always on the menu.<\/p>",
+        "cta": "Learn More",
+        "link": "shopify:\/\/pages\/about",
+        "config": "imageRight",
+        "theme": "light",
+        "wave": "none"
+      }
+    },
+    "main_marquee_HeYJBF": {
+      "type": "main-marquee",
+      "blocks": {
+        "text_JtVPLB": {
+          "type": "text",
+          "settings": {
+            "text": "Follow Us"
+          }
+        },
+        "text_xi8D8t": {
+          "type": "text",
+          "settings": {
+            "text": "@dcujabeverages"
+          }
+        }
+      },
+      "block_order": [
+        "text_JtVPLB",
+        "text_xi8D8t"
+      ],
+      "settings": {
+        "background": "cream"
+      }
+    },
+    "product_suggested_DYV9pg": {
+      "type": "product-suggested",
+      "settings": {
+        "title": "grab a case for your next party. Mix it or drink by itself!",
+        "titleCard": "Complete The Party",
+        "product": "{{ product.metafields.custom.related_product.value }}"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "main_steps_FHyFGk",
+    "main_image_text_banner_9xQUi4",
+    "main_cards_Ty9Bpk",
+    "main_marquee_pbaFit",
+    "main_image_text2up_WLjr8C",
+    "main_marquee_HeYJBF",
+    "product_suggested_DYV9pg"
   ]
 }

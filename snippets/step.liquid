@@ -1,6 +1,6 @@
-<div class="flex-shrink-0 h-[40rem] w-[16rem] relative flex justify-center items-center text-secondary text-center text-24 font-serif leading-100">
-  <div class="absolute left-1/2 -translate-x-1/2 top-0 w-[20rem] h-full bg-primary rounded-[100%]"></div>
-  <div class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">{{ block.settings.title }}</div>
+<div class="flex-shrink-0 h-[40rem] w-[16rem] relative flex justify-center items-center text-secondary text-center text-24 font-serif leading-100 m:h-full group">
+  <div class="absolute left-1/2 -translate-x-1/2 top-0 w-[20rem] h-full bg-primary rounded-[100%] transition-transform duration-300 group-hover:scale-[1.1]"></div>
+  <div class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 point">{{ block.settings.title }}</div>
   <div class="absolute top-60 left-1/2 -translate-x-1/2 w-40 h-40 flex items-center justify-center bg-tertiary text-primary rounded-full text-16">{{ block.settings.number }}</div>
   {% if block.settings.connector.size > 0 %}
     <div class="absolute z-3 right-0 top-1/2 -translate-y-1/2 translate-x-1/2 text-16">{{ block.settings.connector }}</div>

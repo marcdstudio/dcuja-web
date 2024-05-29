@@ -1,10 +1,125 @@
 {
   "sections": {
     "faqs-drawer": {
-      "type": "faqs-drawer"
+      "type": "faqs-drawer",
+      "blocks": {
+        "text_773PXt": {
+          "type": "text",
+          "settings": {
+            "title": "What is D'Cuja",
+            "body": "<p>D’Cuja is a nonalcoholic cocktail mixer that you can dry, or add your favorite liquor to! It comes conveniently canned so that you can take the party with you anywhere.<\/p>"
+          }
+        },
+        "text_XKTRmg": {
+          "type": "text",
+          "settings": {
+            "title": "Does D’Cuja contain alcohol?",
+            "body": "<p>Nope! D’Cuja is a nonalcoholic beverage, which means you can enjoy it non-alcoholic, or add in your favorite liquor. If you choose to add liquor, we recommend one shot (1.5 oz) and to add ice.<\/p>"
+          }
+        },
+        "text_wqpx6j": {
+          "type": "text",
+          "settings": {
+            "title": "Where can I buy your mixers?",
+            "body": "<p>Soon we will be selling our products online! For the meantime, follow us on instagram or join our mailing list to get notified about our launch!<\/p>"
+          }
+        },
+        "text_eCRLRJ": {
+          "type": "text",
+          "settings": {
+            "title": "What kind of sugar do you use?",
+            "body": "<p>We sweeten our drinks with <strong>Allulose. <\/strong>Allulose is a naturally occurring sugar found in figs, raisins, wheat, maple syrup and molasses.<\/p>"
+          }
+        },
+        "text_JRUdRt": {
+          "type": "text",
+          "settings": {
+            "title": "Do I have to refrigerate?",
+            "body": "<p>No, it can be stored in a cool dry location, but we think it tastes better chilled and recommend keeping it in your fridge.<\/p>"
+          }
+        },
+        "text_BMYTYd": {
+          "type": "text",
+          "settings": {
+            "title": "How long can D’Cuja last?",
+            "body": "<p>A can of D’Cuja has a shelf life of a year as long as it is kept in a cool and dry location. <\/p>"
+          }
+        },
+        "text_epPVe8": {
+          "type": "text",
+          "settings": {
+            "title": "Can I make a special order?",
+            "body": "<p>For large parties, business events, weddings, or international shipping requests, please send us an email at dcujabeverage@gmail.com so we can make your wishes come true!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_773PXt",
+        "text_XKTRmg",
+        "text_wqpx6j",
+        "text_eCRLRJ",
+        "text_JRUdRt",
+        "text_BMYTYd",
+        "text_epPVe8"
+      ],
+      "settings": {
+        "title": "Product",
+        "image": "shopify:\/\/shop_images\/people_in_pool.jpg"
+      }
+    },
+    "faqs_drawer_AHhLdP": {
+      "type": "faqs-drawer",
+      "blocks": {
+        "text_HmeNY3": {
+          "type": "text",
+          "settings": {
+            "title": "What's your return policy?",
+            "body": "<p>If you're not satisfied with your product(s), please let us know at <a href=\"mailto:dcujabeverages@gmail.com\"><span style=\"text-decoration:underline\">dcujabeverages@gmail.com<\/span><\/a> within 30 days of purchase and we will issue you a refund.<\/p><p><em>If you have any other questions or concerns, email us at <\/em><a href=\"mailto:dcujabeverages@gmail.com\"><span style=\"text-decoration:underline\"><em>dcujabeverages@gmail.com<\/em><\/span><\/a><em>.<\/em><\/p>"
+          }
+        },
+        "text_je8cnK": {
+          "type": "text",
+          "settings": {
+            "title": "My cans are damaged, what do I do?",
+            "body": "<p>Please email us at <a href=\"mailto:dcujabeverages@gmail.com\"><span style=\"text-decoration:underline\">dcujabeverages@gmail.com<\/span><\/a> with a photo of the damage, showing the cans are unusable, and be sure to save all the damaged packaging because UPS sometimes requires inspection. For damaged items, please notify us and include photos within 7 days of your order being delivered. We will either ship you new cans or issue a credit.<\/p>"
+          }
+        },
+        "text_cpbfz3": {
+          "type": "text",
+          "settings": {
+            "title": "Missing items or wrong order, what do I do?",
+            "body": "<p>We are a small company fulfilling orders so sometimes mistakes happen. If you receive the wrong item or missing items from your order, let us know by reaching out to us at <a href=\"mailto:dcujabeverages@gmail.com\"><span style=\"text-decoration:underline\">dcujabeverages@gmail.com<\/span><\/a>.<\/p>"
+          }
+        },
+        "text_9XDrbC": {
+          "type": "text",
+          "settings": {
+            "title": "What is your return and exchange policy?",
+            "body": "<p>You can return or exchange any unopened items in their original packaging within 30 days of purchase. We do not accept refunds or returns based on flavor preference alone.<\/p>"
+          }
+        },
+        "text_Jwh3tT": {
+          "type": "text",
+          "settings": {
+            "title": "How to Return by Mail:",
+            "body": "<ol><li>Email us at <a href=\"mailto:dcujabeverages@gmail.com\"><span style=\"text-decoration:underline\">dcujabeverages@gmail.com<\/span><\/a>. W will confirm your return request eligibility. If approved, we will send you a return label for the package via email.<\/li><li>Print the label and place it on the package.<\/li><li>Drop the package with the designated carrier.<\/li><li>Once your return has been processed, you will receive an email with exchange\/refund details. If you have chosen an exchange, we will send your replacement package upon receipt of your return. If you have chosen a refund, please expect your credit, minus the original shipping fee.<\/li><\/ol>"
+          }
+        }
+      },
+      "block_order": [
+        "text_HmeNY3",
+        "text_je8cnK",
+        "text_cpbfz3",
+        "text_9XDrbC",
+        "text_Jwh3tT"
+      ],
+      "settings": {
+        "title": "Returns"
+      }
     }
   },
   "order": [
-    "faqs-drawer"
+    "faqs-drawer",
+    "faqs_drawer_AHhLdP"
   ]
 }

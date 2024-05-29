@@ -14,7 +14,11 @@
   }
 
   &.is-glass{
-    @apply bg-glass border border-solid border-current text-cream;
+    @apply border border-solid border-current text-cream transition-colors duration-300 backdrop-blur-2xl bg-[rgba(255,251,235,.1)];
+
+    &:hover{
+      @apply bg-[rgba(255,251,235,.3)];
+    }
   }
 
   &.is-light{

@@ -3,12 +3,12 @@
 }
 
 .js-logo{
-  @apply w-[6.8rem] m:w-[10rem];
+  @apply w-[6.8rem] m:w-[10rem] transition-transform duration-300 origin-top-left;
 }
 
 .logo{
   .js-logo{
-    @apply w-[55rem]
+    @apply scale-[6]
   }
 }
 

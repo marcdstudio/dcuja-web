@@ -1,10 +1,50 @@
 {
   "sections": {
     "main": {
-      "type": "collection-main"
+      "type": "collection-main",
+      "settings": {
+        "title": "",
+        "subtitle": ""
+      }
+    },
+    "main_marquee_FHH8KL": {
+      "type": "main-marquee",
+      "blocks": {
+        "text_haGRYD": {
+          "type": "text",
+          "settings": {
+            "text": "A DRINK FOR EVERYONE, ANYWHERE"
+          }
+        },
+        "text_8HzkcX": {
+          "type": "text",
+          "settings": {
+            "text": "A DRINK FOR EVERYONE, ANYWHERE"
+          }
+        }
+      },
+      "block_order": [
+        "text_haGRYD",
+        "text_8HzkcX"
+      ],
+      "settings": {
+        "background": "primary"
+      }
+    },
+    "main_image_text_overlay_MwzgxK": {
+      "type": "main-imageTextOverlay",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/people_in_pool.jpg",
+        "title": "A DRINK FOR EVERYONE, ANYWHERE",
+        "body": "<p>A crowd pleaser for anyone and everyone. D'cuja can be enjoyed with or without alcohol – perfect for that special occasion without leaving anyone feeling left out. Not only does it fit every lifestyle, but it tastes great too.<\/p>",
+        "cta": "Find Us",
+        "link": "shopify:\/\/pages\/find-us"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "main_marquee_FHH8KL",
+    "main_image_text_overlay_MwzgxK"
   ]
 }

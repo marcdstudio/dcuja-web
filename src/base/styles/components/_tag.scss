@@ -6,6 +6,6 @@
   }
 
   &-btn{
-    @apply absolute z-2 flex-col text-center items-center justify-center origin-left w-[calc(100%-4rem)] left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 h-[14rem] border-2 border-solid border-primary rounded-[100%] bg-tertiary font-serif text-24 leading-100;
+    @apply absolute z-2 flex-col text-center items-center justify-center w-[calc(100%-4rem)] left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 h-[14rem] border-2 border-solid border-primary rounded-[100%] bg-tertiary font-serif text-24 leading-100;
   }
 }

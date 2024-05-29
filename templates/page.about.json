@@ -1,14 +1,368 @@
 {
   "sections": {
-    "anchors": {
-      "type": "about-anchors"
-    },
     "hero": {
-      "type": "about-hero"
+      "type": "about-hero",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/feet_05609523-3355-4589-91a8-1df935a5155c.jpg",
+        "title": "About Us",
+        "body": "<p>D'Cuja, a female-owned and BIPOC-owned venture, is more than just a beverage – it's a testament to inclusivity and innovation in the world of social gatherings. Born out of a desire to bridge the gap between alcoholic and non-alcoholic drink options, D'Cuja represents a refreshing solution for individuals seeking flavorful, communal experiences regardless of their beverage preferences.<\/p><p>The journey began with a close friend's decision to embrace sobriety, highlighting the lack of suitable drink choices at social events. Determined to create a beverage that anyone could enjoy, no matter their drink preference, D’Cuja was born. <\/p><p>We ensure each sip embodies the essence of natural, fresh, peak-season ingredients. From classics to innovative flavors. Good times await, whether you choose to enjoy it dry, or add alcohol because it is truly a drink that everyone can enjoy, anywhere.<\/p>"
+      }
+    },
+    "main_marquee_GGFreN": {
+      "type": "main-marquee",
+      "blocks": {
+        "text_qTzQJj": {
+          "type": "text",
+          "settings": {
+            "text": "A DRINK FOR EVERYONE, ANYWHERE"
+          }
+        },
+        "text_y9LCHA": {
+          "type": "text",
+          "settings": {
+            "text": "A DRINK FOR EVERYONE, ANYWHERE"
+          }
+        }
+      },
+      "block_order": [
+        "text_qTzQJj",
+        "text_y9LCHA"
+      ],
+      "settings": {
+        "background": "primary"
+      }
+    },
+    "main_image_text2up_wUjigU": {
+      "type": "main-imageText2up",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/beach_vintage.jpg",
+        "title": "The Mission",
+        "subtitle": "Real Talk!",
+        "body": "<p>Our mission is to foster inclusivity and connection in social settings. Sober or not, we believe that everyone deserves to feel included and valued. Our alcohol-free cocktail mixers allow everyone to raise a glass together, eliminating the barriers that separate non-alcoholic drinkers from those who enjoy alcohol and creating memorable experiences for all.<\/p>",
+        "cta": "",
+        "link": "",
+        "config": "imageRight",
+        "theme": "dark",
+        "wave": "none"
+      }
+    },
+    "main_image_text_banner_WYMjFP": {
+      "type": "main-imageTextBanner",
+      "blocks": {
+        "text_36gJNG": {
+          "type": "text",
+          "settings": {
+            "text": "Made"
+          }
+        },
+        "image_FjTniC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/kiwi.jpg",
+            "theme": "kiwi-vacation"
+          }
+        },
+        "image_pppXCi": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Mask_group_0c83a140-a4b8-40af-85eb-ff512bf0c8c2.jpg",
+            "theme": "passionfruit-heatwave"
+          }
+        },
+        "text_XMGTRy": {
+          "type": "text",
+          "settings": {
+            "text": "With"
+          }
+        },
+        "image_WjTzp8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_73.jpg",
+            "theme": "kiwi-vacation"
+          }
+        },
+        "image_7YFgCd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_76.jpg",
+            "theme": "passionfruit-heatwave"
+          }
+        },
+        "text_nh6tVm": {
+          "type": "text",
+          "settings": {
+            "text": "Real"
+          }
+        },
+        "image_frWndc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/maryam-sicard-2Wc_pUOviaU-unsplash_1.jpg",
+            "theme": "kiwi-vacation"
+          }
+        },
+        "image_gyPNd8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_74.jpg",
+            "theme": "passionfruit-heatwave"
+          }
+        },
+        "text_UinrRC": {
+          "type": "text",
+          "settings": {
+            "text": "juice"
+          }
+        },
+        "image_cTrJe9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/lime.jpg",
+            "theme": "kiwi-vacation"
+          }
+        },
+        "image_AhD8Qy": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/lime.jpg",
+            "theme": "kiwi-vacation"
+          }
+        }
+      },
+      "block_order": [
+        "text_36gJNG",
+        "image_FjTniC",
+        "image_pppXCi",
+        "text_XMGTRy",
+        "image_WjTzp8",
+        "image_7YFgCd",
+        "text_nh6tVm",
+        "image_frWndc",
+        "image_gyPNd8",
+        "text_UinrRC",
+        "image_cTrJe9",
+        "image_AhD8Qy"
+      ],
+      "settings": {
+        "text": ""
+      }
+    },
+    "main_cards_Af7wKA": {
+      "type": "main-cards",
+      "blocks": {
+        "card_FA9xyg": {
+          "type": "card",
+          "settings": {
+            "title": "Kiwi",
+            "subtitle": "Tangy, Vibrant",
+            "body": "<p>Kiwi’s sweet-tart flavor with hints of citrus, brings a burst of tropical freshness that enhances the overall flavor profile of Kiwi Vacation. When combined with cucumber, the kiwi adds a zesty, invigorating sweetness that perfectly balances the cucumber creating a refreshing and well-rounded beverage.<\/p>",
+            "image": "shopify:\/\/shop_images\/kiwi.jpg",
+            "theme": ""
+          }
+        },
+        "card_LLtWjg": {
+          "type": "card",
+          "settings": {
+            "title": "Cucumber",
+            "subtitle": "Crisp, Fresh",
+            "body": "<p>Cucumber, with its high water content and crisp, refreshing texture, brings a clean and mildly sweet flavor that perfectly complements the vibrant taste of kiwi in Kiwi Vacation. Together, they create a balanced, refreshing beverage that captures the essence of a tropical escape.<\/p>",
+            "image": "shopify:\/\/shop_images\/maryam-sicard-2Wc_pUOviaU-unsplash_1.jpg",
+            "theme": ""
+          }
+        },
+        "card_ttpVyM": {
+          "type": "card",
+          "settings": {
+            "title": "Lemon",
+            "subtitle": "Zesty, Tangy",
+            "body": "<p>Lemon’s zesty flavor, brings a refreshing acidity and a touch of citrusy sharpness to Kiwi Vacation. Its crisp, tangy taste cuts through the sweetness of the kiwi and the mildness of the cucumber, adding a lively, invigorating element to the beverage. Enhancing the overall flavor profile by providing a balanced tartness that elevates the tropical freshness of Kiwi Vacation.<\/p>",
+            "image": "shopify:\/\/shop_images\/maryam-sicard-6ttnWMC41Sc-unsplash_2.jpg",
+            "theme": ""
+          }
+        },
+        "card_EdpAgL": {
+          "type": "card",
+          "settings": {
+            "title": "Mint",
+            "subtitle": "Crisp, Aromatic",
+            "body": "<p>Mint, with its aromatic, cool, and slightly sweet taste, adds a refreshing and invigorating dimension to Kiwi Vacation. The herb's natural crispness enhances the beverage's overall freshness, creating a more vibrant and lively flavor profile. When combined with kiwi and cucumber, mint provides a burst of invigorating coolness that elevates the drink, making it exceptionally refreshing.<\/p>",
+            "image": "shopify:\/\/shop_images\/image_73.jpg",
+            "theme": ""
+          }
+        },
+        "card_YjqKem": {
+          "type": "card",
+          "settings": {
+            "title": "Passionfruit",
+            "subtitle": "Tart, Vibrant",
+            "body": "<p>Passion fruit has a distinctive, exotic flavor characterized by a rich, tropical sweetness balanced with a tangy, citrusy tartness. Its juicy pulp is intensely aromatic, with floral and fruity notes that create a unique, vibrant taste experience. In Passion Fruit Heatwave, the passion fruit's bold and tangy flavor creates a lively and invigorating beverage that captures the essence of a sun-soaked tropical paradise.<\/p>",
+            "image": "shopify:\/\/shop_images\/Mask_group_0c83a140-a4b8-40af-85eb-ff512bf0c8c2.jpg",
+            "theme": ""
+          }
+        },
+        "card_7wbbxP": {
+          "type": "card",
+          "settings": {
+            "title": "Carrot",
+            "subtitle": "Sweet, Earthy",
+            "body": "<p>Carrot has a naturally sweet and slightly earthy flavor, with a crisp and refreshing texture. In the Passion Fruit Heatwave drink, the carrot's sweetness subtly balances the tangy and tropical notes of the passion fruit, adding depth and a mild earthiness to the beverage.<\/p>",
+            "image": "shopify:\/\/shop_images\/image_74.jpg",
+            "theme": ""
+          }
+        },
+        "card_Xr9EeD": {
+          "type": "card",
+          "settings": {
+            "title": "Habanero",
+            "subtitle": "Spicy, Complex",
+            "body": "<p>Habanero peppers are known for their intense heat and distinct fruity, slightly sweet flavor. The habanero adds a fiery kick that contrasts with the tropical sweetness of the passion fruit and the earthy sweetness of the carrot. This spiciness creates a dynamic, exciting flavor profile, enhancing the overall experience with a tantalizing heat that lingers and balances the drink's sweetness and tanginess.<\/p>",
+            "image": "shopify:\/\/shop_images\/image_76.jpg",
+            "theme": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_FA9xyg",
+        "card_LLtWjg",
+        "card_ttpVyM",
+        "card_EdpAgL",
+        "card_YjqKem",
+        "card_7wbbxP",
+        "card_Xr9EeD"
+      ],
+      "settings": {
+        "title": "Our Ingredients",
+        "theme": false
+      }
+    },
+    "main_marquee_mtjfLb": {
+      "type": "main-marquee",
+      "blocks": {
+        "text_zXzwit": {
+          "type": "text",
+          "settings": {
+            "text": "Made Right"
+          }
+        },
+        "text_JMwirD": {
+          "type": "text",
+          "settings": {
+            "text": "Meda Fresh"
+          }
+        },
+        "text_rCmfqr": {
+          "type": "text",
+          "settings": {
+            "text": "Made Natural"
+          }
+        },
+        "text_V7xMnz": {
+          "type": "text",
+          "settings": {
+            "text": "Made Local"
+          }
+        }
+      },
+      "block_order": [
+        "text_zXzwit",
+        "text_JMwirD",
+        "text_rCmfqr",
+        "text_V7xMnz"
+      ],
+      "settings": {
+        "background": "primary"
+      }
+    },
+    "main_image_text2up_dtKHdX": {
+      "type": "main-imageText2up",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/losangeles.jpg",
+        "title": "The Source",
+        "subtitle": "",
+        "body": "<p>We prioritize crafting a truly exceptional cocktail experience by using only the finest natural ingredients. Our commitment to quality means that every D'Cuja mixer is made without any artificial dyes or harmful additives. Instead, we carefully select fresh and natural ingredients to ensure that each sip delivers pure, delicious flavor. By embracing the simplicity and purity of nature, we elevate the craft cocktail experience, allowing our customers to indulge with confidence. With D'Cuja, you can trust that every ingredient has been thoughtfully chosen to deliver a superior taste sensation, making every cocktail moment truly memorable.<\/p>",
+        "cta": "",
+        "link": "",
+        "config": "imageLeft",
+        "theme": "dark",
+        "wave": "none"
+      }
+    },
+    "main_image_text_banner_8Pi8tL": {
+      "type": "main-imageTextBanner",
+      "blocks": {
+        "text_NrfQnX": {
+          "type": "text",
+          "settings": {
+            "text": "Drinks"
+          }
+        },
+        "image_9fLYNy": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/leandro-crespi-JwI3JdqTtxs-unsplash_2.jpg",
+            "theme": "kiwi-vacation"
+          }
+        },
+        "text_EwRhPD": {
+          "type": "text",
+          "settings": {
+            "text": "For"
+          }
+        },
+        "image_QpfamU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/three-people-holding-glass-bottles-while-talking-_qADvinJi20.jpg",
+            "theme": "kiwi-vacation"
+          }
+        },
+        "text_RtyktU": {
+          "type": "text",
+          "settings": {
+            "text": "Everyone"
+          }
+        },
+        "image_KeNLLR": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/tabitha-turner-ZW0lh2N3zOI-unsplash_2.jpg",
+            "theme": "kiwi-vacation"
+          }
+        }
+      },
+      "block_order": [
+        "text_NrfQnX",
+        "image_9fLYNy",
+        "text_EwRhPD",
+        "image_QpfamU",
+        "text_RtyktU",
+        "image_KeNLLR"
+      ],
+      "settings": {
+        "text": ""
+      }
+    },
+    "main_image_text_overlay_F3nHNV": {
+      "type": "main-imageTextOverlay",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/people_in_pool.jpg",
+        "title": "A DRINK FOR EVERYONE, ANYWHERE",
+        "body": "<p>D'Cuja is the ideal drink for everyone to enjoy together, no matter the setting. As a nonalcoholic beverage, you can enjoy D'Cuja on its own for a refreshing, dry experience, or easily add liquor to craft a spirited cocktail. With D'Cuja, inclusivity and enjoyment are always on the menu.<\/p>",
+        "cta": "Find Us",
+        "link": "shopify:\/\/pages\/find-us"
+      }
     }
   },
   "order": [
-    "anchors",
-    "hero"
+    "hero",
+    "main_marquee_GGFreN",
+    "main_image_text2up_wUjigU",
+    "main_image_text_banner_WYMjFP",
+    "main_cards_Af7wKA",
+    "main_marquee_mtjfLb",
+    "main_image_text2up_dtKHdX",
+    "main_image_text_banner_8Pi8tL",
+    "main_image_text_overlay_F3nHNV"
   ]
 }

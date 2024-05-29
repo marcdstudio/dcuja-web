@@ -26,7 +26,7 @@
       {% endif %}
     </div>
   </div>
-  <div class="w-full m:w-1/2 relative">
+  <a class="w-full m:w-1/2 relative group" aria-label="{{ section.settings.cta }}"  href="{{ section.settings.link }}">
     <div class="block w-full h-[70vw] m:h-full relative rounded-[1.5rem]">
       {%
         include 'lazy' with className: 'w-full h-full object-cover absolute left-0 top-0'
@@ -34,9 +34,9 @@
         , size: '1400x' %}
     </div>
     {% if section.settings.link %}
-      <a class="tag-btn hidden m:flex" href="{{ section.settings.link }}">{{ section.settings.cta }}</a>
+      <div class="tag-btn hidden m:flex transition-transform duration-300 group-hover:rotate-[-15deg] origin-center">{{ section.settings.cta }}</div>
     {% endif %}
-  </div>
+  </a>
 
   {% if section.settings.wave == 'bottom' or section.settings.wave == 'both' %}
     <div class="absolute z-2 left-0 bottom-0 w-full text-cream">{% include 'icon-wave' %}</div>
