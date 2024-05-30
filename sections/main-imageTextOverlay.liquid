@@ -1,12 +1,12 @@
 {% assign stngs = section.settings %}
 
-<div class="relative mb-90 m:mb-90">
+<div class="relative mb-60 m:mb-90">
   <div class="overflow-hidden relative z-2 h-[60vw] m:h-[60rem]">
     {%
       include 'lazy' with className: 'w-full h-full object-cover absolute left-0 top-0'
       , src: stngs.image
       , size: '1400x' %}
-      <div class="m:hidden w-full text-cream absolute bottom-0 left-0">{% include 'icon-wave' %}</div>
+      <div class="m:hidden w-full text-cream absolute bottom-[-.5px] left-0">{% include 'icon-wave' %}</div>
 
   </div>
 
@@ -25,7 +25,8 @@
       {% if stngs.link.size > 0 %}
         {% include 'cta' with href: section.settings.link
           , text: section.settings.cta
-          , className: 'block bg-primary m:bg-cream text-cream m:text-primary border border-solid border-primary w-full m:w-[40rem] py-15 m:py-0 flex-shrink-0 flex items-center justify-center rounded-[.5rem] m:rounded-[1rem] text-24 font-serif uppercase leading-100' %}
+          , hasArrow: true,
+          , className: 'block bg-primary m:bg-cream text-cream m:text-primary border border-solid border-primary w-full m:w-[40rem] py-15 m:py-0 flex-shrink-0 flex items-center justify-center rounded-[.5rem] m:rounded-[1rem] text-24 font-serif uppercase leading-100 transition-colors duration-300 hover:text-secondary' %}
       {% endif %}
     </div>
   </div>

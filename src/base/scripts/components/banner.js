@@ -12,8 +12,6 @@ export default component((node, ctx) => {
     let currentTheme = document.body.dataset.theme
     let themeImages = []
 
-    console.log('currentTheme', currentTheme);
-
     allImages.forEach((img, index) => {
       if(img.theme == currentTheme){
         themeImages.push(img)

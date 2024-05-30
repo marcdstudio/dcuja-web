@@ -3,7 +3,7 @@
     <div class="absolute z-2 left-0 top-0 w-full text-cream rotate-180">{% include 'icon-wave' %}</div>
   {% endif %}
 
-  <div class="w-full m:w-1/2 m:min-h-[50rem] pb-50 pt-10 m:py-50 flex items-center justify-center px-15 relative z-3">
+  <div class="w-full m:w-1/2 m:min-h-[50rem] pb-30 m:pb-50 pt-10 m:py-50 flex items-center justify-center px-15 relative z-3">
     <div class="w-full max-w-[60rem] relative">
       {% if section.settings.subtitle.size > 0 %}
         <div class="tag translate-x-[-8rem] m:translate-x-0 -translate-y-30">
@@ -14,7 +14,7 @@
         </div>
       {% endif %}
       {% if section.settings.title.size > 0 %}
-        <h2 class="title-2xl">{{ section.settings.title }}</h2>
+        <h2 class="title-2xl{% unless section.settings.subtitle.size > 0 %} mt-20 m:mt-0{% endunless %}">{{ section.settings.title }}</h2>
       {% endif %}
 
       {% if section.settings.body.size > 0 %}
@@ -26,7 +26,10 @@
       {% endif %}
     </div>
   </div>
-  <a class="w-full m:w-1/2 relative group" aria-label="{{ section.settings.cta }}"  href="{{ section.settings.link }}">
+  <{% if section.settings.link %}a aria-label="{{ section.settings.cta }}"
+      href="{{ section.settings.link }}" {%else%}div{% endif%}
+        class="w-full m:w-1/2 relative group"
+        >
     <div class="block w-full h-[70vw] m:h-full relative rounded-[1.5rem]">
       {%
         include 'lazy' with className: 'w-full h-full object-cover absolute left-0 top-0'
@@ -36,10 +39,10 @@
     {% if section.settings.link %}
       <div class="tag-btn hidden m:flex transition-transform duration-300 group-hover:rotate-[-15deg] origin-center">{{ section.settings.cta }}</div>
     {% endif %}
-  </a>
+  </{% if section.settings.link %}a{% else %}div{% endif %}>
 
   {% if section.settings.wave == 'bottom' or section.settings.wave == 'both' %}
-    <div class="absolute z-2 left-0 bottom-0 w-full text-cream">{% include 'icon-wave' %}</div>
+    <div class="absolute z-2 left-0 bottom-[-.5px] w-full text-cream">{% include 'icon-wave' %}</div>
   {% endif %}
 </div>
 

@@ -10,7 +10,7 @@
   }
 
   &-hero{
-    @apply text-center py-15 m:py-20 w-full flex items-center justify-center absolute bottom-0 text-22 uppercase font-serif;
+    @apply text-center py-15 m:py-20 w-full flex items-center justify-center absolute bottom-0 text-20 m:text-22 uppercase font-serif;
   }
 
   &.is-glass{

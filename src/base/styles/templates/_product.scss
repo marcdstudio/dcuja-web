@@ -17,11 +17,10 @@
 
   &-info {
     .carousel-dot {
-      background-color: var(--primary);
-      @apply border border-solid border-black rounded-full w-15 m:w-20 h-15 m:h-20;
+      @apply bg-cream opacity-50 rounded-full w-10 m:w-20 h-10 m:h-20;
 
       &.is-active {
-        @apply bg-cream;
+        @apply opacity-100;
       }
     }
 
@@ -51,52 +50,6 @@
     &.active{
       &:after{
         @apply opacity-100;
-      }
-    }
-  }
-}
-
-.js {
-  &-addon{
-    @apply rounded-[.5rem] bg-cream border border-solid border-grey w-full p-10 text-12 uppercase flex justify-between items-center;
-
-    div,
-    img{
-      @apply pointer-events-none;
-    }
-    .addon-dot{
-      @apply w-10 h-10 border border-black border-solid rounded-full relative;
-
-      &:after{
-        content: '';
-        position: absolute;
-        left: .2rem;
-        top: .2rem;
-        height: .4rem;
-        width: .4rem;
-        border-radius: 100%;
-        opacity: 0;
-        background: black;
-      }
-    }
-
-    &.selected{
-      @apply border-black;
-      .addon-dot{
-        &:after{
-          opacity: 1;
-        }
-      }
-    }
-  }
-  &-add-to-cart {
-    &:hover {
-    }
-    &.oos {
-      @apply bg-grey text-black;
-
-      &:hover {
-        @apply bg-grey text-black;
       }
     }
   }

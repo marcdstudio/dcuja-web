@@ -10,8 +10,8 @@
     </div>
   </div>
   <div class="w-full">
-    <div class="js-carousel m:z-2 w-full overflow-hidden pl-15 m:pl-20">
-      <div class="flex select-none w-full relative">
+    <div class="js-carousel m:z-2 w-full overflow-hidden px-15 m:px-20 relative">
+      <div class="flex select-none w-full">
         {% for block in section.blocks %}
           {% if section.settings.theme %}
             {% if block.settings.theme == product %}
@@ -20,7 +20,6 @@
           {% else %}
             {% include 'card' %}
           {% endif %}
-
         {% endfor %}
       </div>
     </div>
